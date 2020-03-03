@@ -12,9 +12,15 @@ function search() {
         if (this.readyState === this.DONE) {
             console.log(this.responseText);
             var response = JSON.parse(this.responseText);
-// I KNOW HOW TO TARGET DATA
-            var titleText = document.getElementById("title-text");
-            titleText.innerHTML = response.data[0].title;
+            // First result printed in HTML
+            var titleText = response.data;
+            for (i = 0; i < titleText.length; i++) {
+               document.getElementById("title-text");
+               titleText.innerHTML = "Title:" + titleText[i].title;
+            }
+            // var titleText = document.getElementById("title-text");
+            // titleText.innerHTML = response.data[0].title;
+            // Second result printed I in HTMl
             var rank = document.getElementById("song-rank");
             rank.innerHTML = response.data[0].rank;
         }
