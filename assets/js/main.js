@@ -12,11 +12,17 @@ function search() {
         if (this.readyState === this.DONE) {
             console.log(this.responseText);
             var response = JSON.parse(this.responseText);
-            var title = response.data[0].title;
-            console.log(title);
-            var rank = response.data[0].rank;
-            console.log(rank);
+// I KNOW HOW TO TARGET DATA
+            var titleText = document.getElementById("title-text");
+            titleText.innerHTML = response.data[0].title;
+            var rank = document.getElementById("song-rank");
+            rank.innerHTML = response.data[0].rank;
         }
+
+
+        // NEXT STEPS
+        // 1. Putting data into HTML code
+        // 2. Adding a 'for loop' to be able to iterate through the whole array
     });
 
     xhr.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + inputValue);
