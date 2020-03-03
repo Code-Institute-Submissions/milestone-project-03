@@ -3,7 +3,7 @@ var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
 
-// Practise search function
+// Initial search function
 function search() {
 
     let inputValue = document.getElementById("search").value;
@@ -11,6 +11,11 @@ function search() {
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
             console.log(this.responseText);
+            var response = JSON.parse(this.responseText);
+            var title = response.data[0].title;
+            console.log(title);
+            var rank = response.data[0].rank;
+            console.log(rank);
         }
     });
 
@@ -21,3 +26,4 @@ function search() {
     xhr.send(data);
 
 }
+
