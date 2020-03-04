@@ -12,19 +12,30 @@ function search() {
         if (this.readyState === this.DONE) {
             console.log(this.responseText);
             var response = JSON.parse(this.responseText);
-            // First result (song title search) printed in HTML
-            var titleText = response.data;
-            for (i = 0; i < titleText.length; i++) {
-               document.getElementById("title-text").innerHTML += "Title: " + titleText[i].title + "<br>";
-            }
-            // Second result (song rank) printed in HTML
-            var rank = document.getElementById("song-rank");
-            rank.innerHTML = response.data[0].rank;
+
+            // The data received from the search function
+            var responseData = response.data;
+
+            // The search action (artist name) to be printed in HTML
+            for (i = 0; i < responseData.length; i++) {
+            
+                // Function to try ensure artist search results contain the name searched for
+                var artistName = response.data[i].artist.name;
+                if (artistName.includes(inputValue)) {
+                    console.log("success!");
+                } else {
+                    console.log("failure!");
+                }
+                document.getElementById("artist-name").innerHTML += "Artist name: " + responseData[i].artist.name + "<br>";
+                document.getElementById("popular-song").innerHTML += "Popular song: " + responseData[i].title + "<br>";
+                document.getElementById("recommended-album").innerHTML += "Recommended album: " + responseData[i].album.title + "<br>";
+            }             
         }
     });
-        // NEXT STEPS
-        // 1. Putting data into HTML code
-        // 2. Adding a 'for loop' to be able to iterate through the whole array
+        // QUESTIONS
+        // 1. How to make search specific eg. artist name, rather than songs which also have the artist name in it?
+        // 2. How to show results once, rather than duplicates eg. names
+        // 3. Do I need to do anything with the other API GET Keys eg. artist / album?
 
     xhr.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + inputValue);
     xhr.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
