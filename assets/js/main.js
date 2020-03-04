@@ -12,24 +12,19 @@ function search() {
         if (this.readyState === this.DONE) {
             console.log(this.responseText);
             var response = JSON.parse(this.responseText);
-            // First result printed in HTML
+            // First result (song title search) printed in HTML
             var titleText = response.data;
             for (i = 0; i < titleText.length; i++) {
-               document.getElementById("title-text");
-               titleText.innerHTML = "Title:" + titleText[i].title;
+               document.getElementById("title-text").innerHTML += "Title: " + titleText[i].title + "<br>";
             }
-            // var titleText = document.getElementById("title-text");
-            // titleText.innerHTML = response.data[0].title;
-            // Second result printed I in HTMl
+            // Second result (song rank) printed in HTML
             var rank = document.getElementById("song-rank");
             rank.innerHTML = response.data[0].rank;
         }
-
-
+    });
         // NEXT STEPS
         // 1. Putting data into HTML code
         // 2. Adding a 'for loop' to be able to iterate through the whole array
-    });
 
     xhr.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + inputValue);
     xhr.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
