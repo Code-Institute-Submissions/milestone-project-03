@@ -19,12 +19,17 @@ function search() {
             // Search action to filter results that only include words from inputValue 
             
             for (i = 0; i < responseData.length; i++) {
-                var artistNames = responseData[i].artist.name.toLowerCase();
-                var filteredNames = artistNames.split(" "); 
-                if (filteredNames.includes(inputValue.toLowerCase())) {
-                    document.getElementById("artist-name").innerHTML += "Name: " + responseData[i].artist.name + "<br>";
+                var initialArtistNames = responseData[i].artist.name.toLowerCase();
+                var filteredArtistNames = initialArtistNames.split(" "); 
+                if (filteredArtistNames.includes(inputValue.toLowerCase())) {
+                    // BELOW 2 LINES ARE EARLY STEPS OF TRYING TO FIGURE OUT FILTER. CAN BE REMOVED IF NOT POSSIBLE.
+                    var finalArtistNames = filteredArtistNames.filter(function (name, index) {
+                        return filteredArtistNames.indexOf(name) === index;
+                    });
+                    console.log(finalArtistNames);
+                    document.getElementById("artist-name").innerHTML += responseData[i].artist.name + "<br>";
                 } else {
-                    console.log("didn't work");
+                    console.log("not today Satan.")
                 }
             
                 // document.getElementById("popular-song").innerHTML += "Popular song: " + responseData[i].title + "<br>";
