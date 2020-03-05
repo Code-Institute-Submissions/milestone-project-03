@@ -5,18 +5,43 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="/assets/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+		integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/css/style.css"> <link rel="stylesheet" href="/assets/css/style.css">
 	<title>Milestone Project 2</title>
 </head>
 
 <body>
-    <h1>Music website</h1>
-    <h2>Here you can search for artists, songs and albums...</h2>
-    <input type="text" id="search" placeholder="Search for artists, songs and albums">
-    <button type="button" onclick="search()">Click Me!</button>
-    <p id="artist-name"></p>
-    <p id="popular-song"></p>
-    <p id="recommended-album"></p>
+	<section class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<h1>Music website</h1>
+				<h2>Here you can search for artists, songs and albums...</h2>
+			</div>
+			<div class="col-12">
+				<input type="text" id="search" placeholder="Search for artists, songs and albums">
+				<button type="button" onclick="search()">Click Me!</button>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<h1>TEXT</h1>
+					<p id="artist-name"></p>
+				</div>
+				<div class="col">
+					<h1>TEXT</h1>
+					<p id="popular-song"></p>
+				</div>
+				<div class="col">
+					<h1>TEXT</h1>
+					<p id="recommended-album"></p>
+				</div>
+			</div>
+		</div>
+	</section>
 </body>
 
 <script src="/assets/js/main.js"></script>

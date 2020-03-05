@@ -16,16 +16,8 @@ function search() {
             // The data received from the search function
             var responseData = response.data;
 
-            // The search action (artist name) to be printed in HTML
+            // The search action (artist name, popular songs and recommended albums) to be printed in HTML
             for (i = 0; i < responseData.length; i++) {
-            
-                // Function to try ensure artist search results contain the name searched for
-                var artistName = response.data[i].artist.name;
-                if (artistName.includes(inputValue)) {
-                    console.log("success!");
-                } else {
-                    console.log("failure!");
-                }
                 document.getElementById("artist-name").innerHTML += "Artist name: " + responseData[i].artist.name + "<br>";
                 document.getElementById("popular-song").innerHTML += "Popular song: " + responseData[i].title + "<br>";
                 document.getElementById("recommended-album").innerHTML += "Recommended album: " + responseData[i].album.title + "<br>";
