@@ -2,7 +2,7 @@
 
 function filter() {
     var artistName = responseData[0].artist.name;
-    if (artistName === artistname++) {
+    if (artistName == artistname++) {
         console.log("it's the same name");
     } else {
         console.log("it's not the same name");

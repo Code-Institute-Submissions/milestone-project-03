@@ -14,31 +14,35 @@
 </head>
 
 <body>
+	<header>
+	</header>
+
 	<section class="container-fluid">
 		<div class="row">
-			<div class="col-12">
-				<h1>Music website</h1>
-				<h2>Here you can search for artists, songs and albums...</h2>
+			<div class="col-4">
+				<h1>MUSIC.</h1>
+                <h2>search.</h2>
+				<h2>for artists.</h2>
+                <h2>hear songs.</h2>
+                <h2>pretty basic really.</h2>
+                <input type="text" id="search" placeholder="Type here">
+				<button type="button" onclick="search()">Search</button>
 			</div>
-			<div class="col-12">
-				<input type="text" id="search" placeholder="Search for artists, songs and albums">
-				<button type="button" onclick="search()">Click Me!</button>
+			<div class="col-2">
+				<h3>artist</h3>
+				<p id="artist-name"></p>
 			</div>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<h1>TEXT</h1>
-					<p id="artist-name"></p>
-				</div>
-				<div class="col">
-					<h1>TEXT</h1>
-					<p id="popular-song"></p>
-				</div>
-				<div class="col">
-					<h1>TEXT</h1>
-					<p id="recommended-album"></p>
-				</div>
+			<div class="col-2">
+				<h3>songs</h3>
+				<p id="popular-song"></p>
+			</div>
+			<div class="col-2">
+				<h3>listen</h3>
+				<p id="preview-song"></p>
+			</div>
+			<div class="col-2">
+				<h3>albums</h3>
+				<p id="recommended-album"></p>
 			</div>
 		</div>
 	</section>

@@ -16,18 +16,23 @@ function search() {
             // The data received from the search function
             var responseData = response.data;
 
-            // The search action (artist name, popular songs and recommended albums) to be printed in HTML
+            // Search action to filter results that only include words from inputValue 
+            
             for (i = 0; i < responseData.length; i++) {
-                document.getElementById("artist-name").innerHTML += "Artist name: " + responseData[i].artist.name + "<br>";
-                document.getElementById("popular-song").innerHTML += "Popular song: " + responseData[i].title + "<br>";
-                document.getElementById("recommended-album").innerHTML += "Recommended album: " + responseData[i].album.title + "<br>";
-            }             
+                var artistNames = responseData[i].artist.name;
+                var filteredNames = artistNames.split(" "); 
+                if (filteredNames.includes(inputValue)) {
+                    document.getElementById("artist-name").innerHTML += "Name: " + responseData[i].artist.name + "<br>";
+                } else {
+                    console.log("didn't work");
+                }
+            
+                // document.getElementById("popular-song").innerHTML += "Popular song: " + responseData[i].title + "<br>";
+                // document.getElementById("preview-song").innerHTML += "Song preview: " + responseData[i].preview + "<br>";                
+                // document.getElementById("recommended-album").innerHTML += "Recommended album: " + responseData[i].album.title + "<br>";
+            }
         }
     });
-        // QUESTIONS
-        // 1. How to make search specific eg. artist name, rather than songs which also have the artist name in it?
-        // 2. How to show results once, rather than duplicates eg. names
-        // 3. Do I need to do anything with the other API GET Keys eg. artist / album?
 
     xhr.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + inputValue);
     xhr.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
@@ -36,4 +41,21 @@ function search() {
     xhr.send(data);
 
 }
+
+
+        // QUESTIONS
+        // Q1 How to make search specific eg. artist name, rather than songs which also have the artist name in it?
+        // - I have tried if (xxx.includes(inputValue === true, so whatever the name input in the search is)) {
+            // console.log(success!);
+            // } else {
+            // console.log(failure!);
+            // }
+            // ... but only shows failure
+            // - The 'in' operator
+        // Q2. How to show results once, rather than duplicates eg. names
+        // Q3. How to make it so that when an artist name pops up, you can click a name and then it shows the song results and suggested albums?
+        // Q4. How to make previews show up as images / preview bars
+        // Q5. Do I need to do anything with the other API GET Keys eg. artist / album?
+
+
 
