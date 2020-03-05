@@ -19,9 +19,9 @@ function search() {
             // Search action to filter results that only include words from inputValue 
             
             for (i = 0; i < responseData.length; i++) {
-                var artistNames = responseData[i].artist.name;
+                var artistNames = responseData[i].artist.name.toLowerCase();
                 var filteredNames = artistNames.split(" "); 
-                if (filteredNames.includes(inputValue)) {
+                if (filteredNames.includes(inputValue.toLowerCase())) {
                     document.getElementById("artist-name").innerHTML += "Name: " + responseData[i].artist.name + "<br>";
                 } else {
                     console.log("didn't work");
