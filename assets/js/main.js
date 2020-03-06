@@ -16,20 +16,20 @@ function search() {
             // The data received from the search function
             var responseData = response.data;
 
-            // Search action to filter results that only include words from inputValue 
+            // Search action to filter results that only include words from inputValue and removes duplicates 
             var artistList = [];
 
             for (i = 0; i < responseData.length; i++) {
                 var initialArtistNames = responseData[i].artist.name;
-                // console.log(typeof initialArtistNames);
-                // console.log(initialArtistNames);
                 if (initialArtistNames.toLowerCase().includes(inputValue.toLowerCase())) {
                     if (artistList.includes(initialArtistNames) == false) {
                         artistList.push(initialArtistNames);
+                        document.getElementById("artist-name").innerHTML += initialArtistNames + "<br>";
                     }
-                        document.getElementById("artist-name").innerHTML += artistList + "<br>";
+                        console.log(artistList);
                     }
                 }
+                
 
                 // step 2 - if true... we have an artist we've searched for. should add this to array?
 
