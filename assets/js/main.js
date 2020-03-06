@@ -24,38 +24,33 @@ function search() {
                 if (initialArtistNames.toLowerCase().includes(inputValue.toLowerCase())) {
                     if (artistList.includes(initialArtistNames) == false) {
                         artistList.push(initialArtistNames);
-                        document.getElementById("artist-name").innerHTML += initialArtistNames + "<br>";
-                    }
-                        console.log(artistList);
+                        document.getElementById("artist-name").innerHTML += "<p>" + initialArtistNames + "</p>";
+                        // document.getElementById("artist-name").innerHTML += initialArtistNames + "<br>";
                     }
                 }
-                
+            }
 
-                // step 2 - if true... we have an artist we've searched for. should add this to array?
-
-                // step 3 - if artistList.includes(initialArtistNames) == false, add to the array
-                // otherwise do nothing
-/*  
-              if (filteredArtistNames.includes(inputValue.toLowerCase())) {
-                    // BELOW 4 LINES ARE EARLY STEPS OF TRYING TO FIGURE OUT FILTER METHOD. CAN BE REMOVED IF NOT POSSIBLE.
-                    var finalArtistNames = filteredArtistNames.filter(function (name, index) {
-                        function removeDuplicates(data) {
-                            return data.filter((value, index) = data.indexOf(value) === filteredArtistNames.indexOf(name) === index);
-                        }
-                        console.log(removeDuplicates(finalArtistNames));
-                    });
-                    document.getElementById("artist-name").innerHTML += responseData[i].artist.name + "<br>";
-                } else {
-                    console.log("this, has, not, worked.")
-                }*/
-                // document.getElementById("artist-name").innerHTML += responseData[i].artist.name + "<br>";
-                // document.getElementById("popular-song").innerHTML += "Popular song: " + responseData[i].title + "<br>";
-                // document.getElementById("preview-song").innerHTML += "Song preview: " + responseData[i].preview + "<br>";                
-                // document.getElementById("recommended-album").innerHTML += "Recommended album: " + responseData[i].album.title + "<br>";
+            /*  
+                          if (filteredArtistNames.includes(inputValue.toLowerCase())) {
+                                // BELOW 4 LINES ARE EARLY STEPS OF TRYING TO FIGURE OUT FILTER METHOD. CAN BE REMOVED IF NOT POSSIBLE.
+                                var finalArtistNames = filteredArtistNames.filter(function (name, index) {
+                                    function removeDuplicates(data) {
+                                        return data.filter((value, index) = data.indexOf(value) === filteredArtistNames.indexOf(name) === index);
+                                    }
+                                    console.log(removeDuplicates(finalArtistNames));
+                                });
+                                document.getElementById("artist-name").innerHTML += responseData[i].artist.name + "<br>";
+                            } else {
+                                console.log("this, has, not, worked.")
+                            }*/
+            // document.getElementById("artist-name").innerHTML += responseData[i].artist.name + "<br>";
+            // document.getElementById("popular-song").innerHTML += "Popular song: " + responseData[i].title + "<br>";
+            // document.getElementById("preview-song").innerHTML += "Song preview: " + responseData[i].preview + "<br>";                
+            // document.getElementById("recommended-album").innerHTML += "Recommended album: " + responseData[i].album.title + "<br>";
             // to display each name: create an empty string. then use a for loop, and for each name in artistList, append the following to the string:
-            // sting += "<p>" + artistList[i] + "</p>";
+            // string += "<p>" + artistList[i] + "</p>";
             // innerHtml of artist div = string
-           
+
         }
     });
 
