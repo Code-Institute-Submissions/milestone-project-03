@@ -17,25 +17,46 @@ function search() {
             var responseData = response.data;
 
             // Search action to filter results that only include words from inputValue 
-            
+            var artistList = [];
+
             for (i = 0; i < responseData.length; i++) {
-                var initialArtistNames = responseData[i].artist.name.toLowerCase();
-                var filteredArtistNames = initialArtistNames.split(" "); 
-                if (filteredArtistNames.includes(inputValue.toLowerCase())) {
-                    // BELOW 2 LINES ARE EARLY STEPS OF TRYING TO FIGURE OUT FILTER. CAN BE REMOVED IF NOT POSSIBLE.
+                var initialArtistNames = responseData[i].artist.name;
+                console.log(typeof initialArtistNames);
+                console.log(initialArtistNames);
+                if (initialArtistNames.toLowerCase().includes(inputValue.toLowerCase())) {
+                        document.getElementById("artist-name").innerHTML += responseData[i].artist.name + "<br>";
+                    }
+                }
+           
+                
+                // step 1 - remove names we haven't searched for.
+                // check if initialArtistNames.toLowercase.includes(inputValue.toLowerCase())
+
+                // step 2 - if true... we have an artist we've searched for. should add this to array?
+
+                // step 3 - if artistList.includes(initialArtistNames) == false, add to the array
+                // otherwise do nothing
+/*  
+              if (filteredArtistNames.includes(inputValue.toLowerCase())) {
+                    // BELOW 4 LINES ARE EARLY STEPS OF TRYING TO FIGURE OUT FILTER METHOD. CAN BE REMOVED IF NOT POSSIBLE.
                     var finalArtistNames = filteredArtistNames.filter(function (name, index) {
-                        return filteredArtistNames.indexOf(name) === index;
+                        function removeDuplicates(data) {
+                            return data.filter((value, index) = data.indexOf(value) === filteredArtistNames.indexOf(name) === index);
+                        }
+                        console.log(removeDuplicates(finalArtistNames));
                     });
-                    console.log(finalArtistNames);
                     document.getElementById("artist-name").innerHTML += responseData[i].artist.name + "<br>";
                 } else {
-                    console.log("not today Satan.")
-                }
-            
+                    console.log("this, has, not, worked.")
+                }*/
                 // document.getElementById("popular-song").innerHTML += "Popular song: " + responseData[i].title + "<br>";
                 // document.getElementById("preview-song").innerHTML += "Song preview: " + responseData[i].preview + "<br>";                
                 // document.getElementById("recommended-album").innerHTML += "Recommended album: " + responseData[i].album.title + "<br>";
-            }
+            // to display each name: create an empty string. then use a for loop, and for each name in artistList, append the following to the string:
+            // sting += "<p>" + artistList[i] + "</p>";
+            // innerHtml of artist div = string
+           
+            
         }
     });
 
