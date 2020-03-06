@@ -21,16 +21,15 @@ function search() {
 
             for (i = 0; i < responseData.length; i++) {
                 var initialArtistNames = responseData[i].artist.name;
-                console.log(typeof initialArtistNames);
-                console.log(initialArtistNames);
+                // console.log(typeof initialArtistNames);
+                // console.log(initialArtistNames);
                 if (initialArtistNames.toLowerCase().includes(inputValue.toLowerCase())) {
-                        document.getElementById("artist-name").innerHTML += responseData[i].artist.name + "<br>";
+                    if (artistList.includes(initialArtistNames) == false) {
+                        artistList.push(initialArtistNames);
+                    }
+                        document.getElementById("artist-name").innerHTML += artistList + "<br>";
                     }
                 }
-           
-                
-                // step 1 - remove names we haven't searched for.
-                // check if initialArtistNames.toLowercase.includes(inputValue.toLowerCase())
 
                 // step 2 - if true... we have an artist we've searched for. should add this to array?
 
@@ -49,6 +48,7 @@ function search() {
                 } else {
                     console.log("this, has, not, worked.")
                 }*/
+                // document.getElementById("artist-name").innerHTML += responseData[i].artist.name + "<br>";
                 // document.getElementById("popular-song").innerHTML += "Popular song: " + responseData[i].title + "<br>";
                 // document.getElementById("preview-song").innerHTML += "Song preview: " + responseData[i].preview + "<br>";                
                 // document.getElementById("recommended-album").innerHTML += "Recommended album: " + responseData[i].album.title + "<br>";
@@ -56,7 +56,6 @@ function search() {
             // sting += "<p>" + artistList[i] + "</p>";
             // innerHtml of artist div = string
            
-            
         }
     });
 
