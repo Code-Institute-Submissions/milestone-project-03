@@ -21,23 +21,24 @@
 		<div class="row">
 			<div class="col-6">
 				<h1 class="massive-heading">MUSIC.</h1>
-                <h2>search.</h2>
-				<h2>for artists.</h2>
-                <h2>hear songs.</h2>
-                <h2>pretty basic really.</h2>
+                <h2 class="intro">search for artists.</h2>
+                <h2 class="intro">hear some songs.</h2>
+                <h2 class="intro">pretty basic really.</h2>
                 <input type="text" id="search" placeholder="Type here">
 				<button type="button" onclick="search()">Search</button>
 			</div>
 			<div class="col-2">
-				<h3>artist</h3>
-				<div id="artist-name"></div> <!-- change this a div -->
+				<h3 class="category-header">artist</h3>
+				<div class="search-result" id="artist-name">
+                </div> <!-- EVERYTHING IN THIS DIV NEEDS TO BE CLICKABLE -->
 			</div>
 			<div class="col-2">
-				<h3>songs</h3>
-				<p id="popular-song"></p>
+				<h3 class="category-header">songs</h3>
+                <div class="search-result" id="popular-song">
+                </div> 
 			</div>
 			<div class="col-2">
-				<h3>listen</h3>
+				<h3 class="category-header">listen</h3>
 				<p id="preview-song"></p>
 			</div>
 		</div>

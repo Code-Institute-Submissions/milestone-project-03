@@ -3,15 +3,35 @@
 @import url('https://fonts.googleapis.com/css?family=Space+Mono&:100,200,300,400,500,600,700');
 
 .massive-heading {
-    color: black;
-    font-family: "Coda Caption", sans-serif;
+    color: white;
+    font-family: "Anton", sans-serif;
     font-weight: bolder;
-    font-size: 10vh;
-    /* letter-spacing: .5vw; */
-    /* text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000; */
+    font-size: 300px;
+    letter-spacing: .5vw;
+    text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;
+    /* https://wpshout.com/quick-guides/create-text-outline-css/ */
+    padding-top: 25vh;
 }
 
 h2, h3, p {
     font-family: "Space Mono", sans-serif;
     font-weight: 100;
+}
+
+.search-result {
+    font-family: "Space Mono", sans-serif;
+    font-size: 20px;
+}
+
+button {
+    padding-top: 30px;
+}
+
+.category-header {
+    font-size: 30px;
+    padding-top: 10vh;
+}
+
+.intro {
+    font-size: 40px;
 }
