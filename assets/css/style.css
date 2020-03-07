@@ -10,6 +10,7 @@
     letter-spacing: .5vw;
     text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;
     /* https://wpshout.com/quick-guides/create-text-outline-css/ */
+    /* Play around to make more subtle, grey shadow below and right */
     padding-top: 25vh;
 }
 
