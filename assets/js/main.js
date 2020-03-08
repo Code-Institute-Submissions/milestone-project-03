@@ -24,7 +24,7 @@ function search() {
                 if (initialArtistNames.toLowerCase().includes(inputValue.toLowerCase())) {
                     if (artistList.includes(initialArtistNames) == false) {
                         artistList.push(initialArtistNames);
-                        document.getElementById("artist-name").innerHTML += `<button id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames + "</button>" + "<br>";
+                        document.getElementById("artist-name").innerHTML += `<button id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
                         console.log(initialArtistNames);
                     }
                 }
@@ -47,36 +47,15 @@ function search() {
 // // Second function: When the user clicks on an artist name, that element generates a new search for that artist's popular songs
 function artistSong(artistName) {
     console.log("function is still linked");
-    let songSearch = document.getElementById("search").value; // equivalent to the inputValue, USED "SEARCH" for now to test it works
-    xhr.addEventListener("readystatechange", function () {
-        if (this.readyState === this.DONE) {
-            console.log("the below responseText shows up after the button is clicked");
-            console.log(this.responseText);
-            // var artistSongs = JSON.parse(this.responseText);
-            // var songData = artistSongs.data;
 
-            // Empty array for song results to be inserted into
-            // var songList = [];
+    let selectedArtist = document.getElementByID(initialArtistName);
+    console.log(initialArtistName);
+    
 
-            // for (i = 0; i < songData.length; i++) {
-            //     var returnedSongList = songData[i].title;
-            //     // console.log("the below list of songs uses the first 'search input' as the input value")
-            //     // console.log(returnedSongList); 
-            //     if (returnedSongList.toLowerCase().includes(songSearch.toLowerCase())) {
-            //         if (songList.includes(returnedSongList) == false) {
-            //             songList.push(returnedSongList);
-            //             document.getElementById("popular-song").innerHTML += "<button>" + returnedSongList + "</button>" + "<br>";
-            //             console.log(returnedSongList);
-            //         }
-            //     }
-            // };
-
-    xhr.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + songSearch); // inputvalue is incorrect
-    xhr.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
-    xhr.setRequestHeader("x-rapidapi-key", "188d30da21msh99fa3832c206cd5p1eb131jsn0acc1b025fc9");
-    xhr.send(data);
-}
-    })
+    // xhr.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + songSearch); // inputvalue is incorrect
+    // xhr.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
+    // xhr.setRequestHeader("x-rapidapi-key", "188d30da21msh99fa3832c206cd5p1eb131jsn0acc1b025fc9");
+    // xhr.send(data);
 }
 
 

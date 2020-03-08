@@ -60,6 +60,7 @@ h2, h3, p {
     border-color: black;
     border-width: 2px;
     margin: 5vh 0 5vh 10vw;
+    padding: 10px 20px;
 }
 
 input {
@@ -69,9 +70,13 @@ input {
 /* Button to click when searching for artist */
 #search-button {
     font-family: "Space Mono", sans-serif;
+    color: white;
+    font-weight: bold;
     font-size: 30px;
-    background: #2EF429;
+    background: black;
     margin: 0 2.5vw;
+    padding: 10px 20px;
+    border: 1px solid black;
 }
 
 /* Buttons and text that are returned from search */
@@ -80,8 +85,7 @@ input {
     color: black;
     border: none;
     font-family: "Space Mono", sans-serif;
-    font-size: 30px;
-    font-weight: bold;
+    font-size: 25px;
     margin: 1vh 0;
 }
 
@@ -92,10 +96,15 @@ input {
     margin-top: 2vh;
 }
 
-button:hover {
+#artists:hover {
     background-color: #2EF429;
 }
 
+#search-button:hover {
+    background-color: #2EF429;
+    color: black;
+    border: none;
+}
 
 
 
