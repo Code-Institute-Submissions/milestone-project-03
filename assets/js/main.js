@@ -24,14 +24,12 @@ function search() {
                 if (initialArtistNames.toLowerCase().includes(inputValue.toLowerCase())) {
                     if (artistList.includes(initialArtistNames) == false) {
                         artistList.push(initialArtistNames);
-                        // var btn = document.createElement("BUTTON"); // new line
-                        // btn.innerHTML += initialArtistNames; // new line
-                        // document.getElementById("artist-name").appendChild(btn); // new line
                         document.getElementById("artist-name").innerHTML += `<button id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames + "</button>" + "<br>";
                         console.log(initialArtistNames);
                     }
                 }
             }
+        document.getElementById("artist-column").innerHTML += `<h3>artist</h3>`;
         }
     });
 
