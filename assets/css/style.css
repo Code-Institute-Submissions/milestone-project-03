@@ -1,17 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Coda+Caption:800&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Space+Mono&:100,200,300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Teko&display=swap');
 
 .massive-heading {
-    color: white;
-    font-family: "Anton", sans-serif;
-    font-weight: bolder;
+    color: black;
+    font-family: "Teko", sans-serif;
     font-size: 300px;
+    font-weight: bold;
     letter-spacing: .5vw;
-    text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;
-    /* https://wpshout.com/quick-guides/create-text-outline-css/ */
-    /* Play around to make more subtle, grey shadow below and right */
-    padding-top: 25vh;
+    margin-top: 20vh;
 }
 
 h2, h3, p {
@@ -25,14 +23,45 @@ h2, h3, p {
 }
 
 button {
-    padding-top: 30px;
+    padding-top: 20px;
 }
 
-.category-header {
-    font-size: 30px;
-    padding-top: 10vh;
+.category-name {
+    font-size: 20px;
 }
 
 .intro {
-    font-size: 40px;
+    font-size: 30px;
+}
+
+#search {
+    font-family: "Space Mono", sans-serif;
+    font-size: 30px;
+    border-color: black;
+    border-width: 3px;
+    margin: 5vh 0;
+}
+
+#search-button {
+    font-family: "Space Mono", sans-serif;
+    font-size: 30px;
+}
+
+input {
+    color: black;
+    /* color: #2EF429; */
+}
+
+.breathing-space {
+    height: 5vh;
+    background-color: black;
+}
+
+.bottom-margin {
+    height: 20vh;
+}
+
+.category-column {
+    border-color: black;
+    border-width: 3px;
 }

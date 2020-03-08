@@ -48,20 +48,34 @@ function artistSong(artistName) {
     let songSearch = document.getElementById("search").value; // equivalent to the inputValue, USED "SEARCH" for now to test it works
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
-            console.log("the second part works");
-            var response = JSON.parse(this.responseText);
+            console.log("the below responseText shows up after the button is clicked");
+            console.log(this.responseText);
+            // var artistSongs = JSON.parse(this.responseText);
+            // var songData = artistSongs.data;
 
-            // The data received from the search function
-            var responseData = response.data;
-        }
-    });
+            // Empty array for song results to be inserted into
+            // var songList = [];
 
-    xhr.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + songSearch);
+            // for (i = 0; i < songData.length; i++) {
+            //     var returnedSongList = songData[i].title;
+            //     // console.log("the below list of songs uses the first 'search input' as the input value")
+            //     // console.log(returnedSongList); 
+            //     if (returnedSongList.toLowerCase().includes(songSearch.toLowerCase())) {
+            //         if (songList.includes(returnedSongList) == false) {
+            //             songList.push(returnedSongList);
+            //             document.getElementById("popular-song").innerHTML += "<button>" + returnedSongList + "</button>" + "<br>";
+            //             console.log(returnedSongList);
+            //         }
+            //     }
+            // };
+
+    xhr.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + songSearch); // inputvalue is incorrect
     xhr.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
     xhr.setRequestHeader("x-rapidapi-key", "188d30da21msh99fa3832c206cd5p1eb131jsn0acc1b025fc9");
     xhr.send(data);
 }
-
+    })
+}
 
 
 
