@@ -29,7 +29,11 @@ function search() {
                     }
                 }
             }
-        document.getElementById("artist-column").innerHTML += `<h3>artist</h3>`;
+        document.getElementById("artist-header").innerHTML = `<h2 class="category-header">artist</h3>`;
+        document.getElementById("artist-header").style.borderLeft = "2px solid #000";
+        document.getElementById("artist-results").style.borderLeft = "2px solid #000";
+        document.getElementById("artist-bottom").style.borderLeft = "2px solid #000";
+        document.getElementById("artist-bottom").innerHTML = `<h3 id="next-step">Click on a name to see their most popular songs</h3>`;
         }
     });
 

@@ -1,55 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Coda+Caption:800&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Space+Mono&:100,200,300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:100,200,300,400,500,600,700');
 @import url('https://fonts.googleapis.com/css?family=Teko&display=swap');
 
-.massive-heading {
-    color: black;
-    font-family: "Teko", sans-serif;
-    font-size: 300px;
-    font-weight: bold;
-    letter-spacing: .5vw;
-    margin-top: 20vh;
-}
-
+/* General Styling */
 h2, h3, p {
     font-family: "Space Mono", sans-serif;
-    font-weight: 100;
-}
-
-.search-result {
-    font-family: "Space Mono", sans-serif;
-    font-size: 20px;
-}
-
-button {
-    padding-top: 20px;
-}
-
-.category-name {
-    font-size: 20px;
-}
-
-.intro {
-    font-size: 30px;
-}
-
-#search {
-    font-family: "Space Mono", sans-serif;
-    font-size: 30px;
-    border-color: black;
-    border-width: 3px;
-    margin: 5vh 0;
-}
-
-#search-button {
-    font-family: "Space Mono", sans-serif;
-    font-size: 30px;
-}
-
-input {
-    color: black;
-    /* color: #2EF429; */
+    font-weight: 500;
 }
 
 .breathing-space {
@@ -63,5 +20,85 @@ input {
 
 .category-column {
     border-color: black;
-    border-width: 3px;
+    border-width: 2px;
 }
+
+#song-column {
+    border-width: 5px;
+    border-color: black;
+}
+
+/* Headers that appear with the searches - artist / song / preview */
+.category-header {
+    color: black;
+    margin-top: 35vh;
+    font-weight: bolder;
+    font-size: 40px;
+    border-bottom: 3px solid #2EF429;
+}
+
+/* Header with word 'music' */
+.massive-heading {
+    color: black;
+    font-family: "Teko", sans-serif;
+    font-size: 300px;
+    font-weight: bold;
+    letter-spacing: .5vw;
+    margin: 20vh 0 0 10vw;
+}
+
+/* Text below header */
+.intro {
+    font-size: 30px;
+    margin-left: 10vw;
+}
+
+/* Bar where you type in artist name */
+#search {
+    font-family: "Space Mono", sans-serif;
+    font-size: 30px;
+    border-color: black;
+    border-width: 2px;
+    margin: 5vh 0 5vh 10vw;
+}
+
+input {
+    color: black;
+}
+
+/* Button to click when searching for artist */
+#search-button {
+    font-family: "Space Mono", sans-serif;
+    font-size: 30px;
+    background: #2EF429;
+    margin: 0 2.5vw;
+}
+
+/* Buttons and text that are returned from search */
+#artists {
+    background-color: white;
+    color: black;
+    border: none;
+    font-family: "Space Mono", sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 1vh 0;
+}
+
+/* Text with next step instructions for user */
+#next-step {
+    color: black;
+    font-weight: bold;
+    margin-top: 2vh;
+}
+
+button:hover {
+    background-color: #2EF429;
+}
+
+
+
+
+
+
+
