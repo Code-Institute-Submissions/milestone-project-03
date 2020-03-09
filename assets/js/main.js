@@ -46,20 +46,39 @@ function search() {
 
 // // Second function: When the user clicks on an artist name, that element generates a new search for that artist's popular songs
 function artistSong(artistName) {
-    alert(artistName + " this bit worked");
-        
-    let selectedArtist = artistName;
-    console.log(selectedArtist);
-    console.log(typeof selectedArtist);
-    var newArtist = JSON.parse(selectedArtist);
-    console.log(newArtist);
-    
-    
+    alert(artistName + " first bit worked");
 
-    // xhr.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + selectedArtist);
-    // xhr.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
-    // xhr.setRequestHeader("x-rapidapi-key", "188d30da21msh99fa3832c206cd5p1eb131jsn0acc1b025fc9");
-    // xhr.send(data);
+xhr.addEventListener("readystatechange", function () {
+    if (this.readyState === this.DONE) {
+        console.log(artistName + " second bit worked");
+        console.log(this.responseText);
+        var artistResponse= JSON.parse(this.responseText);
+
+        // The data received from the specific artist name search
+        var artistData = artistResponse.data;
+        console.log(artistData);
+
+        // Empty array
+        var duplicateList = [];
+
+        //Search function
+        for (i = 0; i < artistData.length; i++) {
+            var songList = artistData[i].title;
+            console.log(songList);
+            // if (songList.includes(artistName.toLowerCase())) {
+            //         if (duplicateList.includes(songList) == false) {
+            //             duplicateList.push(songList);
+            //             document.getElementById("song-list").innerHTML += `<button type="button" id="clickable-songs">` + songList.toLowerCase() + "</button>" + "<br>";
+            //         }
+            //     }
+        }
+    }
+})
+
+    xhr.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + artistName);
+    xhr.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
+    xhr.setRequestHeader("x-rapidapi-key", "188d30da21msh99fa3832c206cd5p1eb131jsn0acc1b025fc9");
+    xhr.send(data);
 };
 
 
