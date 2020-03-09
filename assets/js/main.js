@@ -51,7 +51,7 @@ function artistSong(artistName) {
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
             // console.log(artistName + " second bit worked");
-            // console.log(this.responseText);
+            console.log(this.responseText);
             var artistResponse = JSON.parse(this.responseText);
 
             // The data received from the specific artist name search
@@ -65,7 +65,7 @@ function artistSong(artistName) {
             for (i = 0; i < artistData.length; i++) {
                 var songList = artistData[i].title;
                 // console.log(songList); //Songlist is there
-                document.getElementById("song-list").innerHTML += `<div><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}')">` + songList.toLowerCase() + "</button>" + "</div>";  
+                document.getElementById("song-list").innerHTML += `<div class="song-bars"><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}')">` + songList.toLowerCase() + "</button>" + "</div>";
             }
             document.getElementById("popular-songs").innerHTML = `<h2 class="category-header">songs</h2>`;
             document.getElementById("popular-songs").style.borderLeft = "1px solid #000";
@@ -83,28 +83,20 @@ function artistSong(artistName) {
 
 // Function to preview song
 
-    function songListen(preview) {
-        
-        document.getElementById("preview-songs").innerHTML = `<h2 class="category-header">listen</h2>`;
-        document.getElementById("preview-songs").style.borderLeft = "1px solid #000";
-        document.getElementById("preview-results").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg"></audio>`;    
-        document.getElementById("preview-results").style.borderLeft = "1px solid #000";
-        document.getElementById("preview-bottom").style.borderLeft = "1px solid #000";
-        document.getElementById("preview-bottom").innerHTML = `<h3 id="next-step">try another one?</h3>`;
+function songListen(preview) {
+
+    document.getElementById("preview-songs").innerHTML = `<h2 class="category-header">listen</h2>`;
+    document.getElementById("preview-songs").style.borderLeft = "1px solid #000";
+    document.getElementById("preview-results").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg"></audio>`;
+    document.getElementById("preview-results").style.borderLeft = "1px solid #000";
+    document.getElementById("preview-bottom").style.borderLeft = "1px solid #000";
+    document.getElementById("preview-bottom").innerHTML = `<h3 id="next-step">try another one?</h3>`;
 }
 
 
 
-            // CODE FOR DISPLAYING DIFFERENT ELEMENTS
-            // document.getElementById("artist-name").innerHTML += responseData[i].artist.name + "<br>";
-            // document.getElementById("popular-song").innerHTML += "Popular song: " + responseData[i].title + "<br>";
-            // document.getElementById("preview-song").innerHTML += "Song preview: " + responseData[i].preview + "<br>";                
-            // document.getElementById("recommended-album").innerHTML += "Recommended album: " + responseData[i].album.title + "<br>";
-
-
         // QUESTIONS / TO DO
-        // Q3. How to make it so that when an artist name pops up, you can click a name and then it shows the song results and suggested albums?
         // Q4. How to make previews show up as images / preview bars
-        // TO-DO: Add onmouseleave / onmouseenter events instead of clicking on an artist to preview songs
         // TO-DO: How to remove data from a page when a new element is clicked on?
         // TO-DO: How to change the position of the preview bar so it is in line with the button it's clicked on?
+        // TO-DO: Make the song titles clickable, so they play sound instead of a separate sound bar.
