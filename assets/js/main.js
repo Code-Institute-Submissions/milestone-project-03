@@ -29,11 +29,11 @@ function search() {
                     }
                 }
             }
-        document.getElementById("artist-header").innerHTML = `<h2 class="category-header">artist</h3>`;
-        document.getElementById("artist-header").style.borderLeft = "2px solid #000";
-        document.getElementById("artist-results").style.borderLeft = "2px solid #000";
-        document.getElementById("artist-bottom").style.borderLeft = "2px solid #000";
-        document.getElementById("artist-bottom").innerHTML = `<h3 id="next-step">Click on a name to see their most popular songs</h3>`;
+            document.getElementById("artist-header").innerHTML = `<h2 class="category-header">artist</h3>`;
+            document.getElementById("artist-header").style.borderLeft = "2px solid #000";
+            document.getElementById("artist-results").style.borderLeft = "2px solid #000";
+            document.getElementById("artist-bottom").style.borderLeft = "2px solid #000";
+            document.getElementById("artist-bottom").innerHTML = `<h3 id="next-step">Click on a name to see their most popular songs</h3>`;
         }
     });
 
@@ -48,41 +48,33 @@ function search() {
 function artistSong(artistName) {
     alert(artistName + " first bit worked");
 
-xhr.addEventListener("readystatechange", function () {
-    if (this.readyState === this.DONE) {
-        console.log(artistName + " second bit worked");
-        console.log(this.responseText);
-        var artistResponse= JSON.parse(this.responseText);
+    xhr.addEventListener("readystatechange", function () {
+        if (this.readyState === this.DONE) {
+            console.log(artistName + " second bit worked");
+            console.log(this.responseText);
+            var artistResponse = JSON.parse(this.responseText);
 
-        // The data received from the specific artist name search
-        var artistData = artistResponse.data;
-        console.log(artistData);
+            // The data received from the specific artist name search
+            var artistData = artistResponse.data;
+            console.log(artistData);
 
-        // Empty array
-        var duplicateList = [];
+            // Empty array
+            var duplicateList = [];
 
-        //Search function
-        for (i = 0; i < artistData.length; i++) {
-            var songList = artistData[i].title;
-            console.log(songList);
-            // if (songList.includes(artistName.toLowerCase())) {
-            //         if (duplicateList.includes(songList) == false) {
-            //             duplicateList.push(songList);
-            //             document.getElementById("song-list").innerHTML += `<button type="button" id="clickable-songs">` + songList.toLowerCase() + "</button>" + "<br>";
-            //         }
-            //     }
+            //Search function
+            for (i = 0; i < artistData.length; i++) {
+                var songList = artistData[i].title;
+                console.log(songList); //Songlist is there
+                document.getElementById("song-list").innerHTML += `<button type="button" id="clickable-songs">` + songList.toLowerCase() + "</button>" + "</br>";
+            }
         }
-    }
-})
+    })
 
     xhr.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + artistName);
     xhr.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
     xhr.setRequestHeader("x-rapidapi-key", "188d30da21msh99fa3832c206cd5p1eb131jsn0acc1b025fc9");
     xhr.send(data);
 };
-
-
-
 
             // CODE FOR DISPLAYING DIFFERENT ELEMENTS
             // document.getElementById("artist-name").innerHTML += responseData[i].artist.name + "<br>";
