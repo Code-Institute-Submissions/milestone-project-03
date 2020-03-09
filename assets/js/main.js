@@ -24,7 +24,7 @@ function search() {
                 if (initialArtistNames.toLowerCase().includes(inputValue.toLowerCase())) {
                     if (artistList.includes(initialArtistNames) == false) {
                         artistList.push(initialArtistNames);
-                        document.getElementById("artist-name").innerHTML += `<button id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
+                        document.getElementById("artist-name").innerHTML += `<button type="button" id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
                         console.log(initialArtistNames);
                     }
                 }
@@ -47,25 +47,23 @@ function search() {
 // // Second function: When the user clicks on an artist name, that element generates a new search for that artist's popular songs
 function artistSong(artistName) {
     console.log("function is still linked");
+    alert(artistName);
+        
+    let selectedArtist = artistName;
+    console.log(typeof selectedArtist);
+    var songReturn = JSON.parse(selectedArtist);    
+    console.log(songReturn);
 
-    let selectedArtist = document.getElementByID(initialArtistName);
-    console.log(initialArtistName);
     
 
-    // xhr.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + songSearch); // inputvalue is incorrect
+    // xhr.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + selectedArtist);
     // xhr.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
     // xhr.setRequestHeader("x-rapidapi-key", "188d30da21msh99fa3832c206cd5p1eb131jsn0acc1b025fc9");
     // xhr.send(data);
-}
+};
 
 
 
-
-//     xhr.addEventListener("readystatechange", function () {
-//         if (this.readyState === this.DONE) {
-//             console.log(this.responseText);
-//             var response = JSON.parse(this.responseText);
-// 
 
             // CODE FOR DISPLAYING DIFFERENT ELEMENTS
             // document.getElementById("artist-name").innerHTML += responseData[i].artist.name + "<br>";

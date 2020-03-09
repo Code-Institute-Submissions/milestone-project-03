@@ -34,7 +34,7 @@ h2, h3, p {
     margin-top: 35vh;
     font-weight: bolder;
     font-size: 40px;
-    border-bottom: 3px solid #2EF429;
+    border-bottom: 2px solid #2EF429;
 }
 
 /* Header with word 'music' */
@@ -94,6 +94,7 @@ input {
     color: black;
     font-weight: bold;
     margin-top: 2vh;
+    border-top: 2px solid #2EF429;
 }
 
 #artists:hover {
