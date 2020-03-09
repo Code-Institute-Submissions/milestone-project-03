@@ -29,10 +29,10 @@ function search() {
                     }
                 }
             }
-            document.getElementById("artist-header").innerHTML = `<h2 class="category-header">artist</h3>`;
-            document.getElementById("artist-header").style.borderLeft = "2px solid #000";
-            document.getElementById("artist-results").style.borderLeft = "2px solid #000";
-            document.getElementById("artist-bottom").style.borderLeft = "2px solid #000";
+            document.getElementById("artist-header").innerHTML = `<h2 class="category-header">artist</h2>`;
+            document.getElementById("artist-header").style.borderLeft = "1px solid #000";
+            document.getElementById("artist-results").style.borderLeft = "1px solid #000";
+            document.getElementById("artist-bottom").style.borderLeft = "1px solid #000";
             document.getElementById("artist-bottom").innerHTML = `<h3 id="next-step">Click on a name to see their most popular songs</h3>`;
         }
     });
@@ -67,8 +67,13 @@ function artistSong(artistName) {
                 console.log(songList); //Songlist is there
                 document.getElementById("song-list").innerHTML += `<button type="button" id="clickable-songs">` + songList.toLowerCase() + "</button>" + "</br>";
             }
+            document.getElementById("popular-songs").innerHTML = `<h2 class="category-header">songs</h2>`;
+            document.getElementById("popular-songs").style.borderLeft = "1px solid #000";
+            document.getElementById("song-results").style.borderLeft = "1px solid #000";
+            document.getElementById("song-bottom").style.borderLeft = "1px solid #000";
+            document.getElementById("song-bottom").innerHTML = `<h3 id="next-step">Click on a song to preview it</h3>`;
         }
-    })
+    });
 
     xhr.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + artistName);
     xhr.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
