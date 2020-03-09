@@ -33,7 +33,7 @@ function search() {
             document.getElementById("artist-header").style.borderLeft = "1px solid #000";
             document.getElementById("artist-results").style.borderLeft = "1px solid #000";
             document.getElementById("artist-bottom").style.borderLeft = "1px solid #000";
-            document.getElementById("artist-bottom").innerHTML = `<h3 id="next-step">Click on a name to see their most popular songs</h3>`;
+            document.getElementById("artist-bottom").innerHTML = `<h3 id="next-step">click on a name.</h3>`;
         }
     });
 
@@ -65,13 +65,13 @@ function artistSong(artistName) {
             for (i = 0; i < artistData.length; i++) {
                 var songList = artistData[i].title;
                 // console.log(songList); //Songlist is there
-                document.getElementById("song-list").innerHTML += `<button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}')">` + songList.toLowerCase() + "</button>" + "</br>";
+                document.getElementById("song-list").innerHTML += `<div><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}')">` + songList.toLowerCase() + "</button>" + "</div>";  
             }
             document.getElementById("popular-songs").innerHTML = `<h2 class="category-header">songs</h2>`;
             document.getElementById("popular-songs").style.borderLeft = "1px solid #000";
             document.getElementById("song-results").style.borderLeft = "1px solid #000";
             document.getElementById("song-bottom").style.borderLeft = "1px solid #000";
-            document.getElementById("song-bottom").innerHTML = `<h3 id="next-step">Click on a song to preview it</h3>`;
+            document.getElementById("song-bottom").innerHTML = `<h3 id="next-step">click on a song.</h3>`;
         }
     });
 
@@ -86,7 +86,11 @@ function artistSong(artistName) {
     function songListen(preview) {
         
         document.getElementById("preview-songs").innerHTML = `<h2 class="category-header">listen</h2>`;
+        document.getElementById("preview-songs").style.borderLeft = "1px solid #000";
         document.getElementById("preview-results").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg"></audio>`;    
+        document.getElementById("preview-results").style.borderLeft = "1px solid #000";
+        document.getElementById("preview-bottom").style.borderLeft = "1px solid #000";
+        document.getElementById("preview-bottom").innerHTML = `<h3 id="next-step">try another one?</h3>`;
 }
 
 
@@ -103,3 +107,4 @@ function artistSong(artistName) {
         // Q4. How to make previews show up as images / preview bars
         // TO-DO: Add onmouseleave / onmouseenter events instead of clicking on an artist to preview songs
         // TO-DO: How to remove data from a page when a new element is clicked on?
+        // TO-DO: How to change the position of the preview bar so it is in line with the button it's clicked on?
