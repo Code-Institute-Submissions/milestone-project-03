@@ -10,7 +10,7 @@ function search() {
 
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
-            console.log(this.responseText);
+            // console.log(this.responseText);
             var response = JSON.parse(this.responseText);
 
             // The data received from the search function
@@ -24,8 +24,8 @@ function search() {
                 if (initialArtistNames.toLowerCase().includes(inputValue.toLowerCase())) {
                     if (artistList.includes(initialArtistNames) == false) {
                         artistList.push(initialArtistNames);
-                        document.getElementById("artist-name").innerHTML += `<button type="button" id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
-                        console.log(initialArtistNames);
+                        document.getElementById("artist-names").innerHTML += `<button type="button" id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
+                        // console.log(initialArtistNames);
                     }
                 }
             }
@@ -46,17 +46,17 @@ function search() {
 
 // // Second function: When the user clicks on an artist name, that element generates a new search for that artist's popular songs
 function artistSong(artistName) {
-    alert(artistName + " first bit worked");
+    // alert(artistName + " first bit worked");
 
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
-            console.log(artistName + " second bit worked");
-            console.log(this.responseText);
+            // console.log(artistName + " second bit worked");
+            // console.log(this.responseText);
             var artistResponse = JSON.parse(this.responseText);
 
             // The data received from the specific artist name search
             var artistData = artistResponse.data;
-            console.log(artistData);
+            // console.log(artistData);
 
             // Empty array
             var duplicateList = [];
@@ -64,8 +64,8 @@ function artistSong(artistName) {
             //Search function
             for (i = 0; i < artistData.length; i++) {
                 var songList = artistData[i].title;
-                console.log(songList); //Songlist is there
-                document.getElementById("song-list").innerHTML += `<button type="button" id="clickable-songs">` + songList.toLowerCase() + "</button>" + "</br>";
+                // console.log(songList); //Songlist is there
+                document.getElementById("song-list").innerHTML += `<button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}')">` + songList.toLowerCase() + "</button>" + "</br>";
             }
             document.getElementById("popular-songs").innerHTML = `<h2 class="category-header">songs</h2>`;
             document.getElementById("popular-songs").style.borderLeft = "1px solid #000";
@@ -81,6 +81,15 @@ function artistSong(artistName) {
     xhr.send(data);
 };
 
+// Function to preview song
+
+    function songListen(preview) {
+        
+        document.getElementById("preview-results").innerHTML = `<h2>` + preview + `</h2>`    
+}
+
+
+
             // CODE FOR DISPLAYING DIFFERENT ELEMENTS
             // document.getElementById("artist-name").innerHTML += responseData[i].artist.name + "<br>";
             // document.getElementById("popular-song").innerHTML += "Popular song: " + responseData[i].title + "<br>";
@@ -88,6 +97,8 @@ function artistSong(artistName) {
             // document.getElementById("recommended-album").innerHTML += "Recommended album: " + responseData[i].album.title + "<br>";
 
 
-        // QUESTIONS
+        // QUESTIONS / TO DO
         // Q3. How to make it so that when an artist name pops up, you can click a name and then it shows the song results and suggested albums?
         // Q4. How to make previews show up as images / preview bars
+        // TO-DO: Add onmouseleave / onmouseenter events instead of clicking on an artist to preview songs
+        // TO-DO: How to remove data from a page when a new element is clicked on?
