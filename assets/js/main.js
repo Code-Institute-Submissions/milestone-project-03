@@ -46,14 +46,14 @@ function search() {
 
 // // Second function: When the user clicks on an artist name, that element generates a new search for that artist's popular songs
 function artistSong(artistName) {
-    console.log("function is still linked");
-    alert(artistName);
+    alert(artistName + " this bit worked");
         
     let selectedArtist = artistName;
+    console.log(selectedArtist);
     console.log(typeof selectedArtist);
-    var songReturn = JSON.parse(selectedArtist);    
-    console.log(songReturn);
-
+    var newArtist = JSON.parse(selectedArtist);
+    console.log(newArtist);
+    
     
 
     // xhr.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + selectedArtist);
