@@ -85,7 +85,8 @@ function artistSong(artistName) {
 
     function songListen(preview) {
         
-        document.getElementById("preview-results").innerHTML = `<h2>` + preview + `</h2>`    
+        document.getElementById("preview-songs").innerHTML = `<h2 class="category-header">listen</h2>`;
+        document.getElementById("preview-results").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg"></audio>`;    
 }
 
 
