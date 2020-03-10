@@ -145,6 +145,16 @@ input {
         letter-spacing: .5vw;
         margin: 4vh 0 0 5vw;
     }
+
+    .small-column {
+        color: red;
+        margin: 3vh 0 0 5vw;
+    }
+
+    .small-category-header {
+        padding: 3vh 0 3vh 2vw;
+    }
+
 }
 
 /* Up to mobile size */
@@ -166,7 +176,4 @@ input {
         width: 342px;
     }
 
-    .small-column {
-        border-left: none;
-    }
 }

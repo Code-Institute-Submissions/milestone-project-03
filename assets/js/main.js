@@ -3,19 +3,19 @@ var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
 
-// Function to clear search bar when user clicks in it to type an artist name
-function clearFunctionSmall() {
-    document.getElementById("search-small").value="";
-}
+// // Function to clear search bar (in small screens) when user clicks in it to type an artist name
+// function clearFunctionSmall() {
+//     document.getElementById("search-small").value="";
+// }
 
-// Function to reset the preset value in the search bar after the search is activated
-function clearSearchSmall() {
-    document.getElementById("search-small").value = "artist name";
-}
+// // Function to reset the preset value (in small screens) in the search bar after the search is activated
+// function clearSearchSmall() {
+//     document.getElementById("search-small").value = "artist name";
+// }
 
 // Function to clear search bar when user clicks in it to type an artist name
 function clearFunction() {
-    document.getElementById("search").value="";
+    document.getElementById("search").value = "";
 }
 
 // Function to reset the preset value in the search bar after the search is activated
@@ -39,7 +39,7 @@ function search() {
 
             // Search action to filter results that only include words from inputValue and removes duplicates 
             var artistList = [];
-            
+
             // To reset the search when a new artist is clicked
             // document.getElementById("artist-names").innerHTML = "";
 
@@ -53,7 +53,8 @@ function search() {
                     }
                 }
             }
-            document.getElementById("artist-header").innerHTML = `<h2 class="category-header">artist</h2>`;
+            document.getElementById("artist-header").innerHTML = `<h2 class="category-header disappear-small">artist</h2>`;
+            document.getElementById("small-artist-header").innerHTML = `<h2 class="small-category-header">artist</h2>`;
             document.getElementById("artist-header").style.borderLeft = "1px solid #000";
             document.getElementById("artist-results").style.borderLeft = "1px solid #000";
             document.getElementById("artist-bottom").style.borderLeft = "1px solid #000";
@@ -90,8 +91,8 @@ function artistSong(artistName) {
                 document.getElementById("song-list").innerHTML += `<div class="song-bars"><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}')">` + songList.toLowerCase() + "</button>" + "</div>";
                 console.log("SECOND pass");
             }
-            
-            document.getElementById("popular-songs").innerHTML = `<h2 class="category-header">songs</h2>`;
+
+            document.getElementById("popular-songs").innerHTML = `<h2 class="category-header small-column">songs</h2>`;
             document.getElementById("popular-songs").style.borderLeft = "1px solid #000";
             document.getElementById("song-results").style.borderLeft = "1px solid #000";
             document.getElementById("song-bottom").style.borderLeft = "1px solid #000";
@@ -109,7 +110,7 @@ function artistSong(artistName) {
 
 function songListen(preview) {
 
-    document.getElementById("preview-songs").innerHTML = `<h2 class="category-header">listen</h2>`;
+    document.getElementById("preview-songs").innerHTML = `<h2 class="category-header small-column">listen</h2>`;
     document.getElementById("preview-songs").style.borderLeft = "1px solid #000";
     document.getElementById("preview-results").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg"></audio>`;
     document.getElementById("preview-results").style.borderLeft = "1px solid #000";
