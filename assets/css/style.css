@@ -37,7 +37,7 @@ h2, h3, p {
 .massive-heading {
     color: black;
     font-family: "Teko", sans-serif;
-    font-size: 300px;
+    font-size: 200px;
     font-weight: bold;
     letter-spacing: .5vw;
     margin: 10vh 0 0 5vw;
@@ -45,16 +45,20 @@ h2, h3, p {
 
 /* Text below header */
 .intro {
-    font-size: 30px;
+    font-size: 25px;
     margin-left: 5vw;
+    color: black;
 }
+
+
+
 
 /* Bar where you type in artist name */
 #search {
     font-family: "Space Mono", sans-serif;
-    font-size: 30px;
-    border-color: black;
-    border-width: 2px;
+    font-size: 25px;
+    border-color: grey;
+    border-width: 1px;
     margin: 5vh 0 5vh 5vw;
     padding: 10px 20px;
 }
@@ -68,7 +72,7 @@ input {
     font-family: "Space Mono", sans-serif;
     color: white;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 25px;
     background: black;
     margin: 0 2.5vw;
     padding: 10px 20px;
@@ -116,7 +120,49 @@ input {
 }
 
 
+/* -------------------------------------------------------------- Media Queries */
 
+/* Intro text appearing at the top in a small screen */
+@media (min-width: 769px) {
+    .visible-small {
+        display: none;
+    }
+}
 
+/* Up to tablet size */
+@media (max-width: 769px) {
+    .visible-small {
+        color: red;
+    }
 
+    .disappear-small {
+        display: none;
+    }
 
+    .massive-heading {
+        font-size: 175px;
+        font-weight: bold;
+        letter-spacing: .5vw;
+        margin: 4vh 0 0 5vw;
+    }
+}
+
+/* Up to mobile size */
+
+@media (max-width: 426px) {
+    .intro, #search, #search-button {
+        font-size: 20px;
+    }
+
+    #search-button {
+        padding: 10px 20px;
+        margin: 0 0 0 5vw;
+        width: 342px;
+    }
+
+    #search {
+        margin: 3vh 0 3vh 5vw;
+        padding: 10px 20px;
+        width: 342px;
+    }
+}

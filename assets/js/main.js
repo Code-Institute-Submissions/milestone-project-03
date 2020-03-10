@@ -10,7 +10,7 @@ function clearFunction() {
 
 // Function to reset the preset value in the search bar after the search is activated
 function clearSearch() {
-    document.getElementById("search").value = "Artist name";
+    document.getElementById("search").value = "artist name";
 }
 
 // First user step: artist name search function
