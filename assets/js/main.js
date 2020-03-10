@@ -20,7 +20,6 @@ function search() {
 
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
-            // console.log(this.responseText);
             var response = JSON.parse(this.responseText);
 
             // The data received from the search function
@@ -37,8 +36,8 @@ function search() {
                 if (initialArtistNames.toLowerCase().includes(inputValue.toLowerCase())) {
                     if (artistList.includes(initialArtistNames) == false) {
                         artistList.push(initialArtistNames);
-                        document.getElementById("artist-names").innerHTML += `<button type="button" id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
-                        console.log("FIRST TEST");
+                        document.getElementById("artist-names").innerHTML += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
+                        console.log("FIRST pass");
                     }
                 }
             }
@@ -58,18 +57,16 @@ function search() {
 }
 
 // // Second function: When the user clicks on an artist name, that element generates a new search for that artist's popular songs
+
 function artistSong(artistName) {
-    // alert(artistName + " first bit worked");
 
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
-            // console.log(artistName + " second bit worked");
             console.log(this.responseText);
             var artistResponse = JSON.parse(this.responseText);
 
             // The data received from the specific artist name search
             var artistData = artistResponse.data;
-            // console.log(artistData);
 
             // Empty array 
             var duplicateList = [];
@@ -78,9 +75,10 @@ function artistSong(artistName) {
             document.getElementById("song-list").innerHTML = "";
             for (i = 0; i < artistData.length; i++) {
                 var songList = artistData[i].title;
-                // console.log(songList); //Songlist is there
                 document.getElementById("song-list").innerHTML += `<div class="song-bars"><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}')">` + songList.toLowerCase() + "</button>" + "</div>";
+                console.log("SECOND pass");
             }
+            
             document.getElementById("popular-songs").innerHTML = `<h2 class="category-header">songs</h2>`;
             document.getElementById("popular-songs").style.borderLeft = "1px solid #000";
             document.getElementById("song-results").style.borderLeft = "1px solid #000";
@@ -116,7 +114,7 @@ function songListen(preview) {
 
         // TO-DO: How to change the position of the preview bar so it is in line with the button it's clicked on?
 
-        // TO-DO: Make the song titles clickable, so they play sound instead of a separate sound bar.
-
         // TO-DO: Add filter to song results, so duplicate songs don't show. 
+
+        // TO-DO: Highlight the artist and songs that have been selected
 

@@ -27,7 +27,7 @@ h2, h3, p {
 /* Headers that appear with the searches - artist / song / preview */
 .category-header {
     color: black;
-    margin-top: 35vh;
+    margin-top: 25vh;
     font-weight: bolder;
     font-size: 40px;
     border-bottom: 1px solid #2EF429;
@@ -40,13 +40,13 @@ h2, h3, p {
     font-size: 300px;
     font-weight: bold;
     letter-spacing: .5vw;
-    margin: 20vh 0 0 10vw;
+    margin: 10vh 0 0 5vw;
 }
 
 /* Text below header */
 .intro {
     font-size: 30px;
-    margin-left: 10vw;
+    margin-left: 5vw;
 }
 
 /* Bar where you type in artist name */
@@ -55,7 +55,7 @@ h2, h3, p {
     font-size: 30px;
     border-color: black;
     border-width: 2px;
-    margin: 5vh 0 5vh 10vw;
+    margin: 5vh 0 5vh 5vw;
     padding: 10px 20px;
 }
 
