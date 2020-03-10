@@ -28,8 +28,9 @@ function search() {
 
             // Search action to filter results that only include words from inputValue and removes duplicates 
             var artistList = [];
-
-            document.getElementById("artist-names").innerHTML = "";
+            
+            // To reset the search when a new artist is clicked
+            // document.getElementById("artist-names").innerHTML = "";
 
             for (i = 0; i < responseData.length; i++) {
                 var initialArtistNames = responseData[i].artist.name;
