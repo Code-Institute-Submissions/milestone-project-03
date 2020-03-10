@@ -3,6 +3,16 @@ var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
 
+// Function to clear search bar (in small screen) when user clicks in it to type an artist name
+function clearFunction() {
+    document.getElementById("search-small").value="";
+}
+
+// Function to reset the preset value (in small screen) in the search bar after the search is activated
+function clearSearch() {
+    document.getElementById("search-small").value = "artist name";
+}
+
 // Function to clear search bar when user clicks in it to type an artist name
 function clearFunction() {
     document.getElementById("search").value="";
@@ -12,6 +22,8 @@ function clearFunction() {
 function clearSearch() {
     document.getElementById("search").value = "artist name";
 }
+
+
 
 // First user step: artist name search function
 function search() {
