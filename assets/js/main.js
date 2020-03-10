@@ -29,6 +29,8 @@ function search() {
             // Search action to filter results that only include words from inputValue and removes duplicates 
             var artistList = [];
 
+            document.getElementById("artist-names").innerHTML = "";
+
             for (i = 0; i < responseData.length; i++) {
                 var initialArtistNames = responseData[i].artist.name;
                 if (initialArtistNames.toLowerCase().includes(inputValue.toLowerCase())) {
@@ -72,6 +74,7 @@ function artistSong(artistName) {
             var duplicateList = [];
 
             //Search function
+            document.getElementById("song-list").innerHTML = "";
             for (i = 0; i < artistData.length; i++) {
                 var songList = artistData[i].title;
                 // console.log(songList); //Songlist is there
