@@ -3,13 +3,13 @@ var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
 
-
+// Function to clear search bar when user clicks in it to type an artist name
 function clearFunction() {
     document.getElementById("search").value="";
 }
 
+// Function to reset the preset value in the search bar after the search is activated
 function clearSearch() {
-    console.log("is this connected?")
     document.getElementById("search").value = "Artist name";
 }
 
