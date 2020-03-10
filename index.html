@@ -35,8 +35,8 @@
 			<div class="col-6">
 				<h2 class="intro"><strong>search</strong> for an artist.</h2>
 				<h2 class="intro"><strong>listen</strong> to their best songs.</h2>
-				<input type="text" id="search" placeholder="Artist name">
-				<button type="button" onclick="search()" id="search-button">Search</button>
+				<input type="text" id="search" value="Artist name" onclick="clearFunction();">
+				<button type="button" onclick="search();clearSearch();" id="search-button">Search</button>
 			</div>
 			<div class="col-2" id="artist-results">
 				<div id="artist-names">

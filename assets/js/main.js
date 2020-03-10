@@ -3,6 +3,16 @@ var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
 
+
+function clearFunction() {
+    document.getElementById("search").value="";
+}
+
+function clearSearch() {
+    console.log("is this connected?")
+    document.getElementById("search").value = "Artist name";
+}
+
 // First user step: artist name search function
 function search() {
 
@@ -25,7 +35,7 @@ function search() {
                     if (artistList.includes(initialArtistNames) == false) {
                         artistList.push(initialArtistNames);
                         document.getElementById("artist-names").innerHTML += `<button type="button" id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
-                        // console.log(initialArtistNames);
+                        console.log("FIRST TEST");
                     }
                 }
             }
@@ -58,7 +68,7 @@ function artistSong(artistName) {
             var artistData = artistResponse.data;
             // console.log(artistData);
 
-            // Empty array
+            // Empty array 
             var duplicateList = [];
 
             //Search function
@@ -79,7 +89,7 @@ function artistSong(artistName) {
     xhr.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
     xhr.setRequestHeader("x-rapidapi-key", "188d30da21msh99fa3832c206cd5p1eb131jsn0acc1b025fc9");
     xhr.send(data);
-};
+}
 
 // Function to preview song
 
@@ -96,7 +106,13 @@ function songListen(preview) {
 
 
         // QUESTIONS / TO DO
-        // Q4. How to make previews show up as images / preview bars
         // TO-DO: How to remove data from a page when a new element is clicked on?
+        // Eg. if I clicked on George Michael, then saw his songs, but then clicked on George Ezra - how to clear George Michael's songs?
+        // And how to clear the search bar as soon as 'search' is clicked on. 
+
         // TO-DO: How to change the position of the preview bar so it is in line with the button it's clicked on?
+
         // TO-DO: Make the song titles clickable, so they play sound instead of a separate sound bar.
+
+        // TO-DO: Add filter to song results, so duplicate songs don't show. 
+
