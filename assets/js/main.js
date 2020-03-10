@@ -3,13 +3,13 @@ var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
 
-// Function to clear search bar (in small screen) when user clicks in it to type an artist name
-function clearFunction() {
+// Function to clear search bar when user clicks in it to type an artist name
+function clearFunctionSmall() {
     document.getElementById("search-small").value="";
 }
 
-// Function to reset the preset value (in small screen) in the search bar after the search is activated
-function clearSearch() {
+// Function to reset the preset value in the search bar after the search is activated
+function clearSearchSmall() {
     document.getElementById("search-small").value = "artist name";
 }
 
