@@ -1,7 +1,7 @@
 var data = null;
 
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
+// var xhr = new XMLHttpRequest();
+// xhr.withCredentials = true;
 
 // // Function to clear search bar (in small screens) when user clicks in it to type an artist name
 // function clearFunctionSmall() {
@@ -23,6 +23,18 @@ function clearSearch() {
     document.getElementById("search").value = "artist name";
 }
 
+function clearResults() {
+    // document.getElementById("song-list").innerHTML = "";
+    // document.getElementById("popular-songs").innerHTML = "";
+    // document.getElementById("preview-songs").innerHTML = "";
+    // document.getElementById("song-results").innerHTML = "";
+    // document.getElementById("song-list").innerHTML = "";
+    // document.getElementById("small-artist-names").innerHTML = "";
+    // document.getElementById("small-songs-list").innerHTML = "";
+    // document.getElementById("preview-results").innerHTML = "";
+    // document.getElementById("song-listen").innerHTML = "";
+}
+
 
 
 // First user step: artist name search function
@@ -30,6 +42,9 @@ function search() {
 
     let inputValue = document.getElementById("search").value;
 
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+    
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
             var response = JSON.parse(this.responseText);
@@ -42,20 +57,29 @@ function search() {
 
             // To reset the search when a new artist is clicked
             // document.getElementById("artist-names").innerHTML = "";
+            
+            var html_string = ""; // added by Xav 11/03
 
             for (i = 0; i < responseData.length; i++) {
                 var initialArtistNames = responseData[i].artist.name;
                 if (initialArtistNames.toLowerCase().includes(inputValue.toLowerCase())) {
                     if (artistList.includes(initialArtistNames) == false) {
                         artistList.push(initialArtistNames);
+
+                        html_string += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>"; // added by Xav 11/03     
+
                         // Send names to column in larger screens
-                        document.getElementById("artist-names").innerHTML += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
+                        // document.getElementById("artist-names").innerHTML += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
+
                         // Send names to column in smaller screens
-                        document.getElementById("small-artist-names").innerHTML += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
+                        // document.getElementById("small-artist-names").innerHTML += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
                         console.log("FIRST pass");
                     }
                 }
             }
+
+            document.getElementById("artist-names").innerHTML = html_string;
+            document.getElementById("small-artist-names").innerHTML = html_string;
             document.getElementById("artist-header").innerHTML = `<h2 class="category-header disappear-small">artist</h2>`;
             document.getElementById("small-artist-header").innerHTML = `<h2>artist</h2>`;
             document.getElementById("artist-header").style.borderLeft = "1px solid #000";
@@ -76,8 +100,12 @@ function search() {
 
 function artistSong(artistName) {
 
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
+            
             console.log(this.responseText);
             var artistResponse = JSON.parse(this.responseText);
 
@@ -91,11 +119,15 @@ function artistSong(artistName) {
             document.getElementById("song-list").innerHTML = "";
             for (i = 0; i < artistData.length; i++) {
                 var songList = artistData[i].title;
+                // Input song titles in a large screen
                 document.getElementById("song-list").innerHTML += `<div class="song-bars"><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}')">` + songList.toLowerCase() + "</button>" + "</div>";
+                // Input song titles in a smaller screen
+                document.getElementById("small-songs-list").innerHTML += `<div class="song-bars"><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}')">` + songList.toLowerCase() + "</button>" + "</div>";
                 console.log("SECOND pass");
             }
 
             document.getElementById("popular-songs").innerHTML = `<h2 class="category-header disappear-small">songs</h2>`;
+            document.getElementById("small-songs-header").innerHTML = `<h2>songs</h2>`;
             document.getElementById("popular-songs").style.borderLeft = "1px solid #000";
             document.getElementById("song-results").style.borderLeft = "1px solid #000";
             document.getElementById("song-bottom").style.borderLeft = "1px solid #000";
