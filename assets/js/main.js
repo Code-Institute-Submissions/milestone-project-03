@@ -141,7 +141,7 @@ function songListen(preview) {
     document.getElementById("small-previews-header").innerHTML = `<h2>listen</h2>`;
     document.getElementById("preview-header-xs").innerHTML = `<h2>listen</h2>`;
     document.getElementById("preview-songs").style.borderLeft = "1px solid #000";
-    document.getElementById("preview-results").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg"></audio>`;
+    document.getElementById("preview-results").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" id="audio-player"></audio>`;
     document.getElementById("small-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg"></audio>`;
     document.getElementById("xs-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg"></audio>`;
     document.getElementById("preview-results").style.borderLeft = "1px solid #000";

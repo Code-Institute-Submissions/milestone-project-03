@@ -17,11 +17,9 @@ h2, h3, p {
 .bottom-margin {
     height: 20vh;
 }
-/* 
 
-#song-column {
-    border-width: 5px;
-    border-color: black;
+#audio-player {
+    background-color: black;
 }
 
 /* Headers that appear with the searches - artist / song / preview */
@@ -167,8 +165,9 @@ input {
 }
 
 .mobile-header {
-    background-color:yellow;
-    height: 50px;
+    background-color: #f1f3f4;
+    align-content: center;
+    height: 10vh;
 }
 /* Up to mobile size */
 
