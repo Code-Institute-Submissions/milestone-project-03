@@ -26,8 +26,6 @@
 			<div class="col-sm-12 visible-small">
 				<h2 class="intro visible-small"><strong>search</strong> for an artist.</h2>
 				<h2 class="intro visible-small"><strong>listen</strong> to their best songs.</h2>
-				<!-- <input class="visible-small" type="text" id="search-small" value="artist name" onclick="clearFunctionSmall();">
-				<button class="visible-small" type="button" onclick="searchSmall();clearSearchSmall();" id="search-button">Search</button> -->
 			</div>
 			<div class="col-lg-2 disappear-small" id="artist-header">
 			</div>
@@ -43,28 +41,38 @@
 				<input type="text" id="search" value="artist name" onclick="clearFunction();">
 				<button type="button" onclick="search();clearSearch();clearResults();" id="search-button">Search</button>
 			</div>
+            
+            <!-- Artist name search results in large screen-->
 			<div class="col-lg-2 disappear-small" id="artist-results">
-				<div class="col-sm-6">
-				</div>
+				<!-- <div class="col-sm-6">
+                <p>WHAT IS THIS?</p>
+				</div> -->
 				<div class="col-sm-6" id="artist-names">
 				</div>
 			</div>
-			<div class="row visible-small">
-				<div class="col-sm-6 small-category-header visible-small" id="small-artist-header">
+            <!-- Artist / songs headers in small screen-->
+			<div class="row col-sm-12 visible-small">
+				<div class="col-sm-4 small-category-header visible-small" id="small-artist-header">
 				</div>
-                <div class="col-sm-6 small-category-header visible-small" id="small-songs-header">
+                <div class="col-sm-4 small-category-header visible-small" id="small-songs-header">
+				</div>
+                <div class="col-sm-4 small-category-header visible-small" id="small-previews-header">
 				</div>
 			</div>
+
+            <!-- Song search results in a large screen -->
 			<div class="col-lg-2 disappear-small" id="song-results">
-				<div class="col-sm-6">
-				</div>
+				<!-- <div class="col-sm-6">
+                <p>WHAT IS THIS?</p>
+				</div> -->
 				<div class="col-sm-6" id="song-list">
 				</div>
 			</div>
+            <!-- Song search results in a small screen -->
 			<div class="row visible-small">
-				<div class="col-sm-6" id="small-artist-names">
+				<div class="col-sm-6 visible-small" id="small-artist-names">
 				</div>
-				<div class="col-sm-6" id="small-songs-list">
+				<div class="col-sm-6 visible-small" id="small-songs-list">
                 </div>
 			</div>
 			<div class="col-lg-2" id="preview-results">

@@ -23,28 +23,14 @@ function clearSearch() {
     document.getElementById("search").value = "artist name";
 }
 
-function clearResults() {
-    // document.getElementById("song-list").innerHTML = "";
-    // document.getElementById("popular-songs").innerHTML = "";
-    // document.getElementById("preview-songs").innerHTML = "";
-    // document.getElementById("song-results").innerHTML = "";
-    // document.getElementById("song-list").innerHTML = "";
-    // document.getElementById("small-artist-names").innerHTML = "";
-    // document.getElementById("small-songs-list").innerHTML = "";
-    // document.getElementById("preview-results").innerHTML = "";
-    // document.getElementById("song-listen").innerHTML = "";
-}
-
-
-
 // First user step: artist name search function
 function search() {
-
+    
     let inputValue = document.getElementById("search").value;
 
     var xhr = new XMLHttpRequest();
     xhr.withCredentials = true;
-    
+
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
             var response = JSON.parse(this.responseText);
@@ -57,7 +43,7 @@ function search() {
 
             // To reset the search when a new artist is clicked
             // document.getElementById("artist-names").innerHTML = "";
-            
+
             var html_string = ""; // added by Xav 11/03
 
             for (i = 0; i < responseData.length; i++) {
@@ -69,10 +55,10 @@ function search() {
                         html_string += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>"; // added by Xav 11/03     
 
                         // Send names to column in larger screens
-                        // document.getElementById("artist-names").innerHTML += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
+                        document.getElementById("artist-names").innerHTML += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
 
                         // Send names to column in smaller screens
-                        // document.getElementById("small-artist-names").innerHTML += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
+                        document.getElementById("small-artist-names").innerHTML += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
                         console.log("FIRST pass");
                     }
                 }
@@ -86,6 +72,7 @@ function search() {
             document.getElementById("artist-results").style.borderLeft = "1px solid #000";
             document.getElementById("artist-bottom").style.borderLeft = "1px solid #000";
             document.getElementById("artist-bottom").innerHTML = `<h3 id="next-step">click on a name.</h3>`;
+
         }
     });
 
@@ -105,7 +92,7 @@ function artistSong(artistName) {
 
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
-            
+
             console.log(this.responseText);
             var artistResponse = JSON.parse(this.responseText);
 
@@ -141,11 +128,13 @@ function artistSong(artistName) {
     xhr.send(data);
 }
 
+
 // Function to preview song
 
 function songListen(preview) {
 
     document.getElementById("preview-songs").innerHTML = `<h2 class="category-header disappear-small">listen</h2>`;
+    document.getElementById("small-previews-header").innerHTML = `<h2 class="small-category-header visible-small">listen</h2>`;
     document.getElementById("preview-songs").style.borderLeft = "1px solid #000";
     document.getElementById("preview-results").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg"></audio>`;
     document.getElementById("preview-results").style.borderLeft = "1px solid #000";
@@ -157,12 +146,14 @@ function songListen(preview) {
 
         // QUESTIONS / TO DO
         // TO-DO: How to remove data from a page when a new element is clicked on?
-        // Eg. if I clicked on George Michael, then saw his songs, but then clicked on George Ezra - how to clear George Michael's songs?
-        // And how to clear the search bar as soon as 'search' is clicked on. 
 
         // TO-DO: How to change the position of the preview bar so it is in line with the button it's clicked on?
 
         // TO-DO: Add filter to song results, so duplicate songs don't show. 
 
         // TO-DO: Highlight the artist and songs that have been selected
+
+        // TO-DO: Fix search function, currently if you search for Jack no results show up? 
+
+        // TO-DO: Reset columns when a new search is performed - location.reload?
 
