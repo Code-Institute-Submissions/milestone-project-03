@@ -125,7 +125,7 @@ input {
 
 /* -------------------------------------------------------------- Media Queries */
 
-/* Intro text appearing at the top in a small screen */
+/* Text appearing at the top in a small screen */
 @media (min-width: 769px) {
     .visible-small {
         display: none;
@@ -166,7 +166,23 @@ input {
     }
 }
 
+.mobile-header {
+    background-color:yellow;
+    height: 50px;
+}
 /* Up to mobile size */
+
+@media (min-width: 575px) {
+    .visible-xs {
+        display: none;
+    }
+}
+
+@media (max-width: 575px) {
+    .disappear-xs {
+        display: none;
+    }
+}
 
 @media (max-width: 426px) {
     .intro, #search-small, #search-button {
@@ -184,5 +200,7 @@ input {
         padding: 10px 20px;
         width: 342px;
     }
+
+
 
 }

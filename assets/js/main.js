@@ -116,11 +116,13 @@ function artistSong(artistName) {
 
             document.getElementById("popular-songs").innerHTML = `<h2 class="category-header disappear-small">songs</h2>`;
             document.getElementById("small-songs-header").innerHTML = `<h2>songs</h2>`;
+            document.getElementById("song-header-xs").innerHTML = `<h2>songs</h2>`;
             document.getElementById("popular-songs").style.borderLeft = "1px solid #000";
             document.getElementById("song-results").style.borderLeft = "1px solid #000";
             document.getElementById("song-bottom").style.borderLeft = "1px solid #000";
             document.getElementById("song-bottom").innerHTML = `<h3 id="next-step">click on a song.</h3>`;
             document.getElementById("song-bottom-small").innerHTML = `<h3 id="next-step">click on a song.</h3>`;
+            document.getElementById("song-bottom-xs").innerHTML = `<h3 id="next-step">click on a song and it'll appear at the top.</h3>`;
         }
     });
 
@@ -137,13 +139,15 @@ function songListen(preview) {
 
     document.getElementById("preview-songs").innerHTML = `<h2 class="category-header disappear-small">listen</h2>`;
     document.getElementById("small-previews-header").innerHTML = `<h2>listen</h2>`;
+    document.getElementById("preview-header-xs").innerHTML = `<h2>listen</h2>`;
     document.getElementById("preview-songs").style.borderLeft = "1px solid #000";
     document.getElementById("preview-results").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg"></audio>`;
     document.getElementById("small-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg"></audio>`;
+    document.getElementById("xs-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg"></audio>`;
     document.getElementById("preview-results").style.borderLeft = "1px solid #000";
     document.getElementById("preview-bottom").style.borderLeft = "1px solid #000";
-    document.getElementById("preview-bottom").innerHTML = `<h3 id="next-step">try another one?</h3>`;
-    document.getElementById("preview-bottom-small").innerHTML = `<h3 id="next-step">try another one?</h3>`;
+    document.getElementById("preview-bottom").innerHTML = `<h3 id="next-step">happy listening!</h3>`;
+    document.getElementById("preview-bottom-small").innerHTML = `<h3 id="next-step">happy listening!</h3>`;
 }
 
 

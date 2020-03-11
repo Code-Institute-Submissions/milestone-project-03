@@ -15,7 +15,8 @@
 
 <body>
 	<header>
-		<p>Header</p>
+		<div class="row visible-xs mobile-header" id="xs-song-listen">
+		</div>
 	</header>
 
 	<section class="container-fluid">
@@ -47,24 +48,24 @@
 				<div class="col-lg-12 no-gutters" id="artist-names">
 				</div>
 			</div>
-            
-			<!-- Artist / songs / preview text header on a tablet-->
+
+			<!-- Artist / songs / preview headers on a tablet size-->
 			<div class="row col-sm-12 visible-small">
 				<div class="col-sm-4 small-category-header visible-small" id="small-artist-header">
 				</div>
-				<div class="col-sm-4 small-category-header visible-small" id="small-songs-header">
+				<div class="col-sm-4 small-category-header visible-small disappear-xs" id="small-songs-header">
 				</div>
-				<div class="col-sm-4 small-category-header visible-small" id="small-previews-header">
+				<div class="col-sm-4 small-category-header visible-small disappear-xs" id="small-previews-header">
 				</div>
 			</div>
 
-            <!-- Next steps text on a tablet -->
+			<!-- Next steps text on a tablet -->
 			<div class="row col-sm-12 visible-small">
 				<div class="col-sm-4" id="artist-bottom-small">
 				</div>
-				<div class="col-sm-4" id="song-bottom-small">
+				<div class="col-sm-4 disappear-xs" id="song-bottom-small">
 				</div>
-				<div class="col-sm-4" id="preview-bottom-small">
+				<div class="col-sm-4 disappear-xs" id="preview-bottom-small">
 				</div>
 			</div>
 
@@ -81,9 +82,15 @@
 			<div class="row col-sm-12 visible-small">
 				<div class="col-sm-4 visible-small" id="small-artist-names">
 				</div>
+				<div class="col-12 visible-xs" id="song-header-xs">
+				</div>
+				<div class="col-12 visible-xs" id="song-bottom-xs">
+				</div>
 				<div class="col-sm-4 visible-small" id="small-songs-list">
 				</div>
-				<div class="col-sm-4 visible-small" id="small-song-listen">
+				<div class="col-sm-4 visible-small disappear-xs" id="small-song-listen">
+					<div class="col-12 visible-xs" id="preview-header-xs">
+					</div>
 				</div>
 			</div>
 
