@@ -50,9 +50,6 @@ h2, h3, p {
     color: black;
 }
 
-
-
-
 /* Bar where you type in artist name */
 #search, #search-small {
     font-family: "Space Mono", sans-serif;
@@ -79,22 +76,28 @@ input {
     border: 1px solid black;
 }
 
-/* Buttons and text that are returned from search */
+/* Artist names and songs that are returned from search */
 #artists, #clickable-songs {
     background-color: white;
     color: black;
     border: none;
     font-family: "Space Mono", sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     margin: 1vh 0;
+    padding: 0 0 0 0;
     text-align: left;
 }
+
+#artist-names, #song-results {
+    padding-left: 0px;
+}
+
 
 /* Text with next step instructions for user */
 #next-step {
     color: black;
     font-weight: bold;
-    margin-top: 2vh;
+    margin-top: 5vh;
     border-top: 2px solid #2EF429;
 }
 
@@ -146,15 +149,21 @@ input {
         margin: 4vh 0 0 5vw;
     }
 
-    /* .small-column {
+    #artists, #clickable-songs {
+        font-size: 18px;
         color: red;
-        margin: 3vh 0 0 5vw;
-    } */
-
-    .small-category-header {
-        padding: 3vh 0 3vh 2vw;
     }
 
+    #small-artist-header, #small-songs-header, #small-previews-header {
+        font-size: 25px;
+        color:red;
+        font-weight: bold;
+    }
+
+    #next-step {
+        font-size: 15px;
+        color: red;
+    }
 }
 
 /* Up to mobile size */

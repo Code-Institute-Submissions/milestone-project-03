@@ -72,6 +72,7 @@ function search() {
             document.getElementById("artist-results").style.borderLeft = "1px solid #000";
             document.getElementById("artist-bottom").style.borderLeft = "1px solid #000";
             document.getElementById("artist-bottom").innerHTML = `<h3 id="next-step">click on a name.</h3>`;
+            document.getElementById("artist-bottom-small").innerHTML = `<h3 id="next-step">click on a name.</h3>`;
 
         }
     });
@@ -119,6 +120,7 @@ function artistSong(artistName) {
             document.getElementById("song-results").style.borderLeft = "1px solid #000";
             document.getElementById("song-bottom").style.borderLeft = "1px solid #000";
             document.getElementById("song-bottom").innerHTML = `<h3 id="next-step">click on a song.</h3>`;
+            document.getElementById("song-bottom-small").innerHTML = `<h3 id="next-step">click on a song.</h3>`;
         }
     });
 
@@ -134,12 +136,14 @@ function artistSong(artistName) {
 function songListen(preview) {
 
     document.getElementById("preview-songs").innerHTML = `<h2 class="category-header disappear-small">listen</h2>`;
-    document.getElementById("small-previews-header").innerHTML = `<h2 class="small-category-header visible-small">listen</h2>`;
+    document.getElementById("small-previews-header").innerHTML = `<h2>listen</h2>`;
     document.getElementById("preview-songs").style.borderLeft = "1px solid #000";
     document.getElementById("preview-results").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg"></audio>`;
+    document.getElementById("small-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg"></audio>`;
     document.getElementById("preview-results").style.borderLeft = "1px solid #000";
     document.getElementById("preview-bottom").style.borderLeft = "1px solid #000";
     document.getElementById("preview-bottom").innerHTML = `<h3 id="next-step">try another one?</h3>`;
+    document.getElementById("preview-bottom-small").innerHTML = `<h3 id="next-step">try another one?</h3>`;
 }
 
 
