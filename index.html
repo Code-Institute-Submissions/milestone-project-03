@@ -37,28 +37,42 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-lg-6 col-sm-12">
+			<div class="col-lg-6 col-md-12">
 				<h2 class="intro disappear-small"><strong>search</strong> for an artist.</h2>
 				<h2 class="intro disappear-small"><strong>listen</strong> to their best songs.</h2>
 				<input type="text" id="search" value="artist name" onclick="clearFunction();">
 				<button type="button" onclick="search();clearSearch();" id="search-button">Search</button>
 			</div>
-			<div class="col-lg-2 col-sm-12" id="artist-results">
-				<div class="col-sm-6 col-xs-12 visible-small small-category-header" id="small-artist-header">
+			<div class="col-lg-2 disappear-small" id="artist-results">
+				<div class="col-sm-6 small-category-header" id="small-artist-header">
+					<p>'Artist header'</p>
 				</div>
-				<div class="col-sm-6 col-xs-12" id="artist-names">
-				</div>
-			</div>
-			<div class="col-lg-2 col-sm-12" id="song-results">
-				<div class="visible-small small-category-header" id="small-song-titles">
-				</div>
-                <div id="song-list">
+				<div class="col-sm-6" id="artist-names">
+					<p>'Artist names'</p>
 				</div>
 			</div>
-			<div class="col-lg-2 col-sm-12" id="preview-results">
-				<div class="visible-small small-category-header" id="small-preview-column">
+			<div class="row visible-small">
+				<div class="small-category-header">
+					<p>'Artist header (in small screens)'</p>
 				</div>
-                <div id="song-listen">
+				<div id="small-artist-names">
+					<p>'Artist names (in small screens)'</p>
+				</div>
+			</div>
+			<div class="col-lg-2" id="song-results">
+				<div class="col-sm-6 small-category-header" id="small-song-titles">
+					<p>'Songs header'</p>
+				</div>
+				<div class="col-sm-6" id="song-list">
+					<p>'Songs list'</p>
+				</div>
+			</div>
+			<div class="col-lg-2" id="preview-results">
+				<div class="col-md-6 small-category-header" id="small-preview-column">
+					<p>'Listen header'</p>
+				</div>
+				<div class="col-md-6" id="song-listen">
+					<p>'Preview column'</p>
 				</div>
 			</div>
 		</div>
