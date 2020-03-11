@@ -48,14 +48,16 @@ function search() {
                 if (initialArtistNames.toLowerCase().includes(inputValue.toLowerCase())) {
                     if (artistList.includes(initialArtistNames) == false) {
                         artistList.push(initialArtistNames);
+                        // Send names to column in larger screens
                         document.getElementById("artist-names").innerHTML += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
+                        // Send names to column in smaller screens
                         document.getElementById("small-artist-names").innerHTML += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
                         console.log("FIRST pass");
                     }
                 }
             }
             document.getElementById("artist-header").innerHTML = `<h2 class="category-header disappear-small">artist</h2>`;
-            document.getElementById("small-artist-header").innerHTML = `<h2 class="small-category-header">artist</h2>`;
+            document.getElementById("small-artist-header").innerHTML = `<h2>artist</h2>`;
             document.getElementById("artist-header").style.borderLeft = "1px solid #000";
             document.getElementById("artist-results").style.borderLeft = "1px solid #000";
             document.getElementById("artist-bottom").style.borderLeft = "1px solid #000";
@@ -93,7 +95,7 @@ function artistSong(artistName) {
                 console.log("SECOND pass");
             }
 
-            document.getElementById("popular-songs").innerHTML = `<h2 class="category-header small-column">songs</h2>`;
+            document.getElementById("popular-songs").innerHTML = `<h2 class="category-header disappear-small">songs</h2>`;
             document.getElementById("popular-songs").style.borderLeft = "1px solid #000";
             document.getElementById("song-results").style.borderLeft = "1px solid #000";
             document.getElementById("song-bottom").style.borderLeft = "1px solid #000";
@@ -111,7 +113,7 @@ function artistSong(artistName) {
 
 function songListen(preview) {
 
-    document.getElementById("preview-songs").innerHTML = `<h2 class="category-header small-column">listen</h2>`;
+    document.getElementById("preview-songs").innerHTML = `<h2 class="category-header disappear-small">listen</h2>`;
     document.getElementById("preview-songs").style.borderLeft = "1px solid #000";
     document.getElementById("preview-results").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg"></audio>`;
     document.getElementById("preview-results").style.borderLeft = "1px solid #000";
