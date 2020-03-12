@@ -200,6 +200,9 @@ input {
         width: 342px;
     }
 
+    #audio-player {
+        width: 250px;
+    }
 
 
 }
