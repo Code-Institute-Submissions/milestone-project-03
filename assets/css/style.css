@@ -167,7 +167,7 @@ input {
 .mobile-header {
     background-color: #f1f3f4;
     align-content: center;
-    height: 10vh;
+    height: 7vh;
 }
 /* Up to mobile size */
 
@@ -199,10 +199,4 @@ input {
         padding: 10px 20px;
         width: 342px;
     }
-
-    #audio-player {
-        width: 250px;
-    }
-
-
 }

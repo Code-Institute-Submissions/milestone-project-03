@@ -23,6 +23,7 @@ function clearSearch() {
     document.getElementById("search").value = "artist name";
 }
 
+
 // First user step: artist name search function
 function search() {
     
