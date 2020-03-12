@@ -18,8 +18,11 @@ h2, h3, p {
     height: 20vh;
 }
 
-#audio-player {
-    background-color: black;
+.audio-player {
+    display: block;
+    border: 1px solid black;
+    border-radius: 25px;
+    width: 100%;
 }
 
 /* Headers that appear with the searches - artist / song / preview */
@@ -152,7 +155,7 @@ input {
         color: red;
     }
 
-    #small-artist-header, #small-songs-header, #small-previews-header {
+    #small-artist-header, #small-songs-header, #sm-listen-header {
         font-size: 25px;
         color:red;
         font-weight: bold;

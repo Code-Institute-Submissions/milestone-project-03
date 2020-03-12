@@ -23,10 +23,14 @@ function clearSearch() {
     document.getElementById("search").value = "artist name";
 }
 
+// function clearResults() {
+//     document.getElementById("song-results").innerHTML = "";
+// }
+
 
 // First user step: artist name search function
 function search() {
-    
+
     let inputValue = document.getElementById("search").value;
 
     var xhr = new XMLHttpRequest();
@@ -138,17 +142,20 @@ function artistSong(artistName) {
 
 function songListen(preview) {
 
-    document.getElementById("preview-songs").innerHTML = `<h2 class="category-header disappear-small">listen</h2>`;
-    document.getElementById("small-previews-header").innerHTML = `<h2>listen</h2>`;
-    document.getElementById("preview-header-xs").innerHTML = `<h2>listen</h2>`;
-    document.getElementById("preview-songs").style.borderLeft = "1px solid #000";
-    document.getElementById("preview-results").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" id="audio-player"></audio>`;
-    document.getElementById("small-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg"></audio>`;
-    document.getElementById("xs-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg"></audio>`;
-    document.getElementById("preview-results").style.borderLeft = "1px solid #000";
-    document.getElementById("preview-bottom").style.borderLeft = "1px solid #000";
-    document.getElementById("preview-bottom").innerHTML = `<h3 id="next-step">happy listening!</h3>`;
-    document.getElementById("preview-bottom-small").innerHTML = `<h3 id="next-step">happy listening!</h3>`;
+    document.getElementById("lg-listen-header").innerHTML = `<h2 class="category-header disappear-small">listen</h2>`;
+    document.getElementById("sm-listen-header").innerHTML = `<h2>listen</h2>`;
+    document.getElementById("xs-listen-header").innerHTML = `<h2>listen</h2>`;
+
+    document.getElementById("lg-listen-header").style.borderLeft = "1px solid #000";
+    document.getElementById("lg-song-listen").style.borderLeft = "1px solid #000";
+    document.getElementById("lg-preview-bottom").style.borderLeft = "1px solid #000";
+
+    document.getElementById("lg-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;
+    document.getElementById("sm-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;
+    document.getElementById("xs-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;
+
+    document.getElementById("lg-preview-bottom").innerHTML = `<h3 id="next-step">happy listening!</h3>`;
+    document.getElementById("sm-preview-bottom").innerHTML = `<h3 id="next-step">happy listening!</h3>`;
 }
 
 

@@ -34,7 +34,7 @@
 			</div>
 			<div class="col-lg-2 col-sm-12" id="popular-songs">
 			</div>
-			<div class="col-lg-2 col-sm-12" id="preview-songs">
+			<div class="col-lg-2 col-sm-12" id="lg-listen-header">
 			</div>
 		</div>
 		<div class="row">
@@ -42,7 +42,7 @@
 				<h2 class="intro disappear-small"><strong>search</strong> for an artist.</h2>
 				<h2 class="intro disappear-small"><strong>listen</strong> to their best songs.</h2>
 				<input type="text" id="search" value="artist name" onclick="clearFunction();">
-				<button type="button" onclick="search();clearSearch();" id="search-button">Search</button>
+				<button type="button" onclick="search();clearSearch();clearResults();" id="search-button">Search</button>
 			</div>
 
 			<!-- Artist name search results in large screen-->
@@ -57,7 +57,7 @@
 				</div>
 				<div class="col-sm-4 small-category-header visible-small disappear-xs" id="small-songs-header">
 				</div>
-				<div class="col-sm-4 small-category-header visible-small disappear-xs" id="small-previews-header">
+				<div class="col-sm-4 small-category-header visible-small disappear-xs" id="sm-listen-header">
 				</div>
 			</div>
 
@@ -67,7 +67,7 @@
 				</div>
 				<div class="col-sm-4 disappear-xs" id="song-bottom-small">
 				</div>
-				<div class="col-sm-4 disappear-xs" id="preview-bottom-small">
+				<div class="col-sm-4 disappear-xs" id="sm-preview-bottom">
 				</div>
 			</div>
 
@@ -90,14 +90,14 @@
 				</div>
 				<div class="col-sm-4 visible-small" id="small-songs-list">
 				</div>
-				<div class="col-sm-4 visible-small disappear-xs" id="small-song-listen">
-					<div class="col-12 visible-xs" id="preview-header-xs">
+				<div class="col-sm-4 visible-small disappear-xs" id="sm-song-listen">
+					<div class="col-12 visible-xs" id="xs-listen-header">
 					</div>
 				</div>
 			</div>
 
 			<!-- Preview column in a large screen-->
-			<div class="col-lg-2 disappear-small" id="preview-results">
+			<div class="col-lg-2 disappear-small" id="lg-song-listen">
 				<!-- <div class="col-md-6 small-category-header">
 					<p>'Listen header'</p>
 				</div> -->
@@ -112,7 +112,7 @@
 			</div>
 			<div class="col-2 bottom-margin" id="song-bottom">
 			</div>
-			<div class="col-2 bottom-margin" id="preview-bottom">
+			<div class="col-2 bottom-margin" id="lg-preview-bottom">
 			</div>
 		</div>
 	</section>
