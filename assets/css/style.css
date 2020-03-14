@@ -127,7 +127,7 @@ input {
 /* -------------------------------------------------------------- Media Queries */
 
 /* Text appearing at the top in a small screen */
-@media (min-width: 769px) {
+@media (min-width: 992px) {
     .visible-small {
         display: none;
     }
@@ -144,7 +144,7 @@ input {
 
 
 /* Up to tablet size */
-@media (max-width: 769px) {
+@media (max-width: 991px) {
     .visible-small {
         color:black;
     }
