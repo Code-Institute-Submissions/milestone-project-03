@@ -23,6 +23,9 @@ h2, h3, p {
     border: 1px solid black;
     border-radius: 25px;
     width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10px;
 }
 
 /* Headers that appear with the searches - artist / song / preview */
@@ -184,7 +187,7 @@ input {
 }
 /* Up to mobile size */
 
-@media (min-width: 575px) {
+@media (min-width: 576px) {
     .visible-xs {
         display: none;
     }
@@ -193,6 +196,12 @@ input {
 @media (max-width: 575px) {
     .disappear-xs {
         display: none;
+    }
+
+    #xs-song-listen {
+        /* position: -webkit-sticky; */
+        position: sticky;
+        top: 10px;
     }
 }
 

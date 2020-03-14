@@ -163,13 +163,13 @@ function songListen(preview) {
         // QUESTIONS / TO DO
         // TO-DO: How to remove data from a page when a new element is clicked on?
 
-        // TO-DO: How to change the position of the preview bar so it is in line with the button it's clicked on?
-
         // TO-DO: Add filter to song results, so duplicate songs don't show. 
 
         // TO-DO: Highlight the artist and songs that have been selected
 
         // TO-DO: Fix search function, currently if you search for Jack no results show up? 
 
-        // TO-DO: Reset columns when a new search is performed - location.reload?
+        // TO-DO: Reset columns when a new search is performed - location.reload? Innerhtml to "" not working? 
+
+        // TO-DO: Make mobile header sticky
 
