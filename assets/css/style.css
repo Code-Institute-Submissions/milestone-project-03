@@ -133,10 +133,20 @@ input {
     }
 }
 
+/* Search button when screen reduces in size between small laptop to tablet */
+@media (max-width: 1305px) {
+    #search-button {
+        margin: 0 2.5vw 0 5vw;
+    }
+}
+
+/* Between tablet and mobile size */
+
+
 /* Up to tablet size */
 @media (max-width: 769px) {
     .visible-small {
-        color: red;
+        color:black;
     }
 
     .disappear-small {
@@ -152,18 +162,18 @@ input {
 
     #artists, #clickable-songs {
         font-size: 18px;
-        color: red;
+        color: black;
     }
 
     #small-artist-header, #small-songs-header, #sm-listen-header {
         font-size: 25px;
-        color:red;
+        color:black;
         font-weight: bold;
     }
 
     #next-step {
         font-size: 15px;
-        color: red;
+        color: black;
     }
 }
 
