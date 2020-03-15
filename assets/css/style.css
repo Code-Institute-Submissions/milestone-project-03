@@ -191,9 +191,10 @@ input {
     }
 
     .mobile-header {
-    background-color: #f1f3f4;
     align-content: center;
-    height: 7vh;
+    height: 9vh;
+    background-color: white;
+    z-index: 4;
     }
 }
 
@@ -211,18 +212,18 @@ input {
         display: none;
     }
 
-    #xs-song-listen {
-        /* position: -webkit-sticky; */
-        position: sticky;
-        top: 10px;
-    }
-
     #small-songs-list {
         border: none!important;
     }
 
     .massive-heading {
         margin-top: 0px;
+    }
+
+    .audio-player {
+        position: fixed;
+        top: 10px;
+        width: 100%;
     }
 }
 
@@ -248,6 +249,6 @@ input {
     } */
 
     .massive-heading {
-        font-size: 150px;
+        font-size: 125px;
     }
 }
