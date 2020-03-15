@@ -41,7 +41,7 @@ h2, h3, p {
 .massive-heading {
     color: black;
     font-family: "Teko", sans-serif;
-    font-size: 200px;
+    font-size: 225px;
     font-weight: bold;
     letter-spacing: .5vw;
     margin: 10vh 0 0 5vw;
@@ -144,6 +144,14 @@ input {
 }
 
 /* Between tablet and mobile size */
+@media (max-width: 991px) and (min-width: 425px) {
+    .massive-heading {
+        font-size: 175px;
+        font-weight: bold;
+        letter-spacing: .5vw;
+        margin: 4vh 0 0 5vw;
+    }
+}
 
 
 /* Up to tablet size */
@@ -156,12 +164,7 @@ input {
         display: none;
     }
 
-    .massive-heading {
-        font-size: 175px;
-        font-weight: bold;
-        letter-spacing: .5vw;
-        margin: 4vh 0 0 5vw;
-    }
+
 
     #artists, #clickable-songs {
         font-size: 18px;
@@ -220,5 +223,9 @@ input {
         margin: 3vh 0 3vh 5vw;
         padding: 10px 20px;
         width: 342px;
+    }
+
+    .massive-heading {
+        font-size: 150px;
     }
 }
