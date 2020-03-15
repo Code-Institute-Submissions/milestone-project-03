@@ -28,20 +28,26 @@ h2, h3, p {
     top: 10px;
 }
 
+.footer {
+    height: 50px;
+    width: 100%;
+    background-color: black;
+}
+
 /* Headers that appear with the searches - artist / song / preview */
 .category-header {
     color: black;
     margin-top: 25vh;
     font-weight: bolder;
     font-size: 40px;
-    border-bottom: 1px solid #2EF429;
+    /* border-bottom: 1px solid #2EF429; */
 }
 
 /* Header with word 'music' */
 .massive-heading {
     color: black;
     font-family: "Teko", sans-serif;
-    font-size: 225px;
+    font-size: 200px;
     font-weight: bold;
     letter-spacing: .5vw;
     margin: 10vh 0 0 5vw;
@@ -101,8 +107,9 @@ input {
 #next-step {
     color: black;
     font-weight: bold;
-    margin-top: 5vh;
-    border-top: 2px solid #2EF429;
+    font-size: 22px;
+    /* margin-top: 5vh; */
+    border-bottom: 1px solid #2EF429;
 }
 
 #artists:hover, #clickable-songs:hover {
@@ -136,7 +143,7 @@ input {
     }
 }
 
-/* Search button when screen reduces in size between small laptop to tablet */
+/* Fixing glitch in search button when screen reduces in size between small laptop to tablet */
 @media (max-width: 1305px) {
     #search-button {
         margin: 0 2.5vw 0 5vw;
@@ -153,7 +160,6 @@ input {
     }
 }
 
-
 /* Up to tablet size */
 @media (max-width: 991px) {
     .visible-small {
@@ -163,8 +169,6 @@ input {
     .disappear-small {
         display: none;
     }
-
-
 
     #artists, #clickable-songs {
         font-size: 18px;
@@ -181,13 +185,19 @@ input {
         font-size: 15px;
         color: black;
     }
-}
 
-.mobile-header {
+    #search-button {
+        margin-bottom: 5vh;
+    }
+
+    .mobile-header {
     background-color: #f1f3f4;
     align-content: center;
     height: 7vh;
+    }
 }
+
+
 /* Up to mobile size */
 
 @media (min-width: 576px) {
@@ -206,6 +216,14 @@ input {
         position: sticky;
         top: 10px;
     }
+
+    #small-songs-list {
+        border: none!important;
+    }
+
+    .massive-heading {
+        margin-top: 0px;
+    }
 }
 
 @media (max-width: 426px) {
@@ -215,15 +233,19 @@ input {
 
     #search-button {
         padding: 10px 20px;
-        margin: 0 0 0 5vw;
-        width: 342px;
+        margin: 0 0 5vh 5vw;
+        width: 90%;
     }
 
-    #search-small {
+    #search {
+        width: 90%;
+    }
+
+    /* #search-small {
         margin: 3vh 0 3vh 5vw;
         padding: 10px 20px;
-        width: 342px;
-    }
+        width: 100%;
+    } */
 
     .massive-heading {
         font-size: 150px;

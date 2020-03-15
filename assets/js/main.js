@@ -71,13 +71,15 @@ function search() {
 
             document.getElementById("artist-names").innerHTML = html_string;
             document.getElementById("small-artist-names").innerHTML = html_string;
-            document.getElementById("artist-header").innerHTML = `<h2 class="category-header disappear-small">artist</h2>`;
-            document.getElementById("small-artist-header").innerHTML = `<h2>artist</h2>`;
+            document.getElementById("artist-header").innerHTML = `<h2 class="category-header disappear-small">artist</h2>
+            <h3 id="next-step">select an artist.</h3>`;
+            document.getElementById("small-artist-header").innerHTML = `<h2>artist</h2>
+            <h3 id="next-step">select an artist.</h3>`;
             document.getElementById("artist-header").style.borderLeft = "1px solid #000";
             document.getElementById("artist-results").style.borderLeft = "1px solid #000";
             document.getElementById("artist-bottom").style.borderLeft = "1px solid #000";
-            document.getElementById("artist-bottom").innerHTML = `<h3 id="next-step">click on a name.</h3>`;
-            document.getElementById("artist-bottom-small").innerHTML = `<h3 id="next-step">click on a name.</h3>`;
+            // document.getElementById("artist-bottom").innerHTML = `<h3 id="next-step">click on a name.</h3>`;
+            // document.getElementById("artist-bottom-small").innerHTML = `<h3 id="next-step">click on a name.</h3>`;
 
         }
     });
@@ -119,15 +121,18 @@ function artistSong(artistName) {
                 console.log("SECOND pass");
             }
 
-            document.getElementById("popular-songs").innerHTML = `<h2 class="category-header disappear-small">songs</h2>`;
-            document.getElementById("small-songs-header").innerHTML = `<h2>songs</h2>`;
-            document.getElementById("song-header-xs").innerHTML = `<h2>songs</h2>`;
+            document.getElementById("popular-songs").innerHTML = `<h2 class="category-header disappear-small">songs</h2>
+            <h3 class="disappear-small" id="next-step">click on a song.</h3>`;
+            document.getElementById("small-songs-header").innerHTML = `<h2>songs</h2><h3 id="next-step">click on a song.</h3>`;
+            document.getElementById("song-header-xs").innerHTML = `<h2>songs</h2><h3 id="next-step">click on a song and it will appear at the top.</h3>`;
             document.getElementById("popular-songs").style.borderLeft = "1px solid #000";
             document.getElementById("song-results").style.borderLeft = "1px solid #000";
             document.getElementById("song-bottom").style.borderLeft = "1px solid #000";
-            document.getElementById("song-bottom").innerHTML = `<h3 id="next-step">click on a song.</h3>`;
-            document.getElementById("song-bottom-small").innerHTML = `<h3 id="next-step">click on a song.</h3>`;
-            document.getElementById("song-bottom-xs").innerHTML = `<h3 id="next-step">click on a song and it'll appear at the top.</h3>`;
+            document.getElementById("small-songs-header").style.borderLeft = "1px solid #000";
+            document.getElementById("small-songs-list").style.borderLeft = "1px solid #000";
+            // document.getElementById("song-bottom").innerHTML = `<h3 id="next-step">click on a song.</h3>`;
+            // document.getElementById("song-bottom-small").innerHTML = `<h3 id="next-step">click on a song.</h3>`;
+            // document.getElementById("song-bottom-xs").innerHTML = `<h3 id="next-step">click on a song and it'll appear at the top.</h3>`;
         }
     });
 
@@ -142,20 +147,24 @@ function artistSong(artistName) {
 
 function songListen(preview) {
 
-    document.getElementById("lg-listen-header").innerHTML = `<h2 class="category-header disappear-small">listen</h2>`;
-    document.getElementById("sm-listen-header").innerHTML = `<h2>listen</h2>`;
-    document.getElementById("xs-listen-header").innerHTML = `<h2>listen</h2>`;
-
+    document.getElementById("lg-listen-header").innerHTML = `<h2 class="category-header disappear-small">listen</h2>
+    <h3 id="next-step">listen to the clip.</h3>`;
+    document.getElementById("sm-listen-header").innerHTML = `<h2>listen</h2>
+    <h3 id="next-step">listen to the clip.</h3>`;
+    document.getElementById("xs-listen-header").innerHTML = `<h2>listen</h2>
+    <h3 id="next-step">listen to the clip above.</h3>`;
     document.getElementById("lg-listen-header").style.borderLeft = "1px solid #000";
     document.getElementById("lg-song-listen").style.borderLeft = "1px solid #000";
     document.getElementById("lg-preview-bottom").style.borderLeft = "1px solid #000";
+    document.getElementById("sm-listen-header").style.borderLeft = "1px solid #000";
+    document.getElementById("sm-song-listen").style.borderLeft = "1px solid #000";
 
     document.getElementById("lg-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;
     document.getElementById("sm-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;
     document.getElementById("xs-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;
 
-    document.getElementById("lg-preview-bottom").innerHTML = `<h3 id="next-step">happy listening!</h3>`;
-    document.getElementById("sm-preview-bottom").innerHTML = `<h3 id="next-step">happy listening!</h3>`;
+    // document.getElementById("lg-preview-bottom").innerHTML = `<h3 id="next-step">happy listening!</h3>`;
+    // document.getElementById("sm-preview-bottom").innerHTML = `<h3 id="next-step">happy listening!</h3>`;
 }
 
 
