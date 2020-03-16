@@ -143,7 +143,7 @@ function artistSong(artistName) {
 }
 
 
-// Function to preview song
+// Function to preview song & see album artwork
 
 function songListen(preview) {
 
@@ -153,13 +153,14 @@ function songListen(preview) {
     <h3 id="next-step">listen to the clip.</h3>`;
     document.getElementById("xs-listen-header").innerHTML = `<h2>listen</h2>
     <h3 id="next-step">listen to the clip above.</h3>`;
+
     document.getElementById("lg-listen-header").style.borderLeft = "1px solid #000";
-    document.getElementById("lg-song-listen").style.borderLeft = "1px solid #000";
+    document.getElementById("lg-preview-column").style.borderLeft = "1px solid #000";
     document.getElementById("lg-preview-bottom").style.borderLeft = "1px solid #000";
     document.getElementById("sm-listen-header").style.borderLeft = "1px solid #000";
     document.getElementById("sm-song-listen").style.borderLeft = "1px solid #000";
 
-    document.getElementById("lg-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;
+    document.getElementById("lg-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;    
     document.getElementById("sm-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;
     document.getElementById("xs-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;
 
@@ -169,8 +170,7 @@ function songListen(preview) {
 
 
 
-        // QUESTIONS / TO DO
-        // TO-DO: How to remove data from a page when a new element is clicked on?
+        /// TO DO
 
         // TO-DO: Add filter to song results, so duplicate songs don't show. 
 
@@ -180,5 +180,4 @@ function songListen(preview) {
 
         // TO-DO: Reset columns when a new search is performed - location.reload? Innerhtml to "" not working? 
 
-        // TO-DO: Make mobile header sticky
-
+        // TO-DO: When a new song is clicked on, it shows the new song's preview. 
