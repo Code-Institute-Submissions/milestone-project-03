@@ -21,6 +21,7 @@ function clearResults() {
     document.getElementById("sm-listen-header").innerHTML = "";
     document.getElementById("lg-song-listen").innerHTML = "";
     document.getElementById("sm-song-listen").innerHTML = ""; 
+    document.getElementById("lg-artwork-box").innerHTML = "";
 }
 
 // First user step: artist name search function
@@ -109,8 +110,9 @@ function artistSong(artistName) {
             document.getElementById("song-list").innerHTML = "";
             for (i = 0; i < artistData.length; i++) {
                 var songList = artistData[i].title;
+                var artwork = artistData[i].artist.picture_medium;
                 // Input song titles in a large screen
-                document.getElementById("song-list").innerHTML += `<div class="song-bars"><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}')">` + songList.toLowerCase() + "</button>" + "</div>";
+                document.getElementById("song-list").innerHTML += `<div class="song-bars"><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}');albumArtwork('${artistData[i].album.cover_medium}')">` + songList.toLowerCase() + "</button>" + "</div>";
                 // Input song titles in a smaller screen
                 document.getElementById("small-songs-list").innerHTML += `<div class="song-bars"><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}')">` + songList.toLowerCase() + "</button>" + "</div>";
                 console.log("SECOND pass");
@@ -155,9 +157,13 @@ function songListen(preview) {
     document.getElementById("sm-listen-header").style.borderLeft = "1px solid #000";
     document.getElementById("sm-song-listen").style.borderLeft = "1px solid #000";
 
-    document.getElementById("lg-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;    
+    document.getElementById("lg-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;   
     document.getElementById("sm-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;
     document.getElementById("xs-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;
+}
+
+function albumArtwork(artworkLink) {
+    document.getElementById("lg-artwork-box").innerHTML = `<img src="` + artworkLink + `"></img>`;   
 }
 
 $("#search").toggleClass("foo")
