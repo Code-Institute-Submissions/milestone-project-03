@@ -19,8 +19,8 @@ function clearResults() {
     document.getElementById("small-songs-header").innerHTML = "";
     document.getElementById("song-header-xs").innerHTML = "";
     document.getElementById("sm-listen-header").innerHTML = "";
-    document.getElementById("lg-song-listen").innerHTML = ""; // doesn't work 2nd time round
-    document.getElementById("sm-song-listen").innerHTML = ""; // doesn't work 1st time round
+    document.getElementById("lg-song-listen").innerHTML = "";
+    document.getElementById("sm-song-listen").innerHTML = ""; 
 }
 
 // First user step: artist name search function
