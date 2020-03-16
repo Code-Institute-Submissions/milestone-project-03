@@ -23,9 +23,12 @@ h2, h3, p {
     border: 1px solid black;
     border-radius: 25px;
     width: 100%;
+}
+
+.sticky-preview {
     position: -webkit-sticky;
-    position: sticky;
-    top: 10px;
+    position: sticky; 
+    top: 25px;
 }
 
 .footer {
