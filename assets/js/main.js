@@ -19,8 +19,8 @@ function clearResults() {
     document.getElementById("small-songs-header").innerHTML = "";
     document.getElementById("song-header-xs").innerHTML = "";
     document.getElementById("sm-listen-header").innerHTML = "";
-    // document.getElementById("lg-song-listen").innerHTML = ""; // doesn't work 2nd time round
-    // document.getElementById("sm-song-listen").innerHTML = ""; // doesn't work 1st time round
+    document.getElementById("lg-song-listen").innerHTML = ""; // doesn't work 2nd time round
+    document.getElementById("sm-song-listen").innerHTML = ""; // doesn't work 1st time round
 }
 
 // First user step: artist name search function
@@ -146,7 +146,7 @@ function songListen(preview) {
     <h3 id="next-step">listen to the clip.</h3>`;
     document.getElementById("sm-listen-header").innerHTML = `<h2>listen</h2>
     <h3 id="next-step">listen to the clip.</h3>`;
-    document.getElementById("xs-listen-header").innerHTML = `<h2>listen</h2>
+    document.getElementById("sm-song-listen").innerHTML = `<h2>listen</h2>
     <h3 id="next-step">listen to the clip above.</h3>`;
 
     document.getElementById("lg-listen-header").style.borderLeft = "1px solid #000";
@@ -158,8 +158,8 @@ function songListen(preview) {
     document.getElementById("lg-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;    
     document.getElementById("sm-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;
     document.getElementById("xs-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;
-
-    //document.getElementById("lg-song-listen").innerHTML = "";
-
-    // document.getElementById("sm-preview-bottom").innerHTML = `<h3 id="next-step">happy listening!</h3>`;
 }
+
+$("#search").toggleClass("foo")
+
+// $("#search").toggleClass("foo")

@@ -43,6 +43,10 @@ h2, h3, p {
     border-top: 1px solid #2EF429;
 }
 
+.foo {
+    background-color: red;
+}
+
 /* Headers that appear with the searches - artist / song / preview */
 .category-header {
     color: black;
