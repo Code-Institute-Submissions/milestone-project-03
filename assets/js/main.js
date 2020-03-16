@@ -159,6 +159,7 @@ function songListen(preview) {
     document.getElementById("sm-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;
     document.getElementById("xs-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;
 
-    // document.getElementById("lg-preview-bottom").innerHTML = `<h3 id="next-step">happy listening!</h3>`;
+    //document.getElementById("lg-song-listen").innerHTML = "";
+
     // document.getElementById("sm-preview-bottom").innerHTML = `<h3 id="next-step">happy listening!</h3>`;
 }
