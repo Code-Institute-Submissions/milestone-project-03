@@ -3,16 +3,6 @@ var data = null;
 // var xhr = new XMLHttpRequest();
 // xhr.withCredentials = true;
 
-// // Function to clear search bar (in small screens) when user clicks in it to type an artist name
-// function clearFunctionSmall() {
-//     document.getElementById("search-small").value="";
-// }
-
-// // Function to reset the preset value (in small screens) in the search bar after the search is activated
-// function clearSearchSmall() {
-//     document.getElementById("search-small").value = "artist name";
-// }
-
 // Function to clear search bar when user clicks in it to type an artist name
 function clearFunction() {
     document.getElementById("search").value = "";
@@ -23,10 +13,15 @@ function clearSearch() {
     document.getElementById("search").value = "artist name";
 }
 
-// function clearResults() {
-//     document.getElementById("song-results").innerHTML = "";
-// }
-
+function clearResults() {
+    document.getElementById("song-list").innerHTML = "";
+    document.getElementById("small-songs-list").innerHTML = "";
+    document.getElementById("small-songs-header").innerHTML = "";
+    document.getElementById("song-header-xs").innerHTML = "";
+    document.getElementById("sm-listen-header").innerHTML = "";
+    document.getElementById("lg-song-listen").innerHTML = ""; // doesn't work 2nd time round
+    document.getElementById("sm-song-listen").innerHTML = ""; // doesn't work 1st time round
+}
 
 // First user step: artist name search function
 function search() {
@@ -167,17 +162,3 @@ function songListen(preview) {
     // document.getElementById("lg-preview-bottom").innerHTML = `<h3 id="next-step">happy listening!</h3>`;
     // document.getElementById("sm-preview-bottom").innerHTML = `<h3 id="next-step">happy listening!</h3>`;
 }
-
-
-
-        /// TO DO
-
-        // TO-DO: Add filter to song results, so duplicate songs don't show. 
-
-        // TO-DO: Highlight the artist and songs that have been selected
-
-        // TO-DO: Fix search function, currently if you search for Jack no results show up? 
-
-        // TO-DO: Reset columns when a new search is performed - location.reload? Innerhtml to "" not working? 
-
-        // TO-DO: When a new song is clicked on, it shows the new song's preview. 

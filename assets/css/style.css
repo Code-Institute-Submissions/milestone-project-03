@@ -195,13 +195,6 @@ input {
     #search-button {
         margin-bottom: 5vh;
     }
-
-    .mobile-header {
-    align-content: center;
-    height: 9vh;
-    background-color: white;
-    z-index: 4;
-    }
 }
 
 
@@ -209,6 +202,10 @@ input {
 
 @media (min-width: 576px) {
     .visible-xs {
+        display: none;
+    }
+
+    .mobile-header {
         display: none;
     }
 }
@@ -230,6 +227,14 @@ input {
         position: fixed;
         top: 10px;
         width: 100%;
+    }
+
+    .mobile-header {
+        align-content: center;
+        height: 9vh;
+        background-color: white;
+        z-index: 4;
+        display: block;
     }
 }
 
