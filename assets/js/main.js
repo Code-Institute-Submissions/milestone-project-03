@@ -140,9 +140,9 @@ function artistSong(artistName) {
 function songListen(preview) {
 
     document.getElementById("lg-listen-header").innerHTML = `<h2 class="category-header disappear-small">listen</h2>
-    <h3 id="next-step">listen to the clip.</h3>`;
+    <h3 id="next-step">listen to a clip.</h3>`;
     document.getElementById("sm-listen-header").innerHTML = `<h2>listen</h2>
-    <h3 id="next-step">listen to the clip.</h3>`;
+    <h3 id="next-step">listen to a clip.</h3>`;
 
     document.getElementById("lg-listen-header").style.borderLeft = "1px solid #000";
     document.getElementById("lg-preview-column").style.borderLeft = "1px solid #000";

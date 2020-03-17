@@ -9,6 +9,10 @@ h2, h3, p {
     font-weight: 500;
 }
 
+#lg-listen-header {
+    bottom: 0px;
+}
+
 .breathing-space {
     height: 5vh;
     background-color: black;
@@ -30,6 +34,7 @@ h2, h3, p {
     position: -webkit-sticky;
     position: sticky; 
     top: 25px;
+    margin-top: 15px;
 }
 
 .sticky-preview {
@@ -68,6 +73,10 @@ h2, h3, p {
     border-top: 1px solid #2EF429;
 }
 
+.left-buffer {
+    padding-left: 3%;
+}
+
 /* .foo {
     background-color: red;
 } */
@@ -94,7 +103,8 @@ img {
     font-size: 200px;
     font-weight: bold;
     letter-spacing: .5vw;
-    margin: 10vh 0 0 5vw;
+    margin: 15vh 0 0 5vw;
+    align-content: flex-end;
 }
 
 /* Text below header */
@@ -107,10 +117,10 @@ img {
 /* Bar where you type in artist name */
 #search {
     font-family: "Space Mono", sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     border-color: grey;
     border-width: 1px;
-    margin: 5vh 0 5vh 5vw;
+    margin: 3vh 0 3vh 5vw;
     padding: 10px 20px;
 }
 
@@ -123,7 +133,7 @@ input {
     font-family: "Space Mono", sans-serif;
     color: white;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 20px;
     background: black;
     margin: 0 2.5vw;
     padding: 10px 20px;
@@ -150,8 +160,8 @@ input {
 /* Text with next step instructions for user */
 #next-step {
     color: black;
-    font-weight: bold;
-    font-size: 22px;
+    /* font-weight: bold; */
+    font-size: 20px;
     /* margin-top: 5vh; */
     border-bottom: 1px solid #2EF429;
 }
@@ -187,7 +197,7 @@ input {
     }
 }
 
-/* Fixing glitch in search button when screen reduces in size between small laptop to tablet */
+/* Fixing search button positioning when screen reduces in size between small laptop to tablet */
 @media (max-width: 1305px) {
     #search-button {
         margin: 0 2.5vw 0 5vw;
@@ -301,9 +311,9 @@ input {
     }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1750px) {
     body {
-        padding: 0 15% 0 15%;
+        padding: 0 10% 0 10%;
     }
 
     .massive-heading {
