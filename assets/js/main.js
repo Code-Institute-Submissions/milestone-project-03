@@ -112,9 +112,9 @@ function artistSong(artistName) {
                 var songList = artistData[i].title;
                 var artwork = artistData[i].artist.picture_medium;
                 // Input song titles in a large screen
-                document.getElementById("song-list").innerHTML += `<div class="song-bars"><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}');albumArtwork('${artistData[i].album.cover_medium}')">` + songList.toLowerCase() + "</button>" + "</div>";
+                document.getElementById("song-list").innerHTML += `<div><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}');albumArtwork('${artistData[i].album.cover_big}')">` + songList.toLowerCase() + "</button>" + "</div>";
                 // Input song titles in a smaller screen
-                document.getElementById("small-songs-list").innerHTML += `<div class="song-bars"><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}')">` + songList.toLowerCase() + "</button>" + "</div>";
+                document.getElementById("small-songs-list").innerHTML += `<div><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}')">` + songList.toLowerCase() + "</button>" + "</div>";
                 console.log("SECOND pass");
             }
 
@@ -148,14 +148,14 @@ function songListen(preview) {
     <h3 id="next-step">listen to the clip.</h3>`;
     document.getElementById("sm-listen-header").innerHTML = `<h2>listen</h2>
     <h3 id="next-step">listen to the clip.</h3>`;
-    document.getElementById("sm-song-listen").innerHTML = `<h2>listen</h2>
-    <h3 id="next-step">listen to the clip above.</h3>`;
+    // document.getElementById("sm-song-listen").innerHTML = `<h2>listen</h2>
+    // <h3 id="next-step">listen to the clip above.</h3>`;
 
     document.getElementById("lg-listen-header").style.borderLeft = "1px solid #000";
     document.getElementById("lg-preview-column").style.borderLeft = "1px solid #000";
     document.getElementById("lg-preview-bottom").style.borderLeft = "1px solid #000";
     document.getElementById("sm-listen-header").style.borderLeft = "1px solid #000";
-    document.getElementById("sm-song-listen").style.borderLeft = "1px solid #000";
+    document.getElementById("sm-song-results").style.borderLeft = "1px solid #000";
 
     document.getElementById("lg-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;   
     document.getElementById("sm-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;
@@ -163,9 +163,10 @@ function songListen(preview) {
 }
 
 function albumArtwork(artworkLink) {
-    document.getElementById("lg-artwork-box").innerHTML = `<img src="` + artworkLink + `"></img>`;   
+    document.getElementById("lg-artwork-box").innerHTML = `<img src="` + artworkLink + `"></img>`;
+    document.getElementById("sm-artwork-box").innerHTML = `<img src="` + artworkLink + `"></img>`;     
 }
 
-$("#search").toggleClass("foo")
+// $("#search").toggleClass("foo")
 
 // $("#search").toggleClass("foo")

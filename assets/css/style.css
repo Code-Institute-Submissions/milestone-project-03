@@ -52,9 +52,9 @@ h2, h3, p {
     border-top: 1px solid #2EF429;
 }
 
-.foo {
+/* .foo {
     background-color: red;
-}
+} */
 
 img {
     max-width: 100%;
@@ -275,12 +275,6 @@ input {
     #search {
         width: 90%;
     }
-
-    /* #search-small {
-        margin: 3vh 0 3vh 5vw;
-        padding: 10px 20px;
-        width: 100%;
-    } */
 
     .massive-heading {
         font-size: 125px;
