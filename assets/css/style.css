@@ -34,6 +34,12 @@ h2, h3, p {
     top: 25px;
 }
 
+.sticky-artwork {
+    position: -webkit-sticky;
+    position: sticky; 
+    top: 80px;
+}
+
 .footer {
     height: 1px;
     width: 100%;
@@ -48,6 +54,12 @@ h2, h3, p {
 
 .foo {
     background-color: red;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
 }
 
 /* Headers that appear with the searches - artist / song / preview */
