@@ -18,6 +18,10 @@ h2, h3, p {
     height: 10vh;
 }
 
+#lg-artist-column {
+    padding-bottom: 500px;
+}
+
 .audio-player {
     display: block;
     border: 1px solid black;
@@ -216,6 +220,11 @@ input {
 
     #search-button {
         margin-bottom: 5vh;
+    }
+
+    #sm-song-listen {
+        position:-webkit-sticky;
+        position: sticky;
     }
 }
 
