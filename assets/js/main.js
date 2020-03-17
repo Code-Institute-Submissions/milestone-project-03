@@ -13,6 +13,7 @@ function clearSearch() {
     document.getElementById("search").value = "artist name";
 }
 
+// Function to clear search results when a new search is executed
 function clearResults() {
     document.getElementById("lg-song-list").innerHTML = "";
     document.getElementById("sm-song-list").innerHTML = "";
@@ -42,10 +43,7 @@ function search() {
             // Search action to filter results that only include words from inputValue and removes duplicates 
             var artistList = [];
 
-            // To reset the search when a new artist is clicked
-            // document.getElementById("artist-names").innerHTML = "";
-
-            var html_string = ""; // added by Xav 11/03
+            var html_string = ""; 
 
             for (i = 0; i < responseData.length; i++) {
                 var initialArtistNames = responseData[i].artist.name;
@@ -53,14 +51,14 @@ function search() {
                     if (artistList.includes(initialArtistNames) == false) {
                         artistList.push(initialArtistNames);
 
-                        html_string += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>"; // added by Xav 11/03     
+                        html_string += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";    
 
                         // Send names to column in larger screens
                         document.getElementById("lg-artist-names").innerHTML += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
 
                         // Send names to column in smaller screens
                         document.getElementById("sm-artist-names").innerHTML += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
-                        console.log("FIRST pass");
+                        // console.log("FIRST pass");
                     }
                 }
             }
@@ -85,7 +83,7 @@ function search() {
 
 }
 
-// // Second function: When the user clicks on an artist name, that element generates a new search for that artist's popular songs
+// // Second user step: Function when the user clicks on an artist name, that element generates a new search for that artist's popular songs
 
 function artistSong(artistName) {
 
@@ -116,18 +114,15 @@ function artistSong(artistName) {
                 console.log("SECOND pass");
             }
 
-            document.getElementById("lg-song-header").innerHTML = `<h2 class="category-header disappear-small">songs</h2>
-            <h3 class="disappear-small" id="next-step">click on a song.</h3>`;
+            document.getElementById("lg-song-header").innerHTML = `<h2 class="category-header disappear-small">songs</h2><h3 class="disappear-small" id="next-step">click on a song.</h3>`;
             document.getElementById("sm-song-header").innerHTML = `<h2>songs</h2><h3 id="next-step">click on a song.</h3>`;
             document.getElementById("xs-song-header").innerHTML = `<h2>songs</h2><h3 id="next-step">click on a song and it will appear at the top.</h3>`;
+            
             document.getElementById("lg-song-header").style.borderLeft = "1px solid #000";
             document.getElementById("lg-song-column").style.borderLeft = "1px solid #000";
             document.getElementById("lg-song-bottom").style.borderLeft = "1px solid #000";
             document.getElementById("sm-song-header").style.borderLeft = "1px solid #000";
             document.getElementById("sm-song-list").style.borderLeft = "1px solid #000";
-            // document.getElementById("lg-song-bottom").innerHTML = `<h3 id="next-step">click on a song.</h3>`;
-            // document.getElementById("lg-song-bottom-small").innerHTML = `<h3 id="next-step">click on a song.</h3>`;
-            // document.getElementById("song-bottom-xs").innerHTML = `<h3 id="next-step">click on a song and it'll appear at the top.</h3>`;
         }
     });
 
@@ -138,7 +133,7 @@ function artistSong(artistName) {
 }
 
 
-// Function to preview song & see album artwork
+// Third user step: Function to preview song & see album artwork
 
 function songListen(preview) {
 
@@ -146,8 +141,6 @@ function songListen(preview) {
     <h3 id="next-step">listen to the clip.</h3>`;
     document.getElementById("sm-listen-header").innerHTML = `<h2>listen</h2>
     <h3 id="next-step">listen to the clip.</h3>`;
-    // document.getElementById("sm-song-listen").innerHTML = `<h2>listen</h2>
-    // <h3 id="next-step">listen to the clip above.</h3>`;
 
     document.getElementById("lg-listen-header").style.borderLeft = "1px solid #000";
     document.getElementById("lg-preview-column").style.borderLeft = "1px solid #000";
