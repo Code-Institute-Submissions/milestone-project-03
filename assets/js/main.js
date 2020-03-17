@@ -14,10 +14,10 @@ function clearSearch() {
 }
 
 function clearResults() {
-    document.getElementById("song-list").innerHTML = "";
-    document.getElementById("small-songs-list").innerHTML = "";
-    document.getElementById("small-songs-header").innerHTML = "";
-    document.getElementById("song-header-xs").innerHTML = "";
+    document.getElementById("lg-song-list").innerHTML = "";
+    document.getElementById("sm-song-list").innerHTML = "";
+    document.getElementById("sm-song-header").innerHTML = "";
+    document.getElementById("xs-song-header").innerHTML = "";
     document.getElementById("sm-listen-header").innerHTML = "";
     document.getElementById("lg-song-listen").innerHTML = "";
     document.getElementById("sm-song-listen").innerHTML = ""; 
@@ -56,26 +56,24 @@ function search() {
                         html_string += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>"; // added by Xav 11/03     
 
                         // Send names to column in larger screens
-                        document.getElementById("artist-names").innerHTML += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
+                        document.getElementById("lg-artist-names").innerHTML += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
 
                         // Send names to column in smaller screens
-                        document.getElementById("small-artist-names").innerHTML += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
+                        document.getElementById("sm-artist-names").innerHTML += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
                         console.log("FIRST pass");
                     }
                 }
             }
 
-            document.getElementById("artist-names").innerHTML = html_string;
-            document.getElementById("small-artist-names").innerHTML = html_string;
-            document.getElementById("artist-header").innerHTML = `<h2 class="category-header disappear-small">artist</h2>
+            document.getElementById("lg-artist-names").innerHTML = html_string;
+            document.getElementById("sm-artist-names").innerHTML = html_string;
+            document.getElementById("lg-artist-header").innerHTML = `<h2 class="category-header disappear-small">artist</h2>
             <h3 id="next-step">select an artist.</h3>`;
-            document.getElementById("small-artist-header").innerHTML = `<h2>artist</h2>
+            document.getElementById("sm-artist-header").innerHTML = `<h2>artist</h2>
             <h3 id="next-step">select an artist.</h3>`;
-            document.getElementById("artist-header").style.borderLeft = "1px solid #000";
-            document.getElementById("artist-results").style.borderLeft = "1px solid #000";
-            document.getElementById("artist-bottom").style.borderLeft = "1px solid #000";
-            // document.getElementById("artist-bottom").innerHTML = `<h3 id="next-step">click on a name.</h3>`;
-            // document.getElementById("artist-bottom-small").innerHTML = `<h3 id="next-step">click on a name.</h3>`;
+            document.getElementById("lg-artist-header").style.borderLeft = "1px solid #000";
+            document.getElementById("lg-artist-column").style.borderLeft = "1px solid #000";
+            document.getElementById("lg-artist-bottom").style.borderLeft = "1px solid #000";
 
         }
     });
@@ -107,28 +105,28 @@ function artistSong(artistName) {
             var duplicateList = [];
 
             //Search function
-            document.getElementById("song-list").innerHTML = "";
+            document.getElementById("lg-song-list").innerHTML = "";
             for (i = 0; i < artistData.length; i++) {
                 var songList = artistData[i].title;
                 var artwork = artistData[i].artist.picture_medium;
                 // Input song titles in a large screen
-                document.getElementById("song-list").innerHTML += `<div><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}');albumArtwork('${artistData[i].album.cover_big}')">` + songList.toLowerCase() + "</button>" + "</div>";
+                document.getElementById("lg-song-list").innerHTML += `<div><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}');albumArtwork('${artistData[i].album.cover_big}')">` + songList.toLowerCase() + "</button>" + "</div>";
                 // Input song titles in a smaller screen
-                document.getElementById("small-songs-list").innerHTML += `<div><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}')">` + songList.toLowerCase() + "</button>" + "</div>";
+                document.getElementById("sm-song-list").innerHTML += `<div><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}')">` + songList.toLowerCase() + "</button>" + "</div>";
                 console.log("SECOND pass");
             }
 
-            document.getElementById("popular-songs").innerHTML = `<h2 class="category-header disappear-small">songs</h2>
+            document.getElementById("lg-song-header").innerHTML = `<h2 class="category-header disappear-small">songs</h2>
             <h3 class="disappear-small" id="next-step">click on a song.</h3>`;
-            document.getElementById("small-songs-header").innerHTML = `<h2>songs</h2><h3 id="next-step">click on a song.</h3>`;
-            document.getElementById("song-header-xs").innerHTML = `<h2>songs</h2><h3 id="next-step">click on a song and it will appear at the top.</h3>`;
-            document.getElementById("popular-songs").style.borderLeft = "1px solid #000";
-            document.getElementById("song-results").style.borderLeft = "1px solid #000";
-            document.getElementById("song-bottom").style.borderLeft = "1px solid #000";
-            document.getElementById("small-songs-header").style.borderLeft = "1px solid #000";
-            document.getElementById("small-songs-list").style.borderLeft = "1px solid #000";
-            // document.getElementById("song-bottom").innerHTML = `<h3 id="next-step">click on a song.</h3>`;
-            // document.getElementById("song-bottom-small").innerHTML = `<h3 id="next-step">click on a song.</h3>`;
+            document.getElementById("sm-song-header").innerHTML = `<h2>songs</h2><h3 id="next-step">click on a song.</h3>`;
+            document.getElementById("xs-song-header").innerHTML = `<h2>songs</h2><h3 id="next-step">click on a song and it will appear at the top.</h3>`;
+            document.getElementById("lg-song-header").style.borderLeft = "1px solid #000";
+            document.getElementById("lg-song-column").style.borderLeft = "1px solid #000";
+            document.getElementById("lg-song-bottom").style.borderLeft = "1px solid #000";
+            document.getElementById("sm-song-header").style.borderLeft = "1px solid #000";
+            document.getElementById("sm-song-list").style.borderLeft = "1px solid #000";
+            // document.getElementById("lg-song-bottom").innerHTML = `<h3 id="next-step">click on a song.</h3>`;
+            // document.getElementById("lg-song-bottom-small").innerHTML = `<h3 id="next-step">click on a song.</h3>`;
             // document.getElementById("song-bottom-xs").innerHTML = `<h3 id="next-step">click on a song and it'll appear at the top.</h3>`;
         }
     });
@@ -155,7 +153,7 @@ function songListen(preview) {
     document.getElementById("lg-preview-column").style.borderLeft = "1px solid #000";
     document.getElementById("lg-preview-bottom").style.borderLeft = "1px solid #000";
     document.getElementById("sm-listen-header").style.borderLeft = "1px solid #000";
-    document.getElementById("sm-song-results").style.borderLeft = "1px solid #000";
+    document.getElementById("sm-song-column").style.borderLeft = "1px solid #000";
 
     document.getElementById("lg-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;   
     document.getElementById("sm-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;

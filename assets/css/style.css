@@ -15,7 +15,7 @@ h2, h3, p {
 }
 
 .bottom-margin {
-    height: 20vh;
+    height: 10vh;
 }
 
 .audio-player {
@@ -126,7 +126,7 @@ input {
     text-align: left;
 }
 
-#artist-names, #song-results {
+#lg-artist-names, #lg-song-column {
     padding-left: 0px;
 }
 
@@ -203,7 +203,7 @@ input {
         color: black;
     }
 
-    #small-artist-header, #small-songs-header, #sm-listen-header {
+    #sm-artist-header, #sm-songs-header, #sm-listen-header {
         font-size: 25px;
         color:black;
         font-weight: bold;
@@ -237,7 +237,7 @@ input {
         display: none;
     }
 
-    #small-songs-list {
+    #sm-song-list {
         border: none!important;
     }
 
