@@ -51,13 +51,13 @@ function search() {
                     if (artistList.includes(initialArtistNames) == false) {
                         artistList.push(initialArtistNames);
 
-                        html_string += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";    
+                        html_string += `<button type="button" id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";    
 
                         // Send names to column in larger screens
-                        document.getElementById("lg-artist-names").innerHTML += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
+                        document.getElementById("lg-artist-names").innerHTML += `<button type="button" id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
 
                         // Send names to column in smaller screens
-                        document.getElementById("sm-artist-names").innerHTML += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
+                        document.getElementById("sm-artist-names").innerHTML += `<a id="jump-to"><button type="button" id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "</a>" + "<br>";
                     }
                 }
             }
@@ -67,6 +67,8 @@ function search() {
             document.getElementById("lg-artist-header").innerHTML = `<h2 class="category-header disappear-small">artist</h2>
             <h3 id="next-step">select an artist.</h3>`;
             document.getElementById("sm-artist-header").innerHTML = `<h2>artist</h2>
+            <h3 id="next-step">select an artist.</h3>`;
+            document.getElementById("xs-artist-header").innerHTML = `<h2>artist</h2>
             <h3 id="next-step">select an artist and their songs will appear below.</h3>`;
             document.getElementById("lg-artist-header").style.borderLeft = "1px solid #000";
             document.getElementById("lg-artist-column").style.borderLeft = "1px solid #000";
@@ -116,7 +118,7 @@ function artistSong(artistName) {
 
             document.getElementById("lg-song-header").innerHTML = `<h2 class="category-header disappear-small">songs</h2><h3 class="disappear-small" id="next-step">click on a song.</h3>`;
             document.getElementById("sm-song-header").innerHTML = `<h2>songs</h2><h3 id="next-step">click on a song.</h3>`;
-            document.getElementById("xs-song-header").innerHTML = `<h2 href="#artists" id="songs-header">songs</h2><h3 id="next-step">click on a song and it will appear at the top.</h3>`; // HREF Artists isn't working either? 
+            document.getElementById("xs-song-header").innerHTML = `<h2 href="#jump-to" id="songs-header">songs</h2><h3 id="next-step">click on a song and it will appear at the top.</h3>`; // HREF Artists or 'Jump-To' isn't working either? 
 
             document.getElementById("lg-song-header").style.borderLeft = "1px solid #000";
             document.getElementById("lg-song-column").style.borderLeft = "1px solid #000";

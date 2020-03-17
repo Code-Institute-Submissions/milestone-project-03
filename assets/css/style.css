@@ -105,7 +105,7 @@ img {
 }
 
 /* Bar where you type in artist name */
-#search, #search-small {
+#search {
     font-family: "Space Mono", sans-serif;
     font-size: 25px;
     border-color: grey;
@@ -235,7 +235,6 @@ input {
     }
 }
 
-
 /* Up to mobile size */
 
 @media (min-width: 576px) {
@@ -275,10 +274,14 @@ input {
         z-index: 4;
         display: block;
     }
+
+    #xs-song-header {
+        padding-top: 30px;
+    }
 }
 
 @media (max-width: 426px) {
-    .intro, input, #search-small, #search-button {
+    .intro, input, #search, #search-button {
         font-size: 18px;
     }
 
@@ -290,9 +293,20 @@ input {
 
     #search {
         width: 90%;
+        margin: 2.5vh 0 2.5vh 5vw;
     }
 
     .massive-heading {
         font-size: 125px;
+    }
+}
+
+@media (min-width: 1440px) {
+    body {
+        padding: 0 15% 0 15%;
+    }
+
+    .massive-heading {
+        margin: 20vh 0 0 5vw;
     }
 }
