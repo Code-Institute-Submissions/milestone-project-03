@@ -44,6 +44,18 @@ h2, h3, p {
     top: 80px;
 }
 
+.sm-sticky-preview {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 25px;
+}
+
+.sm-sticky-artwork {
+    position: -webkit-sticky;
+    position: sticky; 
+    top: 80px;
+}
+
 .footer {
     height: 1px;
     width: 100%;
@@ -221,11 +233,6 @@ input {
     #search-button {
         margin-bottom: 5vh;
     }
-
-    #sm-song-listen {
-        position:-webkit-sticky;
-        position: sticky;
-    }
 }
 
 
@@ -271,8 +278,8 @@ input {
 }
 
 @media (max-width: 426px) {
-    .intro, #search-small, #search-button {
-        font-size: 20px;
+    .intro, input, #search-small, #search-button {
+        font-size: 18px;
     }
 
     #search-button {

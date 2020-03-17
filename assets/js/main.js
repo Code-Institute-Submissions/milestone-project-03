@@ -58,7 +58,6 @@ function search() {
 
                         // Send names to column in smaller screens
                         document.getElementById("sm-artist-names").innerHTML += `<button type="button" id="artists" class="highlighted-buttons" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
-                        // console.log("FIRST pass");
                     }
                 }
             }
@@ -68,11 +67,12 @@ function search() {
             document.getElementById("lg-artist-header").innerHTML = `<h2 class="category-header disappear-small">artist</h2>
             <h3 id="next-step">select an artist.</h3>`;
             document.getElementById("sm-artist-header").innerHTML = `<h2>artist</h2>
-            <h3 id="next-step">select an artist.</h3>`;
+            <h3 id="next-step">select an artist and their songs will appear below.</h3>`;
             document.getElementById("lg-artist-header").style.borderLeft = "1px solid #000";
             document.getElementById("lg-artist-column").style.borderLeft = "1px solid #000";
             document.getElementById("lg-artist-bottom").style.borderLeft = "1px solid #000";
 
+            // window.location.hash = "#xs-song-header";
         }
     });
 
@@ -116,8 +116,8 @@ function artistSong(artistName) {
 
             document.getElementById("lg-song-header").innerHTML = `<h2 class="category-header disappear-small">songs</h2><h3 class="disappear-small" id="next-step">click on a song.</h3>`;
             document.getElementById("sm-song-header").innerHTML = `<h2>songs</h2><h3 id="next-step">click on a song.</h3>`;
-            document.getElementById("xs-song-header").innerHTML = `<h2>songs</h2><h3 id="next-step">click on a song and it will appear at the top.</h3>`;
-            
+            document.getElementById("xs-song-header").innerHTML = `<h2 href="#artists" id="songs-header">songs</h2><h3 id="next-step">click on a song and it will appear at the top.</h3>`; // HREF Artists isn't working either? 
+
             document.getElementById("lg-song-header").style.borderLeft = "1px solid #000";
             document.getElementById("lg-song-column").style.borderLeft = "1px solid #000";
             document.getElementById("lg-song-bottom").style.borderLeft = "1px solid #000";
