@@ -21,6 +21,7 @@ function clearResults() {
     document.getElementById("sm-song-listen").innerHTML = ""; 
     document.getElementById("lg-artwork-box").innerHTML = "";
     document.getElementById("sm-artwork-box").innerHTML = "";
+    document.getElementById("sm-artist-names").innerHTML = "";
 }
 
 // First user step: artist name search function
@@ -72,6 +73,25 @@ function search() {
             document.getElementById("lg-artist-column").style.borderLeft = "1px solid #000";
             document.getElementById("lg-artist-bottom").style.borderLeft = "1px solid #000";
 
+            // console.log(emptyArtistNames + "this is in the function");
+
+
+            // If artist names list is returned empty on a large screen (because of error)
+            var emptyArtistNames = document.getElementById("lg-artist-names").innerHTML;
+            console.log(emptyArtistNames);
+
+            if (emptyArtistNames == "") {
+                document.getElementById("lg-artist-column").innerHTML = `<h3>sorry that didn't work <strong>☹</strong>.</h3><br><h3>try that again.</h3>`;
+            }
+
+            // If artist names list is returned empty on a small screen (because of error)
+            var emptyArtistNamesSmall = document.getElementById("sm-artist-names").innerHTML;
+            console.log(emptyArtistNamesSmall);
+
+            if (emptyArtistNamesSmall == "") {
+                document.getElementById("sm-artist-names").innerHTML = `<h3>sorry that didn't work <strong>☹</strong>.</h3><br><h3>try that again.</h3>`;
+            }
+
             // window.location.hash = "#xs-song-header";
         }
     });
@@ -82,11 +102,12 @@ function search() {
     xhr.send(data);
     
     // To return an error message if no results are returned
-    var emptyArtistNames = document.getElementById("lg-artist-names").innerHTML = "";
+    // var emptyArtistNames = document.getElementById("lg-artist-names").innerHTML;
+    // console.log(emptyArtistNames + "this is out the function");
 
-    if (emptyArtistNames = true) {
-        document.getElementById("lg-artist-names").innerHTML = `<p id="artists">try that again.</p>`
-    }
+    // if (emptyArtistNames = "") {
+    //     console.log("nothing there");
+    // }
     
 }
 
