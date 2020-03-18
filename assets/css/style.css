@@ -243,6 +243,10 @@ input {
     #search-button {
         margin-bottom: 5vh;
     }
+
+    body {
+        margin-left: 4%;
+    }
 }
 
 /* Up to mobile size */
