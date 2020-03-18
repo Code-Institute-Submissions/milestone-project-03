@@ -160,6 +160,6 @@ function albumArtwork(artworkLink) {
     document.getElementById("sm-artwork-box").innerHTML = `<img src="` + artworkLink + `"></img>`;     
 }
 
-// $("#search").toggleClass("foo")
+$("#search").toggleClass("foo")
 
 // $("#search").toggleClass("foo")
