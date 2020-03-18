@@ -247,6 +247,10 @@ input {
     body {
         margin-left: 4%;
     }
+
+    #sm-song-list {
+        padding-bottom: 50px;
+    }
 }
 
 /* Up to mobile size */
