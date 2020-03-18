@@ -77,9 +77,9 @@ h2, h3, p {
     padding-left: 3%;
 }
 
-.foo {
+/* .foo {
     background-color: red;
-}
+} */
 
 img {
     max-width: 100%;

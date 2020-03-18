@@ -1,8 +1,5 @@
 var data = null;
 
-// var xhr = new XMLHttpRequest();
-// xhr.withCredentials = true;
-
 // Function to clear search bar when user clicks in it to type an artist name
 function clearFunction() {
     document.getElementById("search").value = "";
@@ -101,14 +98,11 @@ function artistSong(artistName) {
             // The data received from the specific artist name search
             var artistData = artistResponse.data;
 
-            // Empty array 
-            var duplicateList = [];
-
             //Search function
             document.getElementById("lg-song-list").innerHTML = "";
             for (i = 0; i < artistData.length; i++) {
                 var songList = artistData[i].title;
-                var artwork = artistData[i].artist.picture_medium;
+                // var artwork = artistData[i].artist.picture_medium;
                 // Input song titles in a large screen
                 document.getElementById("lg-song-list").innerHTML += `<div><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}');albumArtwork('${artistData[i].album.cover_big}')">` + songList.toLowerCase() + "</button>" + "</div>";
                 // Input song titles in a smaller screen
