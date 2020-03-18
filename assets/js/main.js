@@ -14,12 +14,13 @@ function clearSearch() {
 function clearResults() {
     document.getElementById("lg-song-list").innerHTML = "";
     document.getElementById("sm-song-list").innerHTML = "";
-    document.getElementById("sm-song-header").innerHTML = "";
+    // document.getElementById("sm-song-header").innerHTML = "";
     document.getElementById("xs-song-header").innerHTML = "";
-    document.getElementById("sm-listen-header").innerHTML = "";
+    // document.getElementById("sm-listen-header").innerHTML = "";
     document.getElementById("lg-song-listen").innerHTML = "";
     document.getElementById("sm-song-listen").innerHTML = ""; 
     document.getElementById("lg-artwork-box").innerHTML = "";
+    document.getElementById("sm-artwork-box").innerHTML = "";
 }
 
 // First user step: artist name search function
