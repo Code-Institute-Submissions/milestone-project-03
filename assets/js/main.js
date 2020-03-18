@@ -7,7 +7,7 @@ function clearFunction() {
 
 // Function to reset the preset value in the search bar after the search is activated
 function clearSearch() {
-    document.getElementById("search").value = "artist name";
+    document.getElementById("search").value = "artist name here.";
 }
 
 // Function to clear search results when a new search is executed
@@ -80,7 +80,14 @@ function search() {
     xhr.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
     xhr.setRequestHeader("x-rapidapi-key", "188d30da21msh99fa3832c206cd5p1eb131jsn0acc1b025fc9");
     xhr.send(data);
+    
+    // To return an error message if no results are returned
+    var emptyArtistNames = document.getElementById("lg-artist-names").innerHTML = "";
 
+    if (emptyArtistNames = true) {
+        document.getElementById("lg-artist-names").innerHTML = `<p id="artists">try that again.</p>`
+    }
+    
 }
 
 // // Second user step: Function when the user clicks on an artist name, that element generates a new search for that artist's popular songs
@@ -111,7 +118,7 @@ function artistSong(artistName) {
                 console.log("SECOND pass");
             }
 
-            document.getElementById("lg-song-header").innerHTML = `<h2 class="category-header disappear-small">songs</h2><h3 class="disappear-small" id="next-step">click on a song.</h3>`;
+            document.getElementById("lg-song-header").innerHTML = `<h2 class="category-header disappear-small">songs</h2><h3 class="disappear-small" id="next-step">click on a title.</h3>`;
             document.getElementById("sm-song-header").innerHTML = `<h2>songs</h2><h3 id="next-step">click on a song.</h3>`;
             document.getElementById("xs-song-header").innerHTML = `<h2 href="#jump-to" id="songs-header">songs</h2><h3 id="next-step">click on a song and it will appear at the top.</h3>`; // HREF Artists or 'Jump-To' isn't working either? 
 
