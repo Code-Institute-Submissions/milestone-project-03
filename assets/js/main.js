@@ -126,14 +126,17 @@ function artistSong(artistName) {
 
             // The data received from the specific artist name search
             var artistData = artistResponse.data;
+            
 
             //Search function
             document.getElementById("lg-song-list").innerHTML = "";
             for (i = 0; i < artistData.length; i++) {
                 var songList = artistData[i].title;
-                // var artwork = artistData[i].artist.picture_medium;
-                // Input song titles in a large screen
-                document.getElementById("lg-song-list").innerHTML += `<div><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}');albumArtwork('${artistData[i].album.cover_big}')">` + songList.toLowerCase() + "</button>" + "</div>";
+
+                // Input song titles in a large screen 
+                // Song titles are buttons with onclick functions that return preview clips, artwork and song titles
+                document.getElementById("lg-song-list").innerHTML += `<div><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}');albumArtwork('${artistData[i].album.cover_big}');songTitle('${artistData[i].title}')">` + songList.toLowerCase() + "</button>" + "</div>";
+
                 // Input song titles in a smaller screen
                 document.getElementById("sm-song-list").innerHTML += `<div><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}')">` + songList.toLowerCase() + "</button>" + "</div>";
                 console.log("SECOND pass");
@@ -181,6 +184,10 @@ function songListen(preview) {
 function albumArtwork(artworkLink) {
     document.getElementById("lg-artwork-box").innerHTML = `<img src="` + artworkLink + `"></img>`;
     document.getElementById("sm-artwork-box").innerHTML = `<img src="` + artworkLink + `"></img>`;     
+}
+
+function songTitle(titleLink) {
+    document.getElementById("lg-song-title").innerHTML = `<p>now playing: "` + titleLink.toLowerCase() +  `"</p>`;
 }
 
 // $("#search").toggleClass("foo")

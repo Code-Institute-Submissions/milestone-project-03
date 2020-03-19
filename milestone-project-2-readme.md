@@ -14,9 +14,9 @@ The 'MUSIC.' site incorporates an API from the music streaming service 'Deezer' 
 
 ### Site Users - who is the site focused on?
 1. Ria, “I’m on my way to see Jax Jones tonight and want to see what his most popular songs are”.
-2. Jen, “I’m on my way to karaoke and know I want to sing Britney Spears but can’t remember which songs I know. I want to see a list of songs and hear their clips to jog my memory”
+2. Jen, “I’m on my way to karaoke and know I want to sing Britney Spears but can’t remember which songs I know. I want to see a list of songs and hear clips of the songs to jog my memory”
 3. Harry, “I want to hear Bucks Fizz songs because I’m a big fan”
-4. Rachael, “There’s a singer called George something who sings a really catchy song that’s stuck in my mind, but I don’t know the title of the song! I need to search for singers called George and hear their songs to try find out the title”
+4. Rachael, “There’s a singer called George something who sings a really catchy song that’s stuck in my mind, but I don’t know the title of the song! I might recognise the title if I saw it but would need to search for singers called George and hear the songs to try find out the title”
 
 ### The 'MUSIC.' site is the best place for users to achieve their goals because: 
 - The site is easy to navigate with clear instructions, steps and accessibility
