@@ -363,3 +363,15 @@ input {
         margin-left: 5vw;
     }
 }
+
+@media (min-width: 1240px) {
+    .massive-heading {
+        margin-top: 15%;
+    }
+}
+
+@media (max-width: 1239px) and (min-width: 1024px) {
+    .massive-heading {
+        margin-top: 80px;
+    }
+}
