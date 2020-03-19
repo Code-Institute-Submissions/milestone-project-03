@@ -71,3 +71,16 @@ When the user **clicks on a song title**, it will make another column appear to 
 ### Features to implement
 - Option to log in to Deezer account to listen to full songs instead of 30 second clips 
 - Feature to view music videos on the site
+
+## Technologies used
+- HTML and CSS programming languages
+- [BootstrapCDN](https://www.bootstrapcdn.com/): [BootStrap4] (https://getbootstrap.com/docs/4.0/getting-started/introduction/) to assist with the structuring and responsiveness of the site
+- [RapidAPI](https://rapidapi.com/) for providing the Deezer SDK and access to the Deezer API
+- [Deezer](https://rapidapi.com/deezerdevs/api/deezer-1) for the API and access to the song network
+- [Google Fonts](https://fonts.google.com/) for the fonts used throughout the page
+- [Github](https://github.com/) to store repositories of the project
+- [Gitpod](https://www.gitpod.io/) for providing the workspace where the code was written
+- [Emojipedia](https://emojipedia.org/people/) for the frowning face emoji in the error message
+
+## Testing
+
