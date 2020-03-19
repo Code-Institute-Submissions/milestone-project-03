@@ -23,6 +23,10 @@ h2, h3, p, .mobile-header {
     background-color: black;
 }
 
+.myModal {
+    background-color: red;
+}
+
 .bottom-margin {
     height: 10vh;
 }

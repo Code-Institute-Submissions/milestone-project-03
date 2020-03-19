@@ -16,14 +16,14 @@ function clearResults() {
     document.getElementById("sm-song-list").innerHTML = "";
     document.getElementById("xs-song-header").innerHTML = "";
     document.getElementById("lg-song-listen").innerHTML = "";
-    document.getElementById("sm-song-listen").innerHTML = ""; 
+    document.getElementById("sm-song-listen").innerHTML = "";
     document.getElementById("lg-artwork-box").innerHTML = "";
     document.getElementById("sm-artwork-box").innerHTML = "";
     document.getElementById("sm-artist-names").innerHTML = "";
     document.getElementById("lg-song-title").innerHTML = "";
     document.getElementById("sm-song-title").innerHTML = "";
     document.getElementById("xs-song-title").innerHTML = "";
-    // document.getElementById("lg-artist-column").innerHTML = "";
+    //document.getElementById("lg-artist-column").innerHTML = "";
 }
 
 // First user step: artist name search function
@@ -40,35 +40,37 @@ function search() {
 
             // The data received from the search function
             var responseData = response.data;
-            console.log(responseData);
 
-            // Search action to filter results that only include words from inputValue and removes duplicates 
+            // If no results are returned
+            console.log(responseData);
+            if (responseData.length == 0) {
+                alert("hmmmm, we couldn't find anything. try that search again.");
+            }
+
+            // If results are returned
+
             var artistList = [];
 
             var html_string = "";
-            
-            if (responseData.length == 0) {
-                console.log("length = 0")
-            } else {
 
-                for (i = 0; i < responseData.length; i++) {
-                    var initialArtistNames = responseData[i].artist.name;
-                    if (initialArtistNames.toLowerCase().includes(inputValue.toLowerCase())) {
-                        if (artistList.includes(initialArtistNames) == false) {
-                            artistList.push(initialArtistNames);
+            for (i = 0; i < responseData.length; i++) {
+                var initialArtistNames = responseData[i].artist.name;
+                if (initialArtistNames.toLowerCase().includes(inputValue.toLowerCase())) {
+                    if (artistList.includes(initialArtistNames) == false) {
+                        artistList.push(initialArtistNames);
 
-                            html_string += `<button type="button" id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";    
+                        html_string += `<button type="button" id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
 
-                            // Send artist names to artist column in larger screens
-                            document.getElementById("lg-artist-names").innerHTML += `<button type="button" id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
+                        // Send artist names to artist column in larger screens
+                        document.getElementById("lg-artist-names").innerHTML += `<button type="button" id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
 
-                            // Send artist names to artist column in smaller screens
-                            document.getElementById("sm-artist-names").innerHTML += `<button type="button" id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "</a>" + "<br>";
-                        }
+                        // Send artist names to artist column in smaller screens
+                        document.getElementById("sm-artist-names").innerHTML += `<button type="button" id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "</a>" + "<br>";
                     }
                 }
             }
 
+            // Elements added to HTML after function is run
             document.getElementById("lg-artist-names").innerHTML = html_string;
             document.getElementById("sm-artist-names").innerHTML = html_string;
             document.getElementById("lg-artist-header").innerHTML = `<h2 class="category-header disappear-small">artist</h2>
@@ -81,22 +83,6 @@ function search() {
             document.getElementById("lg-artist-column").style.borderLeft = "1px solid #000";
             document.getElementById("lg-artist-bottom").style.borderLeft = "1px solid #000";
 
-
-            // If artist names list is returned empty on a large screen (because of error)
-            // var emptyArtistNames = document.getElementById("lg-artist-names").innerHTML;
-
-            // if (emptyArtistNames == "") {
-            //     document.getElementById("lg-artist-column").innerHTML = `<h3>sorry that didn't work <strong>☹</strong>.</h3><br><h3>try that again.</h3>`;
-            // }
-
-            // // If artist names list is returned empty on a small screen (because of error)
-            // var emptyArtistNamesSmall = document.getElementById("sm-artist-names").innerHTML;
-
-            // if (emptyArtistNamesSmall == "") {
-            //     document.getElementById("sm-artist-names").innerHTML = `<h3>sorry that didn't work <strong>☹</strong>.</h3><br><h3>try that again.</h3>`;
-            // }
-
-            // window.location.hash = "#xs-song-header";
         }
     });
 
@@ -105,7 +91,6 @@ function search() {
     xhr.setRequestHeader("x-rapidapi-key", "188d30da21msh99fa3832c206cd5p1eb131jsn0acc1b025fc9");
     xhr.send(data);
 
-    
 }
 
 // // Second user step: Function when the user clicks on an artist name, that element generates a new search for that artist's popular songs
@@ -123,25 +108,24 @@ function artistSong(artistName) {
 
             // The data received from the specific artist name search
             var artistData = artistResponse.data;
-            
+
 
             //Search function
             document.getElementById("lg-song-list").innerHTML = "";
             for (i = 0; i < artistData.length; i++) {
                 var songList = artistData[i].title;
 
-                // Input song titles in a large screen 
-                // Song titles are buttons with onclick functions that return preview clips, artwork and song titles
+                // Input song title buttons in a large screen (buttons will return preview, artwork and song titles when clicked)
                 document.getElementById("lg-song-list").innerHTML += `<div><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}');albumArtwork('${artistData[i].album.cover_big}');songTitle('${artistData[i].title}')">` + songList.toLowerCase() + "</button>" + "</div>";
 
-                // Input song titles in a smaller screen
+                // Input song title buttons on a smaller screen (buttons will return preview, artwork and song titles when clicked)
                 document.getElementById("sm-song-list").innerHTML += `<div><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}');albumArtwork('${artistData[i].album.cover_big}');songTitle('${artistData[i].title}')">` + songList.toLowerCase() + "</button>" + "</div>";
             }
 
+            // Elements added after function is performed
             document.getElementById("lg-song-header").innerHTML = `<h2 class="category-header disappear-small">songs</h2><h3 class="disappear-small" id="next-step">click on a title.</h3>`;
             document.getElementById("sm-song-header").innerHTML = `<h2>songs</h2><h3 id="next-step">click on a song.</h3>`;
             document.getElementById("xs-song-header").innerHTML = `<h2 id="songs-header">songs</h2><h3 id="next-step">click on a song and it will appear at the top.</h3>`;
-
             document.getElementById("lg-song-header").style.borderLeft = "1px solid #000";
             document.getElementById("lg-song-column").style.borderLeft = "1px solid #000";
             document.getElementById("lg-song-bottom").style.borderLeft = "1px solid #000";
@@ -157,7 +141,7 @@ function artistSong(artistName) {
 }
 
 
-// Third user step: Function to preview song & see album artwork
+// User step 3A: Function to preview song
 
 function songListen(preview) {
 
@@ -172,23 +156,26 @@ function songListen(preview) {
     document.getElementById("sm-listen-header").style.borderLeft = "1px solid #000";
     document.getElementById("sm-song-column").style.borderLeft = "1px solid #000";
 
-    document.getElementById("lg-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;   
+    document.getElementById("lg-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;
     document.getElementById("sm-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;
     document.getElementById("xs-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;
 }
 
-// Function to input preview artwork
+
+// User step 3B: Function to input preview artwork
 function albumArtwork(artworkLink) {
     document.getElementById("lg-artwork-box").innerHTML = `<img src="` + artworkLink + `"></img>`;
-    document.getElementById("sm-artwork-box").innerHTML = `<img src="` + artworkLink + `"></img>`;     
+    document.getElementById("sm-artwork-box").innerHTML = `<img src="` + artworkLink + `"></img>`;
 }
 
-// Function to show song title beneath audio player
+
+// User step 3C: Function to show song title beneath audio player
 function songTitle(titleLink) {
-    document.getElementById("lg-song-title").innerHTML = `<p>now playing: "` + titleLink.toLowerCase() +  `"</p>`;
-    document.getElementById("sm-song-title").innerHTML = `<p>now playing: "` + titleLink.toLowerCase() +  `"</p>`;
-    document.getElementById("xs-song-title").innerHTML = `<p id="xs-title">now playing: "` + titleLink.toLowerCase() +  `"</p>`;
+    document.getElementById("lg-song-title").innerHTML = `<p>now playing: "` + titleLink.toLowerCase() + `"</p>`;
+    document.getElementById("sm-song-title").innerHTML = `<p>now playing: "` + titleLink.toLowerCase() + `"</p>`;
+    document.getElementById("xs-song-title").innerHTML = `<p id="xs-title">now playing: "` + titleLink.toLowerCase() + `"</p>`;
 }
+
 
 // $("#search").toggleClass("foo")
 
