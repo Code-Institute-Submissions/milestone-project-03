@@ -278,22 +278,23 @@ input {
     }
 
     .massive-heading {
-        margin-top: 0px;
+        margin-top: 12vh;
     }
 
     .audio-player {
         position: fixed;
         top: 10px;
         width: 80%;
-        margin-left: 10%;
+        margin-left: 7.5%;
     }
 
     .mobile-header {
         align-content: center;
-        height: 9vh;
-        background-color: white;
+        height: 12vh;
+        background-color: #2EF429;
         z-index: 4;
         display: block;
+        position: fixed;
     }
 
     #xs-song-header {
