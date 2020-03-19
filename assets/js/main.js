@@ -22,6 +22,9 @@ function clearResults() {
     document.getElementById("lg-artwork-box").innerHTML = "";
     document.getElementById("sm-artwork-box").innerHTML = "";
     document.getElementById("sm-artist-names").innerHTML = "";
+    document.getElementById("lg-song-title").innerHTML = "";
+    document.getElementById("sm-song-title").innerHTML = "";
+    document.getElementById("xs-song-title").innerHTML = "";
 }
 
 // First user step: artist name search function
@@ -138,7 +141,7 @@ function artistSong(artistName) {
                 document.getElementById("lg-song-list").innerHTML += `<div><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}');albumArtwork('${artistData[i].album.cover_big}');songTitle('${artistData[i].title}')">` + songList.toLowerCase() + "</button>" + "</div>";
 
                 // Input song titles in a smaller screen
-                document.getElementById("sm-song-list").innerHTML += `<div><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}')">` + songList.toLowerCase() + "</button>" + "</div>";
+                document.getElementById("sm-song-list").innerHTML += `<div><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}');albumArtwork('${artistData[i].album.cover_big}');songTitle('${artistData[i].title}')">` + songList.toLowerCase() + "</button>" + "</div>";
                 console.log("SECOND pass");
             }
 
@@ -181,13 +184,17 @@ function songListen(preview) {
     document.getElementById("xs-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;
 }
 
+// Function to input preview artwork
 function albumArtwork(artworkLink) {
     document.getElementById("lg-artwork-box").innerHTML = `<img src="` + artworkLink + `"></img>`;
     document.getElementById("sm-artwork-box").innerHTML = `<img src="` + artworkLink + `"></img>`;     
 }
 
+// Function to show song title beneath audio player
 function songTitle(titleLink) {
     document.getElementById("lg-song-title").innerHTML = `<p>now playing: "` + titleLink.toLowerCase() +  `"</p>`;
+    document.getElementById("sm-song-title").innerHTML = `<p>now playing: "` + titleLink.toLowerCase() +  `"</p>`;
+    document.getElementById("xs-song-title").innerHTML = `<p id="xs-title">now playing: "` + titleLink.toLowerCase() +  `"</p>`;
 }
 
 // $("#search").toggleClass("foo")
