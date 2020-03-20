@@ -19,3 +19,13 @@ rank.innerHTML = response.data[0].rank;
    var artistNames = responseData[0].artist.name;
                var filteredNames = artistNames.split(" ");
                console.log(filteredNames);
+
+// Trying to code a filter for error message
+
+            for (i = 0; i < responseData.length; i++) {
+                var artistNames = responseData[i].artist.name;
+                var noMatch = artistNames.toLowerCase().includes(inputValue.toLowerCase());
+                    if (noMatch === inputValue) {
+                        console.log(noMatch);
+                    }
+            }
