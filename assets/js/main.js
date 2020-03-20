@@ -41,6 +41,7 @@ function search() {
 
             // The data received from the search function
             var responseData = response.data;
+            console.log(responseData);
 
             // If no results are returned
             
@@ -93,10 +94,10 @@ function search() {
     xhr.setRequestHeader("x-rapidapi-key", "188d30da21msh99fa3832c206cd5p1eb131jsn0acc1b025fc9");
     xhr.send(data);
 
-    // var noMatch = document.getElementById("lg-artist-column");
-    // if (noMatch == 0) {
-    //     console.log("no match");
-    // }
+    var noMatch = document.getElementById("lg-artist-column");
+        if (noMatch.innerHTML == "") {
+            console.log("noMatch = empty");
+        }
 }
 
 // // Second user step: Function when the user clicks on an artist name, that element generates a new search for that artist's popular songs
@@ -180,4 +181,11 @@ function songTitle(titleLink) {
     document.getElementById("lg-song-title").innerHTML = `<p>now playing: "` + titleLink.toLowerCase() + `"</p>`;
     document.getElementById("sm-song-title").innerHTML = `<p>now playing: "` + titleLink.toLowerCase() + `"</p>`;
     document.getElementById("xs-song-title").innerHTML = `<p id="xs-title">now playing: "` + titleLink.toLowerCase() + `"</p>`;
+}
+
+function clickSearch(event) {
+  var x = event.key;
+  if (x == "Enter") {
+    search();clearSearch();clearResults();
+  }
 }

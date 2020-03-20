@@ -34,7 +34,7 @@ The design of the site is very stripped back, with a black and white colour sche
 
 The site opens with the **heading** 'MUSIC.' and a brief **introduction** to the site and its features. The introduction consists of two short sentences. The heading will appear in the top left hand side on desktop and tablet sized screens, and top center on mobile sized screens. The instruction copy will always sit below it.
 
-The user enters the artist name into the **input box**. When the user clicks into the input box, it clears the text 'artist name here'. When the search button is clicked (NEED TO UPDATE THIS WITH OR ENTER BUTTON PRESSED) this BOX automatically clears whatever value the user has input into the box and replaces it with the original text 'artist name here'. This encourages the user to repeat the process and perform another search. If the search doesn't return any results (which could be due to incorrect spelling or the artist not being on the Deezer database), an error message will show up asking the user to try again.
+The user enters the artist name into the **input box**. When the user clicks into the input box, it clears the text 'artist name here'. When the search button is clicked or enter button pressed this box automatically clears whatever value the user has input into the box and replaces it with the original text 'artist name here'. This encourages the user to repeat the process and perform another search. If the search doesn't return any results (which could be due to incorrect spelling or the artist not being on the Deezer database), an error message will show up asking the user to try again.
 Next to the input box is the **search button**, which will search for whatever the user has entered into the input box. When the search button is clicked, this clears the text the user has typed into the input box. 
 
 When the user clicks 'search' the artist results will appear in the **artist column** to the right hand side. They will appear beneath a **header** that says 'artist' along with a **short instruction** on what to do. The search results will be filtered to only show names which include the actual name the user has searched for. The artist(s) name results will appear in a list and each of the names will be a **clickable button** which will be highlighted green when hovered over. On a screen size smaller than a tablet, the header 'artist' will appear below the search button with the artist name results appearing below this. 
@@ -68,9 +68,9 @@ When the user **clicks on a song title**, it will make another column appear to 
 - The audio player will always be **sticky** so when the user scrolls down the page it will always remain visible. 
 - At any stage after a search has been performed, the user can type a new name into the input box, press the search button and this will **reset** any previous search results. The column headers will remain. 
 
-### Features to implement
-- Option to log in to Deezer account to listen to full songs instead of 30 second clips 
-- Feature to view music videos on the site
+### Features to implement in the future
+- Feature to view music videos using data from another API
+- Feature to view song lyrics using data from another API
 
 ## Technologies used
 - HTML and CSS programming languages
@@ -80,7 +80,7 @@ When the user **clicks on a song title**, it will make another column appear to 
 - [Google Fonts](https://fonts.google.com/) for the fonts used throughout the page
 - [Github](https://github.com/) to store repositories of the project
 - [Gitpod](https://www.gitpod.io/) for providing the workspace where the code was written
-- [Emojipedia](https://emojipedia.org/people/) for the frowning face emoji in the error message
+- [ICO Converter](https://www.icoconverter.com/) to create the tab icon
 
 ## Testing
 
@@ -120,6 +120,9 @@ Follow the below steps to clone this project from Github:
 ### Content
 - Copy for the site has been written by Tristan Dauvergne
 - All artist and song data has called from the [Deezer API](https://rapidapi.com/deezerdevs/api/deezer-1) 
+- Tab icon taken from [Icons 8](https://icons8.com)
+- [Emojipedia](https://emojipedia.org/people/) for the frowning face emoji in the error message
+
 
 ###Acknowledgments
 This site has been built as my Milestone 2 Project to demonstrate incorporating JavaScript and an API into a site. I selected a music API for a few reasons:
