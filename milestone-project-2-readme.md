@@ -84,3 +84,48 @@ When the user **clicks on a song title**, it will make another column appear to 
 
 ## Testing
 
+Testing information can be found in the separate testing file which can be accessed [here](milestone-project-2-testing.md)
+
+## Deployment
+
+This project was developed using the [Gitpod](https://www.gitpod.io/) IDE, commited to git and pushed to Github using its build in function. 
+
+The following steps were taken to deploy this page from its [Github](https://github.com/trisdauvergne/milestone-project-02) repository to Github pages:
+
+1. Log into [GitHub](https://github.com/)
+2. Select trisdauvergne/milestone-project-01 from the list of 
+3. Select 'Setings' from the row of menu items on screen
+4. Scroll down to the 'Github Pages' section
+5. Under 'Source', click the drop down menu and select 'Master Branch'
+6. The page is automatically refreshed and the website is now deployed
+7. The link can now be found in the same 'Github Pages' section after 'Your page is now published at...'
+
+At the moment of submitting this Milestone project the Development Branch and Master Branch are identical.
+
+##To run this project locally
+
+Follow the below steps to clone this project from Github:
+
+1. Go to the project repository [here](https://github.com/trisdauvergne/milestone-project-01)
+2. Look for the green button on the right hand side of the page that says 'Clone or Download' (you may need to scroll down slightly to see it)
+3. Copy and paste the link in the box
+4. Open Terminal
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type git clone, and then paste the URL you copied in Step 2.
+> $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+7. Press Enter. Your local clone will be created.
+
+## Credits
+
+### Content
+- Copy for the site has been written by Tristan Dauvergne
+- All artist and song data has called from the [Deezer API](https://rapidapi.com/deezerdevs/api/deezer-1) 
+
+###Acknowledgments
+This site has been built as my Milestone 2 Project to demonstrate incorporating JavaScript and an API into a site. I selected a music API for a few reasons:
+1. I love music and I often think of artists who I haven't listened to for a while then want to listen to their songs
+2. I know there is a lot of data connected to music but I have often found that a lot of it is not relevant to my mission 
+
+The design inspiration from this site comes from many places including typographic posters and book layouts.
+
+I have been guided through this project by my mentor Brian Macharia who has given me professional guidance to improve the UX of this site.
