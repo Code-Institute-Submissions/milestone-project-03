@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css?family=Teko&display=swap');
 
 /* General Styling */
-h2, h3, p, .mobile-header {
+h2, h3, p, .mobile-header, .modal-content {
     font-family: "Space Mono", sans-serif;
     font-weight: 500;
 }
@@ -23,12 +23,19 @@ h2, h3, p, .mobile-header {
     background-color: black;
 }
 
-.myModal {
-    background-color: red;
-}
-
 .bottom-margin {
     height: 10vh;
+}
+
+.modal-text {
+    font-size: 14px;
+}
+
+.modal-button {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 #lg-artist-column {
@@ -188,7 +195,7 @@ input {
     border-bottom: 1px solid #2EF429;
 }
 
-#artists:hover, #clickable-songs:hover {
+#artists:hover, #clickable-songs:hover, .modal-button:hover {
     background-color: #2EF429;
     font-weight: bold;
     font-size: 20px;

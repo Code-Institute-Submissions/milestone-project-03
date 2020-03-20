@@ -44,7 +44,8 @@ function search() {
             // If no results are returned
             console.log(responseData);
             if (responseData.length == 0) {
-                alert("hmmmm, we couldn't find anything. try that search again.");
+                $('#myModal').modal('show');
+                // alert("this should be a modal");
             }
 
             // If results are returned
