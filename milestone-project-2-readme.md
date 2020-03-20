@@ -93,8 +93,8 @@ This project was developed using the [Gitpod](https://www.gitpod.io/) IDE, commi
 The following steps were taken to deploy this page from its [Github](https://github.com/trisdauvergne/milestone-project-02) repository to Github pages:
 
 1. Log into [GitHub](https://github.com/)
-2. Select trisdauvergne/milestone-project-01 from the list of 
-3. Select 'Setings' from the row of menu items on screen
+2. Select trisdauvergne/milestone-project-02 from the list of repositories
+3. Select 'Settings' from the row of menu items on screen
 4. Scroll down to the 'Github Pages' section
 5. Under 'Source', click the drop down menu and select 'Master Branch'
 6. The page is automatically refreshed and the website is now deployed

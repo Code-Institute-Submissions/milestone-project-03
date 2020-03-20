@@ -19,6 +19,7 @@ function clearResults() {
     document.getElementById("sm-song-listen").innerHTML = "";
     document.getElementById("lg-artwork-box").innerHTML = "";
     document.getElementById("sm-artwork-box").innerHTML = "";
+    document.getElementById("lg-artist-names").innerHTML = "";
     document.getElementById("sm-artist-names").innerHTML = "";
     document.getElementById("lg-song-title").innerHTML = "";
     document.getElementById("sm-song-title").innerHTML = "";
@@ -40,19 +41,18 @@ function search() {
 
             // The data received from the search function
             var responseData = response.data;
-            console.log(responseData);
 
             // If no results are returned
             
-            // if (responseData.length == 0) {
-            //     $('#myModal').modal('show');
-            // }
+            if (responseData.length == 0) {
+                $('#myModal').modal('show');
+            }
 
             // If results are returned
 
             var artistList = [];
 
-            // var html_string = "";
+            var html_string = "";
 
             for (i = 0; i < responseData.length; i++) {
                 var initialArtistNames = responseData[i].artist.name;
@@ -60,7 +60,7 @@ function search() {
                     if (artistList.includes(initialArtistNames) == false) {
                         artistList.push(initialArtistNames);
 
-                        // html_string += `<button type="button" id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
+                        html_string += `<button type="button" id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
 
                         // Send artist names to artist column in larger screens
                         document.getElementById("lg-artist-names").innerHTML += `<button type="button" id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
@@ -72,8 +72,8 @@ function search() {
             }
 
             // Elements added to HTML after function is run
-            // document.getElementById("lg-artist-names").innerHTML = html_string;
-            // document.getElementById("sm-artist-names").innerHTML = html_string;
+            document.getElementById("lg-artist-names").innerHTML = html_string;
+            document.getElementById("sm-artist-names").innerHTML = html_string;
             document.getElementById("lg-artist-header").innerHTML = `<h2 class="category-header disappear-small">artist</h2>
             <h3 id="next-step">select an artist.</h3>`;
             document.getElementById("sm-artist-header").innerHTML = `<h2>artist</h2>
@@ -93,7 +93,10 @@ function search() {
     xhr.setRequestHeader("x-rapidapi-key", "188d30da21msh99fa3832c206cd5p1eb131jsn0acc1b025fc9");
     xhr.send(data);
 
-    
+    // var noMatch = document.getElementById("lg-artist-column");
+    // if (noMatch == 0) {
+    //     console.log("no match");
+    // }
 }
 
 // // Second user step: Function when the user clicks on an artist name, that element generates a new search for that artist's popular songs
