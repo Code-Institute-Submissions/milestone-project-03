@@ -45,9 +45,9 @@ function search() {
 
             // If no results are returned
             
-            if (responseData.length == 0) {
-                $('#myModal').modal('show');
-            }
+            // if (responseData.length == 0) {
+            //     $('#myModal').modal('show');
+            // }
 
             // If results are returned
 
@@ -86,7 +86,6 @@ function search() {
             document.getElementById("lg-artist-bottom").style.borderLeft = "1px solid #000";
 
         }
-
     });
 
     xhr.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + inputValue);
@@ -94,10 +93,27 @@ function search() {
     xhr.setRequestHeader("x-rapidapi-key", "188d30da21msh99fa3832c206cd5p1eb131jsn0acc1b025fc9");
     xhr.send(data);
 
-    var noMatch = document.getElementById("lg-artist-column");
-        if (noMatch.innerHTML == "") {
-            console.log("noMatch = empty");
-        }
+    // Error message on large screen in case no match results are shown
+    var noMatchLG = document.getElementById("lg-artist-names");
+    if (noMatchLG.innerHTML == "") {
+        console.log("nothing on large screen");
+        $('#myModal').modal('show');
+    }
+
+    var noMatchSM = document.getElementById("sm-artist-names");
+    if (noMatchSM.innerHTML == "") {
+        console.log("nothing on small screen");
+        $('#myModal').modal('show');
+    }
+ 
+}
+
+// Search function if user presses enter instead of click
+function clickSearch(event) {
+  var x = event.key;
+  if (x == "Enter") {
+    search();clearSearch();clearResults();
+  }
 }
 
 // // Second user step: Function when the user clicks on an artist name, that element generates a new search for that artist's popular songs
@@ -181,11 +197,4 @@ function songTitle(titleLink) {
     document.getElementById("lg-song-title").innerHTML = `<p>now playing: "` + titleLink.toLowerCase() + `"</p>`;
     document.getElementById("sm-song-title").innerHTML = `<p>now playing: "` + titleLink.toLowerCase() + `"</p>`;
     document.getElementById("xs-song-title").innerHTML = `<p id="xs-title">now playing: "` + titleLink.toLowerCase() + `"</p>`;
-}
-
-function clickSearch(event) {
-  var x = event.key;
-  if (x == "Enter") {
-    search();clearSearch();clearResults();
-  }
 }
