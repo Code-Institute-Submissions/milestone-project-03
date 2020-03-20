@@ -79,6 +79,21 @@ function search() {
             document.getElementById("lg-artist-column").style.borderLeft = "1px solid #000";
             document.getElementById("lg-artist-bottom").style.borderLeft = "1px solid #000";
 
+            // Error message on large screen in case no results match the input value
+
+            var noMatchLG = document.getElementById("lg-artist-names");
+            if (noMatchLG.innerHTML == "") {
+                // console.log("nothing on large screen");
+                $('#myModal').modal('show');
+            }
+
+            // Error message on small screen in case no results match the input value
+
+            var noMatchSM = document.getElementById("sm-artist-names");
+            if (noMatchSM.innerHTML == "") {
+                // console.log("nothing on small screen");
+                $('#myModal').modal('show');
+            }
         }
     });
 
@@ -89,28 +104,27 @@ function search() {
 
     // Error message on large screen in case no results match the input value
 
-    var noMatchLG = document.getElementById("lg-artist-names");
-    if (noMatchLG.innerHTML == "") {
-        console.log("nothing on large screen");
-        $('#myModal').modal('show');
-    }
+    // var noMatchLG = document.getElementById("lg-artist-names");
+    // if (noMatchLG.innerHTML == "") {
+    //     // console.log("nothing on large screen");
+    //     $('#myModal').modal('show');
+    // }
 
     // Error message on small screen in case no results match the input value
 
-    var noMatchSM = document.getElementById("sm-artist-names");
-    if (noMatchSM.innerHTML == "") {
-        console.log("nothing on small screen");
-        $('#myModal').modal('show');
-    }
- 
+    // var noMatchSM = document.getElementById("sm-artist-names");
+    // if (noMatchSM.innerHTML == "") {
+    //     // console.log("nothing on small screen");
+    //     $('#myModal').modal('show');
+    // }
 }
 
 // Search function if user presses enter instead of click
 function clickSearch(event) {
-  var x = event.key;
-  if (x == "Enter") {
-    search();clearSearch();clearResults();
-  }
+    var x = event.key;
+    if (x == "Enter") {
+        search(); clearSearch(); clearResults();
+    }
 }
 
 // // Second user step: Function when the user clicks on an artist name, that element generates a new search for that artist's popular songs
