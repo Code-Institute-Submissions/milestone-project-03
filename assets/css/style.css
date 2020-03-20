@@ -9,18 +9,34 @@ h2, h3, p, .mobile-header, .modal-content {
     font-weight: 500;
 }
 
-#lg-listen-header {
+/* #lg-listen-header {
     bottom: 0px;
-}
+} */
 
-#lg-song-title {
+/* #lg-song-title {
     font-size: 12px;
     margin-top: 15px;
+} */
+
+/* Header with word 'music' */
+.massive-heading {
+    color: black;
+    font-family: "Teko", sans-serif;
+    font-size: 200px;
+    font-weight: bold;
+    letter-spacing: .5vw;
+    margin-left: 5vw;
 }
 
-.breathing-space {
-    height: 5vh;
-    background-color: black;
+/* Text below header */
+.intro {
+    font-size: 25px;
+    margin-left: 5vw;
+    color: black;
+}
+
+#lg-artist-column {
+    padding-bottom: 500px;
 }
 
 .bottom-margin {
@@ -38,10 +54,64 @@ h2, h3, p, .mobile-header, .modal-content {
     font-weight: bold;
 }
 
-#lg-artist-column {
-    padding-bottom: 500px;
+.footer {
+    height: 1px;
+    width: 100%;
+    background-color: #2EF429;
+    position: fixed;
+    bottom: 0;
 }
 
+.header-border {
+    border-top: 1px solid #2EF429;
+}
+
+.left-buffer {
+    padding-left: 3%;
+}
+
+/* Headers that appear with the searches - artist / song / preview */
+.category-header {
+    color: black;
+    margin-top: 25vh;
+    font-weight: bolder;
+    font-size: 40px;
+}
+
+/* Text with next step instructions for user */
+#next-step {
+    color: black;
+    font-size: 20px;
+    border-bottom: 1px solid #2EF429;
+}
+
+/* Input box where you type in artist name */
+#search {
+    font-family: "Space Mono", sans-serif;
+    font-size: 20px;
+    border-color: grey;
+    border-width: 1px;
+    margin: 3vh 0 3vh 5vw;
+    padding: 10px 20px;
+}
+
+input {
+    color: black;
+}
+
+/* Button to click when searching for artist */
+#search-button {
+    font-family: "Space Mono", sans-serif;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    background: black;
+    margin: 0 2.5vw;
+    padding: 10px 20px;
+    border: 1px solid black;
+}
+
+/* Preview column elements */
 .audio-player {
     display: block;
     border: 1px solid black;
@@ -89,87 +159,13 @@ h2, h3, p, .mobile-header, .modal-content {
     top: 145px;
 }
 
-.footer {
-    height: 1px;
-    width: 100%;
-    background-color: #2EF429;
-    position: fixed;
-    bottom: 0;
-}
-
-.header-border {
-    border-top: 1px solid #2EF429;
-}
-
-.left-buffer {
-    padding-left: 3%;
-}
-
-/* .foo {
-    background-color: red;
-} */
-
 img {
     max-width: 100%;
     height: auto;
     margin-top: 15px;
 }
 
-/* Headers that appear with the searches - artist / song / preview */
-.category-header {
-    color: black;
-    margin-top: 25vh;
-    font-weight: bolder;
-    font-size: 40px;
-    /* border-bottom: 1px solid #2EF429; */
-}
-
-/* Header with word 'music' */
-.massive-heading {
-    color: black;
-    font-family: "Teko", sans-serif;
-    font-size: 200px;
-    font-weight: bold;
-    letter-spacing: .5vw;
-    margin-left: 5vw;
-    /* position: absolute;
-    bottom: 0; */
-}
-
-/* Text below header */
-.intro {
-    font-size: 25px;
-    margin-left: 5vw;
-    color: black;
-}
-
-/* Bar where you type in artist name */
-#search {
-    font-family: "Space Mono", sans-serif;
-    font-size: 20px;
-    border-color: grey;
-    border-width: 1px;
-    margin: 3vh 0 3vh 5vw;
-    padding: 10px 20px;
-}
-
-input {
-    color: black;
-}
-
-/* Button to click when searching for artist */
-#search-button {
-    font-family: "Space Mono", sans-serif;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    background: black;
-    margin: 0 2.5vw;
-    padding: 10px 20px;
-    border: 1px solid black;
-}
-
-/* Artist names and songs that are returned from search */
+/* Artist names, song titles and error that are returned from search */
 #artists, #clickable-songs, #sorry-message {
     background-color: white;
     color: black;
@@ -183,16 +179,6 @@ input {
 
 #lg-artist-names, #lg-song-column {
     padding-left: 0px;
-}
-
-
-/* Text with next step instructions for user */
-#next-step {
-    color: black;
-    /* font-weight: bold; */
-    font-size: 20px;
-    /* margin-top: 5vh; */
-    border-bottom: 1px solid #2EF429;
 }
 
 #artists:hover, #clickable-songs:hover, .modal-button:hover {
@@ -217,10 +203,9 @@ input {
     color: black;
 }
 
-
 /* -------------------------------------------------------------- Media Queries */
 
-/* Text appearing at the top in a small screen */
+/* Elements which are not visible on screens larger than tablet */
 @media (min-width: 992px) {
     .visible-small {
         display: none;
@@ -234,7 +219,7 @@ input {
     }
 }
 
-/* Between tablet and mobile size */
+/* Fixing heading positioning between tablet and mobile size */
 @media (max-width: 991px) and (min-width: 425px) {
     .massive-heading {
         font-size: 175px;
@@ -314,8 +299,6 @@ input {
         top: 10px;
         margin-top: 0px;
         width: 80%;
-        /* margin-left: 7.5%;
-        z-index: 3; */
     }
 
     #xs-song-listen {
@@ -337,6 +320,7 @@ input {
     }
 }
 
+/* Up to small mobile size */
 @media (max-width: 426px) {
     .intro, input, #search, #search-button {
         font-size: 18px;
@@ -364,6 +348,7 @@ input {
     }
 }
 
+/* Breathing space on either side on very large screens and making the heading responsive */
 @media (min-width: 1750px) {
     body {
         padding: 0 10% 0 10%;

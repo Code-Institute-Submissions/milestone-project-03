@@ -24,7 +24,6 @@ function clearResults() {
     document.getElementById("lg-song-title").innerHTML = "";
     document.getElementById("sm-song-title").innerHTML = "";
     document.getElementById("xs-song-title").innerHTML = "";
-    //document.getElementById("lg-artist-column").innerHTML = "";
 }
 
 // First user step: artist name search function
@@ -41,19 +40,10 @@ function search() {
 
             // The data received from the search function
             var responseData = response.data;
-            console.log(responseData);
-
-            // If no results are returned
-            
-            // if (responseData.length == 0) {
-            //     $('#myModal').modal('show');
-            // }
-
-            // If results are returned
 
             var artistList = [];
 
-            var html_string = "";
+            // var html_string = "";
 
             for (i = 0; i < responseData.length; i++) {
                 var initialArtistNames = responseData[i].artist.name;
@@ -61,7 +51,7 @@ function search() {
                     if (artistList.includes(initialArtistNames) == false) {
                         artistList.push(initialArtistNames);
 
-                        html_string += `<button type="button" id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
+                        // html_string += `<button type="button" id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
 
                         // Send artist names to artist column in larger screens
                         document.getElementById("lg-artist-names").innerHTML += `<button type="button" id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
@@ -72,15 +62,19 @@ function search() {
                 }
             }
 
-            // Elements added to HTML after function is run
-            document.getElementById("lg-artist-names").innerHTML = html_string;
-            document.getElementById("sm-artist-names").innerHTML = html_string;
+            // To clear columns 
+            // document.getElementById("lg-artist-names").innerHTML = html_string;
+            // document.getElementById("sm-artist-names").innerHTML = html_string;
+
+            // Column headers
             document.getElementById("lg-artist-header").innerHTML = `<h2 class="category-header disappear-small">artist</h2>
             <h3 id="next-step">select an artist.</h3>`;
             document.getElementById("sm-artist-header").innerHTML = `<h2>artist</h2>
             <h3 id="next-step">select an artist.</h3>`;
             document.getElementById("xs-artist-header").innerHTML = `<h2>artist</h2>
             <h3 id="next-step">select an artist and their songs will appear below.</h3>`;
+
+            // Borders added to HTML after function is run
             document.getElementById("lg-artist-header").style.borderLeft = "1px solid #000";
             document.getElementById("lg-artist-column").style.borderLeft = "1px solid #000";
             document.getElementById("lg-artist-bottom").style.borderLeft = "1px solid #000";
@@ -93,12 +87,15 @@ function search() {
     xhr.setRequestHeader("x-rapidapi-key", "188d30da21msh99fa3832c206cd5p1eb131jsn0acc1b025fc9");
     xhr.send(data);
 
-    // Error message on large screen in case no match results are shown
+    // Error message on large screen in case no results match the input value
+
     var noMatchLG = document.getElementById("lg-artist-names");
     if (noMatchLG.innerHTML == "") {
         console.log("nothing on large screen");
         $('#myModal').modal('show');
     }
+
+    // Error message on small screen in case no results match the input value
 
     var noMatchSM = document.getElementById("sm-artist-names");
     if (noMatchSM.innerHTML == "") {
