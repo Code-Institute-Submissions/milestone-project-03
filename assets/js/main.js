@@ -102,21 +102,6 @@ function search() {
     xhr.setRequestHeader("x-rapidapi-key", "188d30da21msh99fa3832c206cd5p1eb131jsn0acc1b025fc9");
     xhr.send(data);
 
-    // Error message on large screen in case no results match the input value
-
-    // var noMatchLG = document.getElementById("lg-artist-names");
-    // if (noMatchLG.innerHTML == "") {
-    //     // console.log("nothing on large screen");
-    //     $('#myModal').modal('show');
-    // }
-
-    // Error message on small screen in case no results match the input value
-
-    // var noMatchSM = document.getElementById("sm-artist-names");
-    // if (noMatchSM.innerHTML == "") {
-    //     // console.log("nothing on small screen");
-    //     $('#myModal').modal('show');
-    // }
 }
 
 // Search function if user presses enter instead of click
