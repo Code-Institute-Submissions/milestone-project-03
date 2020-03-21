@@ -16,7 +16,7 @@ The 'MUSIC.' site incorporates an API from the music streaming service 'Deezer' 
 1. Ria, “I’m on my way to see Jax Jones tonight and want to see what his most popular songs are”.
 2. Jen, “I’m on my way to karaoke and know I want to sing Britney Spears but can’t remember which songs I know. I want to see a list of songs and hear clips of the songs to jog my memory”
 3. Harry, “I want to hear Bucks Fizz songs because I’m a big fan”
-4. Rachael, “There’s a singer called George something who sings a really catchy song that’s stuck in my mind, but I don’t know the title of the song! I might recognise the title if I saw it but would need to search for singers called George and hear the songs to try find out the title”
+4. Rachael, “There’s a singer called George something who sings a really catchy song that’s stuck in my mind, but I don’t know the title of the song! I might recognise the title if I saw it but would need to search for singers called George first and hear the songs to try find out the title”
 
 ### The 'MUSIC.' site is the best place for users to achieve their goals because: 
 - The site is easy to navigate with clear instructions, steps and accessibility
@@ -27,24 +27,24 @@ The 'MUSIC.' site incorporates an API from the music streaming service 'Deezer' 
 
 # WIREFRAMES 
 1. Opening page (before search):
- - [Desktop](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/desktop-wireframe-1.jpg)
- - [Tablet](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/tablet-wireframe-1.jpg)
- - [Mobile](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/mobile-wireframe-1.jpg)
+ - [Desktop](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/wireframes/desktop-wireframe-1.jpg)
+ - [Tablet](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/wireframes/tablet-wireframe-1.jpg)
+ - [Mobile](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/wireframes/mobile-wireframe-1.jpg)
 
 2. Artist information (after search):
- - [Desktop](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/desktop-wireframe-2.jpg)
- - [Tablet](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/tablet-wireframe-2.jpg)
- - [Mobile](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/mobile-wireframe-2.jpg)
+ - [Desktop](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/wireframes/desktop-wireframe-2.jpg)
+ - [Tablet](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/wireframes/tablet-wireframe-2.jpg)
+ - [Mobile](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/wireframes/mobile-wireframe-2.jpg)
 
 3. Song information (after an artist name is clicked):
- - [Desktop](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/desktop-wireframe-3.jpg)
- - [Tablet](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/tablet-wireframe-3.jpg)
- - [Mobile](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/mobile-wireframe-3.jpg)
+ - [Desktop](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/wireframes/desktop-wireframe-3.jpg)
+ - [Tablet](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/wireframes/tablet-wireframe-3.jpg)
+ - [Mobile](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/wireframes/mobile-wireframe-3.jpg)
 
  4. Preview songs (after a song title is clicked):
- - [Desktop](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/desktop-wireframe-4.jpg)
- - [Tablet](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/tablet-wireframe-4.jpg)
- - [Mobile](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/mobile-wireframe-4.jpg)
+ - [Desktop](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/wireframes/desktop-wireframe-4.jpg)
+ - [Tablet](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/wireframes/tablet-wireframe-4.jpg)
+ - [Mobile](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/wireframes/mobile-wireframe-4.jpg)
 
 ## FEATURES
 
