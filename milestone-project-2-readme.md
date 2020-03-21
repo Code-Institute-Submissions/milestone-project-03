@@ -1,8 +1,10 @@
-# project heading
+![MUSIC - site logo](readme-assets/readme-images/music-logo.jpg "MUSIC - site logo")
+
+# A site to discover songs by your favourite artists"
 
 # MUSIC. 
 
-View the project on Github pages [here](then input the deployed github page URL here)
+View the project on Github pages [here](https://trisdauvergne.github.io/milestone-project-02/)
 
 ##An introduction to the project
 
