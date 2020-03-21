@@ -142,6 +142,9 @@
 ## Further testing:
 
 1. Asked fellow students to look at the site and report any issues they encountered. Issues spotted include:
-- No error message when unknown bands were searched for (this function was subsequently added)
+- No error message when unknown bands were searched for
+- _This function was subsequently added_
+- Found issue when trying to play songs which have an apostrophe in the title
+- _The apostrophe in the template literal onclick function caused the string to prematurely end, so had to replace the apostrophe with &apos instead_ 
 2. Asked friends and family to test the site for ease of use
 3. The website has been viewed on different browsers, no issues were found 
