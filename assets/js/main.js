@@ -174,16 +174,16 @@ function songListen(preview) {
     document.getElementById("sm-listen-header").style.borderLeft = "1px solid #000";
     document.getElementById("sm-song-column").style.borderLeft = "1px solid #000";
 
-    document.getElementById("lg-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;
-    document.getElementById("sm-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;
-    document.getElementById("xs-song-listen").innerHTML = `<audio controls volume=0.1 src="` + preview + `" type="audio/mpeg" class="audio-player"></audio>`;
+    document.getElementById("lg-song-listen").innerHTML = `<audio controls volume=0.1 src="${preview}" type="audio/mpeg" class="audio-player"></audio>`;
+    document.getElementById("sm-song-listen").innerHTML = `<audio controls volume=0.1 src="${preview}" type="audio/mpeg" class="audio-player"></audio>`;
+    document.getElementById("xs-song-listen").innerHTML = `<audio controls volume=0.1 src="${preview}" type="audio/mpeg" class="audio-player"></audio>`;
 }
 
 
 // User step 3B: Function to input preview artwork
 function albumArtwork(artworkLink) {
-    document.getElementById("lg-artwork-box").innerHTML = `<img src="` + artworkLink + `"></img>`;
-    document.getElementById("sm-artwork-box").innerHTML = `<img src="` + artworkLink + `"></img>`;
+    document.getElementById("lg-artwork-box").innerHTML = `<img src="${artworkLink}">`;
+    document.getElementById("sm-artwork-box").innerHTML = `<img src="${artworkLink}">`;
 }
 
 
@@ -193,3 +193,4 @@ function songTitle(titleLink) {
     document.getElementById("sm-song-title").innerHTML = `<p>now playing: ${titleLink.toLowerCase()}</p>`;
     document.getElementById("xs-song-title").innerHTML = `<p id="xs-title">now playing: ${titleLink.toLowerCase()}</p>`;
 }
+
