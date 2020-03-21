@@ -29,7 +29,7 @@ function clearResults() {
 // First user step: artist name search function
 function search() {
 
-    let inputValue = document.getElementById("search").value;
+    var inputValue = document.getElementById("search").value;
 
     var xhr = new XMLHttpRequest();
     xhr.withCredentials = true;
