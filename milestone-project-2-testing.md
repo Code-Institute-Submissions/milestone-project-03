@@ -5,7 +5,7 @@
 - CSS validated using [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) 
 - JS validated using [JSHint](https://jshint.com/)
 
-## Testing client stories from the UX section of milestone-project-2-readme.md
+## Testing client stories from the UX section of [Milestone Project 2 Readme](milestone-project-2-readme.md)
 
 1. _"I’m on my way to see Jax Jones tonight and want to see **what his most popular songs are**”_
 - The user can fulfill their mission in 3 steps to show Jax Jones's most popular songs: _Type artist name into input box, click search button, click on artist name_

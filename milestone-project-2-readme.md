@@ -27,24 +27,24 @@ The 'MUSIC.' site incorporates an API from the music streaming service 'Deezer' 
 
 # WIREFRAMES 
 1. Opening page (before search):
- - [Desktop]
- - [Tablet]
- - [Mobile]
+ - [Desktop](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/desktop-wireframe-1.jpg)
+ - [Tablet](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/tablet-wireframe-1.jpg)
+ - [Mobile](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/mobile-wireframe-1.jpg)
 
 2. Artist information (after search):
- - [Desktop]
- - [Tablet]
- - [Mobile]
+ - [Desktop](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/desktop-wireframe-2.jpg)
+ - [Tablet](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/tablet-wireframe-2.jpg)
+ - [Mobile](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/mobile-wireframe-2.jpg)
 
 3. Song information (after an artist name is clicked):
- - [Desktop]
- - [Tablet]
- - [Mobile]
+ - [Desktop](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/desktop-wireframe-3.jpg)
+ - [Tablet](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/tablet-wireframe-3.jpg)
+ - [Mobile](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/mobile-wireframe-3.jpg)
 
  4. Preview songs (after a song title is clicked):
- - [Desktop]
- - [Tablet]
- - [Mobile]
+ - [Desktop](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/desktop-wireframe-4.jpg)
+ - [Tablet](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/tablet-wireframe-4.jpg)
+ - [Mobile](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/mobile-wireframe-4.jpg)
 
 ## FEATURES
 
@@ -125,7 +125,7 @@ At the moment of submitting this Milestone project the Development Branch and Ma
 
 Follow the below steps to clone this project from Github:
 
-1. Go to the project repository [here](https://github.com/trisdauvergne/milestone-project-01)
+1. Go to the project repository [here](https://github.com/trisdauvergne/milestone-project-02)
 2. Look for the green button on the right hand side of the page that says 'Clone or Download' (you may need to scroll down slightly to see it)
 3. Copy and paste the link in the box
 4. Open Terminal
