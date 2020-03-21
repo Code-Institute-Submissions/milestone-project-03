@@ -132,13 +132,13 @@ function artistSong(artistName) {
             //Search function
             document.getElementById("lg-song-list").innerHTML = "";
             for (i = 0; i < artistData.length; i++) {
-                var songList = artistData[i].title;
+                var songList = artistData[i].title.replace("'", "&apos;");
 
                 // Input song title buttons in a large screen (buttons will return preview, artwork and song titles when clicked)
-                document.getElementById("lg-song-list").innerHTML += `<div><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}');albumArtwork('${artistData[i].album.cover_big}');songTitle('${artistData[i].title}')">` + songList.toLowerCase() + "</button>" + "</div>";
+                document.getElementById("lg-song-list").innerHTML += `<div><button type='button' id='clickable-songs' onclick='songListen("${artistData[i].preview}");albumArtwork("${artistData[i].album.cover_big}");songTitle(\"${songList}\")'>${songList.toLowerCase()}</button></div>`;
 
                 // Input song title buttons on a smaller screen (buttons will return preview, artwork and song titles when clicked)
-                document.getElementById("sm-song-list").innerHTML += `<div><button type="button" id="clickable-songs" onclick="songListen('${artistData[i].preview}');albumArtwork('${artistData[i].album.cover_big}');songTitle('${artistData[i].title}')">` + songList.toLowerCase() + "</button>" + "</div>";
+                document.getElementById("sm-song-list").innerHTML += `<div><button type='button' id='clickable-songs' onclick='songListen("${artistData[i].preview}");albumArtwork("${artistData[i].album.cover_big}");songTitle(\"${songList}\")'>${songList.toLowerCase()}</button></div>`;
             }
 
             // Elements added after function is performed
@@ -190,7 +190,7 @@ function albumArtwork(artworkLink) {
 
 // User step 3C: Function to show song title beneath audio player
 function songTitle(titleLink) {
-    document.getElementById("lg-song-title").innerHTML = `<p>now playing: "` + titleLink.toLowerCase() + `"</p>`;
-    document.getElementById("sm-song-title").innerHTML = `<p>now playing: "` + titleLink.toLowerCase() + `"</p>`;
-    document.getElementById("xs-song-title").innerHTML = `<p id="xs-title">now playing: "` + titleLink.toLowerCase() + `"</p>`;
+    document.getElementById("lg-song-title").innerHTML = `<p>now playing: ${titleLink.toLowerCase()}</p>`;
+    document.getElementById("sm-song-title").innerHTML = `<p>now playing: ${titleLink.toLowerCase()}</p>`;
+    document.getElementById("xs-song-title").innerHTML = `<p id="xs-title">now playing: ${titleLink.toLowerCase()}</p>`;
 }
