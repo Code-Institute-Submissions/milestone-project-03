@@ -1,3 +1,5 @@
+![MUSIC site logo](readme-assets/readme-images/music-logo.jpg "MUSIC site logo")
+
 # Testing 'MUSIC.' website
 
 ## Testing
@@ -16,11 +18,11 @@
 - To fulfill the second part of their mission, they need to add 2 more steps: _Click on song title, click play in audio source_
 - [User journey screenshots here](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/user-stories/user-story-2.jpeg)
 
-3. _“I want to hear Bucks Fizz songs because I’m a big fan”_
+3. _“I want to **hear Bucks Fizz songs** because I’m a big fan”_
 - The user can easily fulfill their mission in 5 steps: _Search for artist name, click on artist name, view song results, click on song title, click play in audio source_
 - [User journey screenshots here](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/user-stories/user-story-3.jpeg)
 
-4. _“There’s a singer called George something who sings a really catchy song that’s stuck in my mind, but I don’t know the title of the song! I might recognise the title if I saw it but would need to search for singers called George first and hear the songs to try find out the title”_
+4. _“There’s a singer called George something who sings a really catchy song that’s stuck in my mind, but I don’t know the title of the song! I might recognise the title if I saw it but would need to **search for singers called George** first and **hear the songs** to try find out the title”_
 - The user can easily fulfill their mission in 3 steps (which would need to be repeated for different artists): _Search for artist name, click on artist name, view song results_ (the user could now potentially see the song title in this list)
 - The user may need to take 2 additional steps to listen to the songs to jog their memory (these steps may need to be repeated for different artists): _Click on song title, click play in audio source_
 - [User journey screenshots here](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/user-stories/user-story-4.jpeg)
@@ -140,7 +142,6 @@
 ## Further testing:
 
 1. Asked fellow students to look at the site and report any issues they encountered. Issues spotted include:
-- xxxxxxxxxxxxxxxxxxxx
-- xxxxxxxxxxxxxxxxxxxx
+- No error message when unknown bands were searched for (this function was subsequently added)
 2. Asked friends and family to test the site for ease of use
 3. The website has been viewed on different browsers, no issues were found 

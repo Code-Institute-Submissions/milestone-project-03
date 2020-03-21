@@ -1,5 +1,4 @@
-![MUSIC site logo](readme-assets/user-stories/user-story-1.jpeg)
-
+![MUSIC site logo](readme-assets/readme-images/music-logo.jpg "MUSIC site logo")
 # A site to discover songs by your favourite artists"
 
 # MUSIC. 
