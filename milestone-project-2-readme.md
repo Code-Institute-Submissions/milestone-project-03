@@ -1,4 +1,4 @@
-![MUSIC - site logo](readme-assets/readme-images/music-logo.jpg "MUSIC - site logo")
+![MUSIC site logo](readme-assets/user-stories/user-story-1.jpeg)
 
 # A site to discover songs by your favourite artists"
 
@@ -6,7 +6,7 @@
 
 View the project on Github pages [here](https://trisdauvergne.github.io/milestone-project-02/)
 
-##An introduction to the project
+## An introduction to the project
 
 The 'MUSIC.' site offers users the chance to indulge their curiosity by searching for a musical artist or band and to preview 30 second clips of their most popular songs. The experience is clean and stripped back to allow the user to fulfill their goal easily.
 
@@ -88,6 +88,7 @@ When the user **clicks on a song title**, it will make another column appear to 
 - **Album artwork** will also appear beneath the audio player when a song title is clicked. Album artwork will only be visible on a desktop and tablet sized screen but not on a mobile.
 - The audio player will always be **sticky** so when the user scrolls down the page it will always remain visible. 
 - At any stage after a search has been performed, the user can type a new name into the input box, press the search button and this will **reset** any previous search results. The column headers will remain. 
+- An **error message** will appear if the user has made a spelling mistake or the API can't return any results that match exactly what the user has searched for
 
 ### Features to implement in the future
 - Feature to view music videos using data from another API
@@ -141,11 +142,12 @@ Follow the below steps to clone this project from Github:
 ### Content
 - Copy for the site has been written by Tristan Dauvergne
 - All artist and song data has called from the [Deezer API](https://rapidapi.com/deezerdevs/api/deezer-1) 
-- Tab icon taken from [Icons 8](https://icons8.com)
+
+### Media
+- Headphone icon in tab sourced from [Icons 8](https://icons8.com)
 - [Emojipedia](https://emojipedia.org/people/) for the frowning face emoji in the error message
 
-
-###Acknowledgments
+### Acknowledgments
 This site has been built as my Milestone 2 Project to demonstrate incorporating JavaScript and an API into a site. I selected a music API for a few reasons:
 1. I love music and I often think of artists who I haven't listened to for a while then want to listen to their songs
 2. I know there is a lot of data connected to music but I have often found that a lot of it is not relevant to my mission 

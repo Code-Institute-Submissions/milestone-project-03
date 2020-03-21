@@ -9,21 +9,21 @@
 
 1. _"I’m on my way to see Jax Jones tonight and want to see **what his most popular songs are**”_
 - The user can fulfill their mission in 3 steps to show Jax Jones's most popular songs: _Search for artist name, click on artist name, view song results_]
-- [User journey screenshots here](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/user-stories/user-story-1.jpg)
+- [User journey screenshots here](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/user-stories/user-story-1.jpeg)
 
 2. _“I’m on my way to karaoke and know I want to sing Britney Spears but can’t remember which songs I know. I want to **see a list of songs** and **hear clips of the songs** to jog my memory”_
 - The user can easily fulfill the first part of their mission in 4 steps: _Search for artist name, click on artist name, view song results_
 - To fulfill the second part of their mission, they need to add 2 more steps: _Click on song title, click play in audio source_
-- [User journey screenshots here](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/user-stories/user-story-2.jpg)
+- [User journey screenshots here](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/user-stories/user-story-2.jpeg)
 
 3. _“I want to hear Bucks Fizz songs because I’m a big fan”_
 - The user can easily fulfill their mission in 5 steps: _Search for artist name, click on artist name, view song results, click on song title, click play in audio source_
-- [User journey screenshots here](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/user-stories/user-story-3.jpg)
+- [User journey screenshots here](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/user-stories/user-story-3.jpeg)
 
 4. _“There’s a singer called George something who sings a really catchy song that’s stuck in my mind, but I don’t know the title of the song! I might recognise the title if I saw it but would need to search for singers called George first and hear the songs to try find out the title”_
 - The user can easily fulfill their mission in 3 steps (which would need to be repeated for different artists): _Search for artist name, click on artist name, view song results_ (the user could now potentially see the song title in this list)
 - The user may need to take 2 additional steps to listen to the songs to jog their memory (these steps may need to be repeated for different artists): _Click on song title, click play in audio source_
-- [User journey screenshots here](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/user-stories/user-story-4.jpg)
+- [User journey screenshots here](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/user-stories/user-story-4.jpeg)
 
 ## Manual (logical) testing of all elements and functionality on every page.
 
@@ -133,6 +133,9 @@
 
 18. **Reset**
 - Type a new artist name into the input box and click search to check that all the previous search results (artist names, song titles, preview clip, 'now playing' text and album artwork) is cleared
+
+19. **Error Message**
+- Make a deliberate spelling mistake in an artist search to see the error message show up
 
 ## Further testing:
 
