@@ -1,4 +1,4 @@
-![MUSIC site logo](readme-assets/readme-images/music-logo.jpg "MUSIC site logo")
+![MUSIC site logo](assets/readme-assets/readme-images/logo.jpg)
 
 # Testing 'MUSIC.' website
 
