@@ -25,7 +25,26 @@ The 'MUSIC.' site incorporates an API from the music streaming service 'Deezer' 
 - It allows users to easily explore an artist or group's most popular songs
 - It provides users with the option to listen to a 30 second clip of all songs
 
-# WIREFRAMES NEED TO BE DONEEEEEE
+# WIREFRAMES 
+1. Opening page (before search):
+ - [Desktop]
+ - [Tablet]
+ - [Mobile]
+
+2. Artist information (after search):
+ - [Desktop]
+ - [Tablet]
+ - [Mobile]
+
+3. Song information (after an artist name is clicked):
+ - [Desktop]
+ - [Tablet]
+ - [Mobile]
+
+ 4. Preview songs (after a song title is clicked):
+ - [Desktop]
+ - [Tablet]
+ - [Mobile]
 
 ## FEATURES
 

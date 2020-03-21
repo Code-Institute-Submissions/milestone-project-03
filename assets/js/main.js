@@ -128,11 +128,10 @@ function artistSong(artistName) {
             // The data received from the specific artist name search
             var artistData = artistResponse.data;
 
-
             //Search function
             document.getElementById("lg-song-list").innerHTML = "";
             for (i = 0; i < artistData.length; i++) {
-                var songList = artistData[i].title.replace("'", "&apos;");
+                var songList = artistData[i].title.replace(/'/g, "&apos;");
 
                 // Input song title buttons in a large screen (buttons will return preview, artwork and song titles when clicked)
                 document.getElementById("lg-song-list").innerHTML += `<div><button type='button' id='clickable-songs' onclick='songListen("${artistData[i].preview}");albumArtwork("${artistData[i].album.cover_big}");songTitle(\"${songList}\")'>${songList.toLowerCase()}</button></div>`;
