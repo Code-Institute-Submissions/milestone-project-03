@@ -7,15 +7,6 @@ h2, h3, p, .mobile-header, .modal-content {
     font-weight: 500;
 }
 
-/* #lg-listen-header {
-    bottom: 0px;
-} */
-
-/* #lg-song-title {
-    font-size: 12px;
-    margin-top: 15px;
-} */
-
 /* Header with word 'music' */
 .massive-heading {
     color: black;
@@ -268,7 +259,6 @@ img {
 }
 
 /* Up to mobile size */
-
 @media (min-width: 576px) {
     .visible-xs {
         display: none;

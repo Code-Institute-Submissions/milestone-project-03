@@ -14,7 +14,7 @@
 - [User journey screenshots here](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/user-stories/user-story-1.jpeg)
 
 2. _“I’m on my way to karaoke and know I want to sing Britney Spears but can’t remember which songs I know. I want to **see a list of songs** and **hear clips of the songs** to jog my memory”_
-- The user can easily fulfill the first part of their mission in 4 steps: _Search for artist name, click on artist name, view song results_
+- The user can easily fulfill the first part of their mission in 3 steps: _Search for artist name, click on artist name, view song results_
 - To fulfill the second part of their mission, they need to add 2 more steps: _Click on song title, click play in audio source_
 - [User journey screenshots here](https://github.com/trisdauvergne/milestone-project-02/blob/master/assets/readme-assets/user-stories/user-story-2.jpeg)
 
@@ -48,7 +48,7 @@
 - Click on search button when artist name has been typed into input box to perform a search and to check that the button turns from black with white text to neon green with white text
 - Check that the artist name from the input box is cleared when search button is clicked
 
-#### Appear on page after functions are executed
+### Appear on page after functions are executed
 1. **Artist column** 
 - Check that a new column appears with the search results
 - Reduce screen size to check that the new column will appear to the right hand side of the permanent elements on a desktop and below the search button on a tablet size screen and smaller 
@@ -142,10 +142,8 @@
 ## Further testing:
 
 1. Asked fellow students to look at the site and report any issues they encountered. Issues spotted include:
-- No error message when unknown bands were searched for
-- _This function was subsequently added_
-- Found issue when trying to play songs which have an apostrophe in the title
-- _The apostrophe in the template literal onclick function caused the string to prematurely end, so had to replace the apostrophe with '&apos' instead_ 
+- No error message when unknown bands were searched for (NOTE:_This feature was added after this feedback was received_)
+- Found issue when trying to play songs which have an apostrophe in the title (_NOTE: Realised that any apostrophes in song titles in the template literal onclick function caused the string to prematurely end, so had to replace apostrophes with '&apos' instead_)
 2. Asked friends and family to test the site for ease of use
 3. The website has been viewed on different browsers, no issues were found 
 
