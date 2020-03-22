@@ -43,15 +43,11 @@ function search() {
 
             var artistList = [];
 
-            // var html_string = "";
-
             for (i = 0; i < responseData.length; i++) {
                 var initialArtistNames = responseData[i].artist.name;
                 if (initialArtistNames.toLowerCase().includes(inputValue.toLowerCase())) {
                     if (artistList.includes(initialArtistNames) == false) {
                         artistList.push(initialArtistNames);
-
-                        // html_string += `<button type="button" id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
 
                         // Send artist names to artist column in larger screens
                         document.getElementById("lg-artist-names").innerHTML += `<button type="button" id="artists" onclick="artistSong('${initialArtistNames}')">` + initialArtistNames.toLowerCase() + "</button>" + "<br>";
@@ -62,11 +58,7 @@ function search() {
                 }
             }
 
-            // To clear columns 
-            // document.getElementById("lg-artist-names").innerHTML = html_string;
-            // document.getElementById("sm-artist-names").innerHTML = html_string;
-
-            // Column headers
+            // Column headers added to artist column
             document.getElementById("lg-artist-header").innerHTML = `<h2 class="category-header disappear-small">artist</h2>
             <h3 id="next-step">select an artist.</h3>`;
             document.getElementById("sm-artist-header").innerHTML = `<h2>artist</h2>
@@ -74,7 +66,7 @@ function search() {
             document.getElementById("xs-artist-header").innerHTML = `<h2>artist</h2>
             <h3 id="next-step">select an artist and their songs will appear below.</h3>`;
 
-            // Borders added to HTML after function is run
+            // Borders added to artist column after function is run
             document.getElementById("lg-artist-header").style.borderLeft = "1px solid #000";
             document.getElementById("lg-artist-column").style.borderLeft = "1px solid #000";
             document.getElementById("lg-artist-bottom").style.borderLeft = "1px solid #000";
@@ -83,7 +75,6 @@ function search() {
 
             var noMatchLG = document.getElementById("lg-artist-names");
             if (noMatchLG.innerHTML == "") {
-                // console.log("nothing on large screen");
                 $('#myModal').modal('show');
             }
 
@@ -91,7 +82,6 @@ function search() {
 
             var noMatchSM = document.getElementById("sm-artist-names");
             if (noMatchSM.innerHTML == "") {
-                // console.log("nothing on small screen");
                 $('#myModal').modal('show');
             }
         }
@@ -104,6 +94,7 @@ function search() {
 
 }
 
+
 // Search function if user presses enter instead of click
 function clickSearch(event) {
     var x = event.key;
@@ -112,7 +103,8 @@ function clickSearch(event) {
     }
 }
 
-// // Second user step: Function when the user clicks on an artist name, that element generates a new search for that artist's popular songs
+
+// // Second user step: Function when the user clicks on an artist name and generates a new search for that artist's popular songs
 
 function artistSong(artistName) {
 
@@ -122,7 +114,6 @@ function artistSong(artistName) {
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
 
-            // console.log(this.responseText);
             var artistResponse = JSON.parse(this.responseText);
 
             // The data received from the specific artist name search
@@ -140,10 +131,12 @@ function artistSong(artistName) {
                 document.getElementById("sm-song-list").innerHTML += `<div><button type='button' id='clickable-songs' onclick='songListen("${artistData[i].preview}");albumArtwork("${artistData[i].album.cover_big}");songTitle(\"${songList}\")'>${songList.toLowerCase()}</button></div>`;
             }
 
-            // Elements added after function is performed
+            // Header and instructions added to songs column after function is performed
             document.getElementById("lg-song-header").innerHTML = `<h2 class="category-header disappear-small">songs</h2><h3 class="disappear-small" id="next-step">click on a title.</h3>`;
             document.getElementById("sm-song-header").innerHTML = `<h2>songs</h2><h3 id="next-step">click on a song.</h3>`;
             document.getElementById("xs-song-header").innerHTML = `<h2 id="songs-header">songs</h2><h3 id="next-step">click on a song and it will appear at the top.</h3>`;
+
+            // Styling adding to songs column after function is performed
             document.getElementById("lg-song-header").style.borderLeft = "1px solid #000";
             document.getElementById("lg-song-column").style.borderLeft = "1px solid #000";
             document.getElementById("lg-song-bottom").style.borderLeft = "1px solid #000";
@@ -163,17 +156,20 @@ function artistSong(artistName) {
 
 function songListen(preview) {
 
+    // Header and next instructions added to listen column
     document.getElementById("lg-listen-header").innerHTML = `<h2 class="category-header disappear-small">listen</h2>
     <h3 id="next-step">listen to a clip.</h3>`;
     document.getElementById("sm-listen-header").innerHTML = `<h2>listen</h2>
     <h3 id="next-step">listen to a clip.</h3>`;
 
+    // Styling added to listen column after function is run
     document.getElementById("lg-listen-header").style.borderLeft = "1px solid #000";
     document.getElementById("lg-preview-column").style.borderLeft = "1px solid #000";
     document.getElementById("lg-preview-bottom").style.borderLeft = "1px solid #000";
     document.getElementById("sm-listen-header").style.borderLeft = "1px solid #000";
     document.getElementById("sm-song-column").style.borderLeft = "1px solid #000";
 
+    // Audio player added to listen column after function is run
     document.getElementById("lg-song-listen").innerHTML = `<audio controls volume=0.1 src="${preview}" type="audio/mpeg" class="audio-player"></audio>`;
     document.getElementById("sm-song-listen").innerHTML = `<audio controls volume=0.1 src="${preview}" type="audio/mpeg" class="audio-player"></audio>`;
     document.getElementById("xs-song-listen").innerHTML = `<audio controls volume=0.1 src="${preview}" type="audio/mpeg" class="audio-player"></audio>`;
